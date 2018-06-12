@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+输入code值：<input type="text" id="code">
+<button id="jump">点击跳转</button>
+<script src="../assets/js/jquery-1.11.1.js"></script>
+<script>
+    console.log(code)
+    $('#jump').click(function () {
+        var code = $('#code').val()
+        window.location.href = './isRegister.html?code='+code+'&state='
+    })
+</script>
+</body>
+</html>

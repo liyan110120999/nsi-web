@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>国际学校四库全书-机构新增</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/instution/insPublic.css?v=1.0.2">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <style>
+        .nsiCourseAdd input{margin-bottom: 6px;}
+        .form-control-feedback{  right:0  }
+        .btn-info{background: transparent;color: #0C0C0C;}
+        .glyphicon-exclamation-sign{color: #999;}
+        .popover-content{  color:#999; }
+        .MB5 input{margin-bottom: 5px;}
+    </style>
+</head>
+<body>
+<!--头部-->
+<!--#include virtual="../module/nav02.html" -->
+<!--新增信息-->
+<div class="container-fluid" >
+    <ol class="breadcrumb" style="background: transparent;">
+        <li><a href="../other/index.html">首页</a></li>
+        <li><a href="../school/search.html">机构数据库</a></li>
+        <li style="color:#000033">新增信息</li>
+    </ol>
+</div>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="jumbotron">
+                <h1>修改机构数据</h1>
+                <p>请按照标准格式录入数据</p>
+                <p><a class="btn btn-primary btn-large" href="searchCompany.html">返回机构查询页面</a></p>
+            </div>
+            <p style="margin-bottom: 20px;color: #337ab7;font-weight: bold;">温馨提示：带有 <span class="glyphicon glyphicon-exclamation-sign"></span> 标记的为必填部分</p>
+            <!--基本信息-->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">基本信息</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="form-group has-feedback hasError" data-container="body" data-toggle="popover"  data-trigger="manual" data-placement="top" data-content="注意：机构名已存在！">
+                            <label class="col-lg-2 control-label"><em class="glyphicon glyphicon-exclamation-sign"></em> 机构名</label>
+                            <div class="col-lg-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <input type="text" class="form-control" id="Name"  placeholder="请输入机构名" onblur="checkInstutionName();"/>
+                            </div>
+                            <div class="col-lg-5">
+                                <h5 style="color:#999" class="NameCheck" style="margin-top:0;"></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback hasError">
+                            <label  class="col-sm-2 control-label">成立时间</label>
+                            <div class="col-sm-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <input type="text" class="form-control" id="Founded_time" name="Founded_time" onblur="checkFoundTime()"/>
+                            </div>
+                            <div class="col-sm-5">
+                                <h5 style="color:#999" class="foundTimeCheck" style="margin-top:0;">例如：2017，不添加月份</h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group hasError">
+                            <label class="col-lg-2 control-label errColor"><em class="glyphicon glyphicon-exclamation-sign"></em> 所在地区</label>
+                            <div class="col-lg-2">
+                                <select class="form-control" id="selProvince" onchange="provinceChange();checkAddress()"></select>
+                            </div>
+                            <div class="col-lg-3">
+                                <select class="form-control" id="selCity" onchange="checkAddress()"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">  <!--修改过，没有hasError-->
+                            <label class="col-lg-2 control-label"></label>
+                            <div class="col-lg-5">
+                                <input type="text" id="Areas03" class="form-control" placeholder="详细地址：xxx 大街 xx 号" onblur="checkAddress()">
+                            </div>
+                            <div class="col-lg-5">
+                                <h5 style="color:#999" class="addressCheck">注意：地址不能为空</h5>
+                            </div>
+                        </div>
+                        <div class="form-group hasError">
+                            <label  class="col-lg-2 control-label"><em class="glyphicon glyphicon-exclamation-sign"></em> 机构类型</label>
+                            <div class="col-lg-5">
+                                <select class="form-control" id="institutionType">
+                                    <option value="教育集团">教育集团</option>
+                                    <option value="投资机构">投资机构</option>
+                                    <option value="服务商">服务商</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group hasError">
+                            <label class="col-sm-2 control-label"><em class="glyphicon glyphicon-exclamation-sign"></em> 机构标签</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="instutionLable"/>
+                            </div>
+                            <div class="col-lg-5">
+                                <h5 style="color:#999" class="instutionLableCheck">注意：以分号结尾 且不能为空</h5>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"></label>
+                            <div class="col-sm-5 MB5">
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('课程服务;')" value="课程服务" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('艺术教育;')" value="艺术教育" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('留学咨询;')" value="留学咨询" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('营地;')" value="营地" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('教材;')" value="教材" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('职业体检;')" value="职业体检" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('体育;')" value="体育" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('投资;')" value="投资" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('校车;')" value="校车" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('校服;')" value="校服" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('保洁;')" value="保洁" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('餐饮服务;')" value="餐饮服务" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('保险;')" value="保险" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('课后培训;')" value="课后培训" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group hasError">
+                            <label  class="col-sm-2 control-label">机构官网</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="Website" />
+                            </div>
+                            <div class="col-sm-5"> <span  style=" color:#999"><h5>例如：www.baidu.com</h5></span>  </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label serviceErrColor"><em class="glyphicon glyphicon-exclamation-sign"></em> 服务简介</label>
+                            <div class="col-sm-5" >
+                                <textarea class="form-control"  id="Service" rows="3" placeholder="控制在50字以内" onblur="checkService();"></textarea>
+                            </div>
+                            <div class="col-lg-5">
+                                <h5 style="color:#999" class="ServiceCheck" style="margin-top:0;">注意：服务简介不能为空！</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--联系方式-->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">联系方式&nbsp;&nbsp;&nbsp;<span class="small" style="color: #ccc;">( 请确保联系方式的正确性，以便需求用户及时联系您 )</span></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-horizontal" role="form">
+                        <div class="form-group hasError">
+                            <label class="col-sm-2 control-label">个人姓名</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="col-sm-4 form-control" id="ContactName" />
+                            </div >
+                        </div>
+                        <div class="form-group  hasError">
+                            <label class="col-sm-2 control-label">个人职位</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="ContactPosition"/>
+                            </div>
+                        </div>
+                        <div class="form-group hasError">
+                            <label class="col-sm-2 control-label">联系电话</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="ContactPhone" />
+                            </div>
+                        </div>
+
+                        <div class="form-group hasError">
+                            <label class="col-sm-2 control-label">联系邮箱</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="ContactMail"  />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--详情&备注-->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">详情&备注</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-horizontal" role="form">
+                        <div class="form-group  hasError">
+                            <label  class="col-sm-2 control-label">投资信息</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="Investment"  />
+                            </div>
+                        </div>
+
+                        <div class="form-group  hasError">
+                            <label  class="col-sm-2 control-label">过往服务学校</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="ServedSchool" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">详细介绍</label>
+                            <div class="col-sm-5">
+                                <textarea class="form-control" id="Introduction"  rows="3" style="min-height: 100px;"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">备注</label>
+                            <div class="col-sm-5">
+                                <textarea class="form-control" id="Remark"  rows="3"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top:30px;margin-bottom: 30px;">
+                <span class="btn btn-success" id="alertSubmit" onclick="instutionFormAlter()" style="display: inline-block;padding: 10px 20px;font-size:16px;font-weight: bold;color: #fff;cursor: pointer;border-radius: 0;">立即修改</span>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<input id="alter_old_Institution_id"  style="display: none;">
+<!--页脚-->
+<!--#include virtual="../module/footer.html" -->
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    系统提示
+                </h4>
+            </div>
+            <div class="modal-body">
+                提交失败，数据不符合格式
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger"
+                        data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script src="../assets/js/jquery-1.11.1.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.cookie.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/instution/publicInstution.js?v=1.0.3"></script>
+<script src="../assets/js/instution/alertInstution.js?v=1.0.3"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">-->
+    <title>国际学校四库全书-机构数据库</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/instution/insPublic.css?v=1.0.3">
+    <link rel="stylesheet" href="../assets/css/instution/insution.css?v=06111646">
+</head>
+
+<body>
+    <!--头部-->
+    <!--#include virtual="../module/nav02.html" -->
+    <div>
+        <img src="http://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-pc/banner02.jpg" alt="机构数据库" class="img-responsive" />
+    </div>
+    <div class="container-fluid" style="margin-top:10px;">
+        <ol class="breadcrumb" style="background: transparent;">
+            <li><a href="../other/index.html">首页</a></li>
+            <li style="color:#000033">机构数据库</li>
+        </ol>
+    </div>
+
+
+    <div class="container wrap text-center">
+        <h1 style="color:rgb(33,80,137)">机构数据系统</h1>
+        <div class="row">
+            <div class="col-lg-12 pcPL266 text-right">
+                <span class="glyphicon glyphicon-plus-sign" style="font-size: 20px;top:3px;padding-right: 6px;"></span><a href="insertCompany.html" class="add_company" style="text-decoration: none;">加入机构库</a>
+            </div>
+            <div class="col-lg-12 header-search">
+                <div role="search">
+                    <div class="clearfix text-center">
+                        <input type="text" id="search" placeholder="请输入机构名或其他关键字" />
+                        <!-- <button id="SearchButton" type="submit">搜 索</button> -->
+                        <span class="btn btn-primary glyphicon glyphicon-search search_icon" id="SearchButton"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container" style="margin-top:30px;">
+        <div class="row text-center">
+            <p class="col-lg-2" style="font-size: 16px;"><span class="glyphicon glyphicon-hand-right" style="top:2px;padding-right: 5px;"></span> 热门搜索地点：</p>
+            <div class="col-lg-8 " style="padding-bottom:10px;border-bottom: 1px dashed #336699">
+                <a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=北京">北京</a>
+                <a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=上海">上海</a>
+                <a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=广州">广州</a>
+                <a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=深圳">深圳</a>
+                <a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=成都">成都</a>
+                <a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=南京">南京</a>
+                <a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=杭州">杭州</a>
+                <a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=江苏">江苏</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top:20px;">
+        <div class="row text-center">
+            <p class="col-lg-2" style="font-size: 16px;"><span class="glyphicon glyphicon-hand-right" style="top:2px;padding-right: 5px;"></span> 热门搜索服务：</p>
+            <div class="col-lg-8">
+                <a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=课程服务">课程服务</a><a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=艺术教育">艺术教育</a><a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=留学咨询">留学咨询</a>
+                <a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=营地">营地</a><a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=教材">教材</a><a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=职业体检">职业体检</a><a class="btn btn-info myBtn"
+                    href="searchCompany.html?whereFrom=体育">体育</a><br>
+                <a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=投资">投资</a><a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=校车">校车</a><a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=校服">校服</a><a class="btn btn-info myBtn"
+                    href="searchCompany.html?whereFrom=保洁">保洁</a><a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=餐饮服务">餐饮服务</a><a class="btn btn-info myBtn" href="searchCompany.html?whereFrom=保险">保险</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h3 style="color: #337ab7;padding-left: 0px;margin-bottom: 20px;"><span class="glyphicon glyphicon-fire" style="color: red;top:4px;"></span> 热门搜索机构</h3>
+        </div>
+    </div>
+
+    <!--热门搜索-->
+    <div class="container" style="margin-top:18px;margin-bottom: 40px;">
+        <div class="row">
+            <!--<h3><span class="glyphicon glyphicon-hand-right"></span> 热门搜索学校</h3>-->
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <a href="./detailCompany.html?School_name=100043&whereFrom=search"><img src="../assets/img/companyImg/company01.jpg" alt="起点校车"></a>
+                        <div class="caption">
+                            <h4><a href="./detailCompany.html?School_name=100043&whereFrom=search">起点校车</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <a href="./detailCompany.html?School_name=100127&whereFrom=search"><img src="../assets/img/companyImg/company02.jpg" alt="大风车"></a>
+                        <div class="caption">
+                            <h4><a href="./detailCompany.html?School_name=100127&whereFrom=search">大风车教育集团</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <a href="detailCompany.html?School_name=100046&whereFrom=search"><img src="../assets/img/companyImg/company03.jpg" alt="校宝智慧校园"></a>
+                        <div class="caption">
+                            <h4><a href="./detailCompany.html?School_name=100046&whereFrom=search">校宝智慧校园</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <a href="./detailCompany.html?School_name=100163&whereFrom=search"><img src="../assets/img/companyImg/company04.jpg" alt="北京汉通文化有限责任公司"></a>
+                        <div class="caption">
+                            <h4><a href="./detailCompany.html?School_name=100163&whereFrom=search">北京汉通文化有限责任公司</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <a href="./detailCompany.html?School_name=100181&whereFrom=search"> <img src="../assets/img/companyImg/company05.jpg" alt="卡西欧"></a>
+                        <div class="caption">
+                            <h4><a href="./detailCompany.html?School_name=100181&whereFrom=search"> 卡西欧（中国）贸易有限公司 </a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <a href="./detailCompany.html?School_name=100099&whereFrom=search"><img src="../assets/img/companyImg/company06.jpg" alt="通用的占位符缩略图"></a>
+                        <div class="caption">
+                            <h4><a href="./detailCompany.html?School_name=100099&whereFrom=search">  博实乐教育集团 </a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <a href="./detailCompany.html?School_name=100106&whereFrom=search"><img src="../assets/img/companyImg/company07.jpg" alt="DDC天乐勤教育"></a>
+                        <div class="caption">
+                            <h4><a href="./detailCompany.html?School_name=100106&whereFrom=search">   DDC天乐勤教育 </a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <a href="./detailCompany.html?School_name=100165&whereFrom=search"><img src="../assets/img/companyImg/company08.jpg?1.0.1" alt="ManageBac"></a>
+                        <div class="caption">
+                            <h4><a href="./detailCompany.html?School_name=100165&whereFrom=search">   ManageBac </a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--页脚-->
+    <!--#include virtual="../module/footer.html" -->
+    <script src="../assets/js/jquery-1.11.1.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.cookie.js"></script>
+    <script src="../assets/js/instution/publicInstution.js?v=1.0.3"></script>
+    <script src="../assets/js/instution/indexInstution.js"></script>
+    <script src="https://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+    <script src="../assets/js/config.js"></script>
+</body>
+
+</html>

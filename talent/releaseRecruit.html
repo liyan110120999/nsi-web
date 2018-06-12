@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">-->
+    <title>国际学校四库全书-人才数据库</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/validator/bootstrapValidator.css">
+    <link rel="stylesheet" href="../assets/css/cropper/cropper.min.css">
+    <link rel="stylesheet" href="../assets/css/talent/talPublic.css?v=1.0.2">
+    <link rel="stylesheet" href="../assets/css/talent/talent.css">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/talent/releaseRecruit.css?v=1.0.5">
+</head>
+
+<body>
+    <!--头部-->
+    <!--#include virtual="../module/nav02.html" -->
+    <div>
+        <img src="../assets/img/swiper/banner02.jpg" alt="机构数据库" class="img-responsive" />
+    </div>
+    <div class="container-fluid" style="margin-top:10px;">
+        <ol class="breadcrumb" style="background: transparent;">
+            <li><a href="../other/index.html">首页</a></li>
+            <li><a href="talent.html">人才数据库</a></li>
+            <li style="color:#000033">发布招聘</li>
+        </ol>
+    </div>
+    <div class="container" style="margin-bottom: 30px;margin-top: 10px;">
+
+        <div class="row">
+            <!-- 侧边栏 -->
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked text-center">
+                    <li class="active" id="tab-companyInfo"><a  data-toggle="tab" href="#companyInfo_tab1">公司信息</a></li>
+                    <li class="hide" id="tab-JobManger"><a data-toggle="tab" disabled href="#jobManage_tab2" >职位管理</a></li>
+
+                    <!--<a href="javascript:;" class="list-group-item" id="companyInfo">公司信息</a>-->
+                    <!--<a href="javascript:;" class="list-group-item " id="jobManage" data-toggle="tooltip" data-placement="bottom" title="请先将公司信息填写完整"> 职位管理</a>-->
+                </ul>
+            </div>
+
+            <!--公司信息 -->
+            <div class="tab-content">
+                <form method="post" class="form-horizontal tab-pane fade in active" role="form" id="companyInfo_tab1">
+                    <div class="col-md-9">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">公司信息</h3>
+                            </div>
+                            <div class="panel-body">
+                                <!-- <form id="companyInfo_tab1" method="post" action="target.php" class="form-horizontal"> -->
+                                <!-- 企业名称 -->
+                                <div class="form-group">
+                                    <label for="Name" class="col-sm-2 control-label"><span class="star">*</span>企业名称:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="Name" placeholder="请输入企业名称或品牌名" name="companyName" maxlength="10">
+                                    </div>
+                                </div>
+                                <!-- </form> -->
+                                <!-- 上传LOGO -->
+                                <div class="form-group mtb50">
+                                    <label for="upLogo" class="col-sm-3 col-xs-12 control-label"><span class="star">*</span>请上传LOGO:</label>
+                                    <div class="btns tc col-sm-6 col-xs-12">
+                                        <button type="button" id="uplogo" class="btn btn-primary" data-toggle="modal" data-target="#myModal">上传LOGO</button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title letter_spacing2 text-primary" id="myModalLabel">选择上传图片</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row modal_row">
+                                                            <!-- 选择上传图片 -->
+                                                            <div class="selectUpLoadLogo col-md-8 col-xs-12 ">
+                                                                <img src="" alt="" class="cropper-hidden" id="image">
+                                                                <!-- 上传图片btn -->
+                                                                <div class="upLoadBtn" id="upLoadBtn">
+                                                                    <a href="javascript:;" class="lable_selectPic">
+                                                                        <label ><span class="glyphicon glyphicon-plus"></span>选择图片</label>
+                                                                    </a>
+                                                                    <input type="file" id="inputImage" accept="image/jpeg,image/gif,image/x-png">
+                                                                </div>
+                                                            </div>
+                                                            <!-- 预览图片 -->
+                                                            <div class="previewLogo col-md-4 col-xs-12">
+                                                                <div class="img-preview">
+                                                                    <span class="preview-pic">预览图片</span>
+                                                                    <img src="" alt="" id="preview">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                        <button type="button" class="btn btn-primary"  id="startUpload">上传</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 图片地址 -->
+                                <div class="form-group">
+                                    <label for="Logo" class="col-sm-2 control-label">
+                                        <!--<span class="star">*</span>LOGO地址:-->
+                                    </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control hide" id="Logo" placeholder="请上传图片" disabled maxlength="20"  name="logoImgUrl">
+                                        <div style="padding-left: 150px;">
+                                            <img id="imgLogo"  src="" alt="" width="200" height="200" style="box-shadow: 0 0 5px #000;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 企业简介 -->
+                                <div class="form-group">
+                                    <label for="Intro" class="col-sm-2 control-label"><span class="star">*</span>企业简介:</label>
+                                    <div class="col-sm-10">
+                                        <textarea name="corporateProfile" id="Intro" cols="30" rows="10" placeholder="企业简介（限制100字以内）" maxlength="100"></textarea>
+                                        <!--<span class="wordwrap text-primary"><var class="word"><span id="userWord">100</span>/100</var>-->
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- 一句话简介 -->
+                                <div class="form-group">
+                                    <label for="Intro" class="col-sm-2 control-label"><span class="star">*</span>介绍:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="Brief_intro" placeholder="企业的一句话介绍（20字以内）" maxlength="20" name="oneSentence">
+                                    </div>
+                                </div>
+                                <!-- 工作城市 -->
+                                <div class="form-group">
+                                    <label  class="col-sm-2 control-label"><span class="star">*</span>所在城市:</label>
+                                    <div class="col-sm-10  cityName">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <select name="" id="selProvince" onchange="provinceChange('selProvince', 'selCity');" class="form-control"></select>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 city">
+                                                <select name="" id="selCity" class="form-control"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 工作地点 -->
+                                <div class="form-group">
+                                    <label for="Site" class="col-sm-2 control-label"><span class="star">*</span>工作地点:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="Site" placeholder="例：北京市xx区xx街xx楼xx室。" name="Site">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">联系人信息</h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <!-- 联系人姓名 -->
+                                <div class="form-group">
+                                    <label for="Link_name" class="col-sm-2 control-label"><span class="star">*</span>姓名:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="Link_name" placeholder="请输入联系人姓名" name="uName">
+                                    </div>
+                                </div>
+                                <!-- 联系人电话 -->
+                                <div class="form-group">
+                                    <label for="Link_phone" class="col-sm-2 control-label"><span class="star">*</span>电话:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="Link_phone" placeholder="请输入联系人电话" name="uTel">
+                                    </div>
+                                </div>
+                                <!-- 联系人邮箱 -->
+                                <div class="form-group">
+                                    <label for="Link_mail" class="col-sm-2 control-label"><span class="star">*</span>邮箱:</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="Link_mail" placeholder="请输入联系人邮箱" name="Link_mail">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input  value="下一步：职位管理" type="button" class="btn btn-primary center-block" id="next" >
+                    </div>
+                    <!-- 公司信息_展示end -->
+                </form>
+
+                <!-- 职位管理 -->
+                <form method="post" class="form-horizontal tab-pane fade in " role="form" id="jobManage_tab2">
+                    <div class="col-md-9 ">
+                        <div class="text-center">
+                            <button class="btn btn-primary" id="addNewJob">添加新职位</button>
+                        </div>
+                        <div class="panel panel-primary hide" id="JobForm">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">添加新职位</h3>
+                            </div>
+                            <div class="panel-body">
+                                <!-- 选择分类 -->
+                                <div class="form-group">
+                                    <label  class="col-sm-2 control-label"><span class="star">*</span>选择分类:</label>
+                                    <div class="col-sm-10">
+                                        <select name="SelectType" id="SelectType">
+                                            <option value="数学教研">教学教研</option>
+                                            <option value="产品运营">产品运营</option>
+                                            <option value="市场销售">市场销售</option>
+                                            <option value="教务运营">教务运营</option>
+                                            <option value="技术研发">技术研发</option>
+                                            <option value="设计创意">设计创意</option>
+                                            <option value="职能管理">职能管理</option>
+                                            <option value="内容编辑">内容编辑</option>
+                                            <option value="其他">其他</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <!-- 职位名称 -->
+                                <div class="form-group">
+                                    <label for="Position" class="col-sm-2 control-label"><span class="star">*</span>职位名称:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="Position" placeholder="请输入职位名称" name="Position">
+                                    </div>
+                                </div>
+                                <!-- 工作年限 -->
+                                <div class="form-group">
+                                    <label  class="col-sm-2 control-label"><span class="star">*</span>工作年限:</label>
+                                    <div class="col-sm-10" id="Seniority">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="workYears" id="workYears01" value="应届毕业生">应届毕业生
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="workYears" id="workYears02" value="1-3年" checked>1-3年
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="workYears" id="workYears03" value="3-5年">3-5年
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="workYears" id="workYears04" value="5-10年">5-10年
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="workYears" id="workYears05" value="10年以上">10年以上
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- 招聘人数 -->
+                                <div class="form-group">
+                                    <label for="Headcount" class="col-sm-2 control-label"><span class="star">*</span>招聘人数:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="Headcount" placeholder="请输入招聘人数（ 需要为整数 ）" name="Headcount">
+                                    </div>
+                                </div>
+                                <!-- 工作城市 -->
+                                <div class="form-group">
+                                    <label  class="col-sm-2 control-label"><span class="star">*</span>工作城市:</label>
+                                    <div class="col-sm-10  cityName">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <select name="selProvince1" id="selProvince1" onchange="provinceChange('selProvince1', 'selCity1');" class="form-control"></select>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 city">
+                                                <select name="selCity1" id="selCity1" class="form-control"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 工作地点 -->
+                                <div class="form-group">
+                                    <label for="Areas03" class="col-sm-2 control-label"><span class="star">*</span>工作地点:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="Areas03" placeholder="请输入工作地点" name="Areas03">
+                                    </div>
+                                </div>
+                                <!-- 职位描述 -->
+                                <div class="form-group">
+                                    <label for="Job_description" class="col-sm-2 control-label"><span class="star">*</span>职位描述:</label>
+                                    <div class="col-sm-10">
+                                        <textarea name="Job_description" id="Job_description" cols="30" rows="10" placeholder="职位描述（7条以内，请清晰分好每一条描述）
+例：
+1.负责组织编制内容。
+组织开展各类活动等。(回车)"></textarea>
+                                    </div>
+                                </div>
+                                <!-- 职位要求 -->
+                                <div class="form-group">
+                                    <label for="Job_requirement" class="col-sm-2 control-label"><span class="star">*</span>职位要求:</label>
+                                    <div class="col-sm-10">
+                                        <textarea name="Job_requirement" id="Job_requirement" cols="30" rows="10" placeholder="职位要求（7条以内，请清晰分好每一条描述）
+例：
+1.负责组织编制内容。
+组织开展各类活动等。(回车)"></textarea>
+                                    </div>
+                                </div>
+                                <!-- 待遇福利 -->
+                                <div class="form-group">
+                                    <label for="Job_weal" class="col-sm-2 control-label"><span class="star">*</span>福利待遇:</label>
+                                    <div class="col-sm-10">
+                                        <textarea name="Job_weal" id="Job_weal" cols="30" rows="10" placeholder=" 福利待遇（7条以内，请清晰分好每一条描述）
+ 例：
+1.五险一金、弹性工作
+组织开展各类活动等。(回车)"></textarea>
+                                    </div>
+                                </div>
+                                <!-- 月薪 -->
+                                <div class="form-group">
+                                    <label  class="col-sm-6 control-label" style="width: 290px;"><span class="star">*</span>月薪（浮动区间10K，如20K-30K）：</label>
+                                    <div id="salary" class="col-sm-6">
+                                        <label class="radio-inline salary" style="width: 230px;">
+                                            <input type="radio" name="salary01" id="type01" value="区间" checked> 区间
+                                            <input type="text" id="salary01"> K至
+                                            <input type="text" id="salary02"> K
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="salary01" id="type02" value="面议"> 面议
+                                        </label>
+                                    </div>
+                                </div>
+                                <input type="button" value="保存" class="btn btn-primary pull-right save" id="saveNewJob">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--页脚-->
+    <!--#include virtual="../module/footer.html" -->
+
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.cookie.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/talent/talent.js?v=1.0.4"></script>
+
+
+    <script src="../assets/js/talent/releaseRecruit.js?v=1.0.2"></script>
+    <script src="../assets/js/validator/bootstrapValidator.js"></script>
+    <script src="../assets/js/validator/validatorDetail.js?v=1.0.8"></script>
+    <script src="../assets/js/cropper/cropper.min.js"></script>
+    <script src="../assets/js/cropper/upLoadImg.js?v=1.0.5"></script>
+    <script src="../assets/js/cropper/main.js"></script>
+    <script src="../assets/js/talent/selectPlace.js"></script>
+</body>
+
+</html>

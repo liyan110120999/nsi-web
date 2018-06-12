@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+/*  公用头部区域 */
+.l-h-001{
+	padding-left:5%;
+}
+.l-h-002{
+	padding-right:5%;
+}
+
+/* 字体大小区域 */
+.l-f28{
+	font-size:28px;
+}
+.l-f24{
+	font-size:24px;
+}
+.l-f22{
+	font-size:22px;
+}
+.l-f20{
+	font-size:20px;
+}
+.l-f18{
+	font-size:18px;
+}
+.l-f16{
+	font-size:16px;
+}
+/* ------------------------------------------------------- */
+/* 色彩空间 */
+
+	/* 灰色系 */
+	.color01{
+		background-color:rgba(158, 158, 158, 0.50);
+	}
+	.color02{
+		background-color:rgba(158, 158, 158, 0.10);
+	}
+	
+/* 	蓝色系 */
+/* 	图片用 浅蓝色 */
+	.color03{
+		background-color:rgba(117, 163, 209, 0.39);
+	}
+
+
+
+
+/* 详情表 */ /* detail-table */  /*DT*/
+.font-title01{ font-size:25px;line-height:120%;color: #428bca;}
+.font-title02{ font-size:20px;line-height:120%;color: #828282;}
+.font-title03{ font-size:18px;line-height:100%;}
+
+
+/* 页眉 */
+.DT-header{
+	font-size:18px;line-height:100%;
+	text-align:left;
+	float:left;
+}
+/* 小标题 */
+.DT-title{
+	
+}
+/* 内容文字 */
+.DT-content{
+	
+}
+
+/* 会员权限 7级管理员*/
+.userMember07{
+	visibility:hidden;
+}
+.userMember07-show{
+	visibility:visible;
+}

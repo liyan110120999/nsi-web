@@ -1,0 +1,257 @@
+body {
+    background: #f7f7f7;
+}
+
+
+/*普通搜索和高级搜索分页部分*/
+
+.pageFooter {
+    height: 100px;
+    background: transparent;
+    text-align: center;
+}
+
+.noData {
+    padding-top: 25px;
+    font: bold 24px/48px 'Microsoft YaHei';
+    color: #666666;
+}
+
+.generalSearchResult,
+.advanceSearchResult {
+    display: none;
+}
+
+.generalSearchResult p,
+.advanceSearchResult p {
+    padding-top: 20px;
+    color: black;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+.gengeralSearchNum,
+.advanceSearchNum {
+    font-weight: bold;
+    color: lightcoral;
+    padding: 0 4px;
+}
+
+#pageDemo01,
+#pageDemo02 {
+    text-align: center;
+}
+
+#AdvancedSearchID {
+    display: block;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    /*box-shadow:  5px 5px 5px #888888;*/
+    /*text-align:center;*/
+}
+
+.dowebok li {
+    display: inline-block;
+}
+
+.AdvanSpan01 {
+    font-weight: bold;
+    font-size: 14px;
+    color: #0C0C0C;
+    padding-top: 8px;
+}
+
+
+/* 搜索框更改 */
+
+.search_input {
+    width: 454px;
+    height: 40px;
+    padding-left: 10px;
+    outline: none;
+    border: 2px solid #215089;
+    border-right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.search_button {
+    background: #215089;
+    left: -5px;
+    top: -2px;
+    height: 40px;
+    width: 60px;
+    font-size: 24px;
+    padding-top: 2px;
+    border-radius: 0 5px 5px 0;
+    font-weight: 100;
+}
+
+.add_info {
+    font-size: 20px;
+    color: #215089;
+    padding-right: 30px;
+    font-weight: bold;
+    transition: all .3s;
+}
+
+.add_info:hover {
+    color: #3075c9;
+}
+
+
+/*提交按钮*/
+
+#AdvanceSubmitID {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+/*方框形式展示搜索列表*/
+
+.leftInfo {
+    padding-left: 10px;
+}
+
+.leftInfo p {
+    font-size: 14px;
+    padding-top: 10px;
+    color: #2B2E37;
+}
+
+.schoolName a {
+    display: block;
+    padding-top: 20px;
+    font-weight: bold;
+    color: #0C0C0C;
+}
+
+.schoolName:hover {
+    color: #0077b3;
+}
+
+.rightInfo {
+    padding-top: 10px;
+    width: 212px;
+    height: 110px;
+}
+
+.rightInfo p {
+    font-size: 14px;
+    padding-right: 30px;
+    padding-top: 20px;
+    color: #2B2E37;
+}
+
+.rightInfo p:first-child {
+    padding-top: 40px;
+}
+
+.submitTime {
+    color: #828282;
+}
+
+.overInfo {
+    height: 160px;
+    transition: all .5s;
+}
+
+.thumbnail>img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 24px 30px 0 30px;
+}
+
+.glyphicon-globe {
+    color: #337ab7;
+    font-size: 20px;
+    float: left;
+}
+
+.schoolSite {
+    padding: 2px 0 0 5px;
+    display: block;
+    height: 20px;
+    float: left;
+    font: 14px/20px 'Microsoft YaHei';
+}
+
+.innerNav {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.overInfo:hover {
+    /*background: #cccccc;*/
+    box-shadow: 0 0 20px rgba(153, 153, 153, 0.8);
+}
+
+.glyphicon-time {
+    font-size: 20px;
+    color: #337ab7;
+    position: relative;
+    top: 4px;
+}
+
+@media screen and (min-width:769px) {
+    .mobieHidden {
+        display: block;
+    }
+    .pcHidden {
+        display: none;
+    }
+}
+
+@media screen and (max-width:768px) {
+    /*方框形式展示搜索列表*/
+    .thumbnail>img {
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin: 5px 5px 0px 5px;
+    }
+    .schoolName {
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+    .schoolName a {
+        padding-top: 0px;
+        font-size: 14px;
+    }
+    .leftInfo {
+        width: 240px;
+    }
+    .leftInfo p {
+        padding-top: 5px;
+    }
+    .overInfo {
+        height: 152px;
+    }
+    .mobieHidden {
+        display: none;
+    }
+    .pcHidden {
+        display: block;
+    }
+    .glyphicon-time {
+        top: 0;
+    }
+    .foundedTime {
+        position: relative;
+        top: -4px;
+        padding-right: 61px;
+    }
+    #footer-sec {
+        /*页脚距离顶部的高度*/
+        margin-top: 40px;
+    }
+}
+
+.schoolName a:hover {
+    color: #1E9FFF;
+}

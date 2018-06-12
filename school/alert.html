@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <title>国际学校四库全书-修改数据</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/public.css?v=1.0.2">
+    <style>
+        .nsiCourseAdd input , .nsiCourseEvaluationAdd input {margin-bottom: 6px;}
+        .btn-info{background: transparent;color: #0C0C0C;}
+        .glyphicon-exclamation-sign{color: #999;}
+    </style>
+</head>
+<body>
+<!--头部-->
+<!--#include virtual="../module/nav02.html" -->
+<div class="container-fluid" >
+    <ol class="breadcrumb">
+        <li><a href="../other/index.html">首页</a></li>
+        <li><a href="../school/search.html">学校数据库</a></li>
+        <li style="color:#000033">修改</li>
+    </ol>
+</div>
+<!--修改信息-->
+<div class="container">
+    <div class="jumbotron">
+        <h1>修改学校数据</h1>
+        <p>请按照标准格式录入数据</p>
+        <p><a class="btn btn-primary btn-large" href="search.html">返回查询页面</a></p>
+    </div>
+    <p style="margin-bottom: 20px;color: #337ab7;font-weight: bold;">温馨提示：带有 <em class="glyphicon glyphicon-exclamation-sign"></em> 标记的为必填部分</p>
+    <!--基本信息-->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">基本信息</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-horizontal" role="form">
+
+                <div class="form-group has-feedback hasError">
+                    <label class="col-lg-2 control-label"><em class="glyphicon glyphicon-exclamation-sign"></em> 学校名</label>
+                    <div class="col-lg-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="School_name"  name="School_name"  placeholder="请输入学校中文名" onblur="checkSchoolName();"/>
+                    </div>
+                    <div class="col-lg-5">
+                        <h5 style="color:#999" class="SchoolNameCheck" style="margin-top:0;"></h5>
+                    </div>
+                </div>
+
+                <div class="form-group hasError" data-container="body">
+                    <label class="col-lg-2 control-label">英文名</label>
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control"  id="School_EnglishName" placeholder="请输入学校英文名"/>
+                    </div>
+                    <div class="col-lg-5">
+                        <h5 style="color:#999"  style="margin-top:0;"></h5>
+                    </div>
+                </div>
+
+                <div class="form-group hasError">
+                    <label  class="col-lg-2 control-label">学校性质</label>
+                    <div class="col-lg-5">
+                        <select class="form-control" id="School_properties" name="School_properties">
+                            <option value="公办">公办</option>
+                            <option value="民办">民办</option>
+                            <option value="外籍">外籍</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group hasError">
+                    <label class="col-lg-2 control-label errColor"><em class="glyphicon glyphicon-exclamation-sign"></em> 所在地区</label>
+                    <div class="col-lg-2">
+                        <select class="form-control" id="selProvince" onchange="provinceChange();checkAddress()"></select>
+                    </div>
+                    <div class="col-lg-3">
+                        <select class="form-control" id="selCity" onchange="checkAddress()" ></select>
+                    </div>
+                </div>
+
+                <div class="form-group">  <!--修改过，没有hasError-->
+                    <label class="col-lg-2 control-label"></label>
+                    <div class="col-lg-5">
+                        <input type="text" id="Areas03" class="form-control" placeholder="详细地址：xxx 大街 xx 号" onblur="checkAddress()">
+                    </div>
+                    <div class="col-lg-5">
+                        <h5 style="color:#999" class="addressCheck">注意：地址不能为空</h5>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label  class="col-sm-2 control-label">建校时间</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="Founded_time" name="Founded_time" onblur="checkFoundTime()"/>
+                    </div>
+                    <div class="col-sm-5">
+                        <h5 style="color:#999" class="foundTimeCheck" style="margin-top:0;">例如：2017，不添加月份</h5>
+                    </div>
+                </div>
+
+                <div class="form-group hasError">
+                    <label  class="col-lg-2 control-label">运营状态</label>
+                    <div class="col-lg-5">
+                        <select class="form-control" id="OperationState">
+                            <option value="运营中">运营中</option>
+                            <option value="停办">停办</option>
+                            <option value="筹建">筹建</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label class="col-lg-2 control-label"><em class="glyphicon glyphicon-exclamation-sign"></em> 学制</label>
+                    <div class="col-lg-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="School_system" onblur="checkSchoolSystem()"/>
+                    </div>
+                    <div class="col-lg-5">
+                        <h5 style="color:#999" class="schoolSystemCheck">注意：以分号结尾 且不能为空</h5>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-5">
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert02('高中;')" value="高中" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert02('初中;')" value="初中" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert02('小学;')" value="小学" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert02('幼儿园;')" value="幼儿园" />
+                    </div>
+                </div>
+
+                <!--后期添加，没有hasErr-->
+                <div class="form-group ">
+                    <label  class="col-sm-2 control-label">学费/年</label>
+                    <div class="col-sm-5">
+                        <div class="col-sm-2 text-center" style="margin-top:7px;">幼儿园</div>
+                        <div class="col-sm-4" style="padding: 0;">
+                            <input type="text" class="form-control " id="Tuition01"/>
+                        </div>
+                        <div class="col-sm-2 text-center" style="margin-top:7px;">小学</div>
+                        <div class="col-sm-4"  style="padding: 0;">
+                            <input type="text" class="form-control " id="Tuition02"/>
+                        </div>
+                    </div>
+                    <div class="col-sm-5"> <span  style=" color:#999"><h5>例如：100800</h5></span>  </div>
+                </div>
+                <div class="form-group ">
+                    <label  class="col-sm-2 control-label"></label>
+                    <div class="col-sm-5">
+                        <div class="col-sm-2 text-center" style="margin-top:7px;">初中</div>
+                        <div class="col-sm-4"  style="padding: 0;">
+                            <input type="text" class="form-control " id="Tuition03"/>
+                        </div>
+                        <div class="col-sm-2 text-center" style="margin-top:7px;">高中</div>
+                        <div class="col-sm-4"  style="padding: 0;">
+                            <input type="text" class="form-control " id="Tuition04"/>
+                        </div>
+                    </div>
+                    <div class="col-sm-5"> <span  style=" color:#999"><h5>例如：100800</h5></span>  </div>
+                </div>
+
+                <!--有hasErr,别删除-->
+                <div class="form-group hasError">
+                    <!--<label  class="col-sm-2 control-label">最高学费</label>-->
+                    <!--<div class="col-sm-5">-->
+                        <!--<input type="text" class="form-control" id="TuitionHigh" />-->
+                    <!--</div>-->
+                    <!--<div class="col-sm-5"> <span  style=" color:#999"><h5>例如：100800</h5></span>  </div>-->
+                </div>
+
+                <div class="form-group hasError">
+                    <label  class="col-sm-2 control-label">官网</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="Website" />
+                    </div>
+                    <div class="col-sm-5"> <span id="" style=" color:#999"><h5>例如：www.baidu.com</h5></span>  </div>
+                </div>
+
+                <div class="form-group hasError">
+                    <label  class="col-sm-2 control-label">电话</label>
+                    <div class="col-sm-5">
+                        <input type="text" id="Telephone" class="form-control" />
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!--课程-->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">课程信息</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-horizontal" role="form">
+                <div class="form-group has-feedback hasError">
+                    <label class="col-sm-2 control-label">国际课程认证时间</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="Inter_Course_Founded_time" onblur="checkIntCourse()"/>
+                    </div>
+                    <div class="col-sm-5">
+                        <h5 style="color:#999" class="intnCourseCheck" style="margin-top:0;">例如：2017，不添加月份</h5>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label class="col-sm-2 control-label"><em class="glyphicon glyphicon-exclamation-sign"></em> 国际课程</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="col-sm-4 form-control" id="Course"  onblur="checkCourse()"/>
+                    </div >
+                    <div class="col-lg-5">
+                        <h5 style="color:#999" class="courseCheck">注意：以分号结尾 且不能为空</h5>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-2 control-label"></label>
+                    <div class="col-sm-5 nsiCourseAdd">
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('IPC;')" value="IPC" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('IMYC;')" value="IMYC" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('PGA;')" value="PGA" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('AP;')" value="AP" />
+                        <!--<input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('IB;')" value="IB" />-->
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('IBMYP;')" value="IBMYP" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('IBDP;')" value="IBDP" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('A-LEVEL;')" value="A-LEVEL" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('IGCSE;')" value="IGCSE" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('蒙特梭利;')" value="蒙特梭利" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('美国课程;')" value="美国课程" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('澳大利亚课程;')" value="澳大利亚课程" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('澳洲VCE;')" value="澳洲VCE" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('澳洲QCE;')" value="澳洲QCE" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('澳洲WACE;')" value="澳洲WACE" />
+
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('加拿大课程;')" value="加拿大课程" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('其他;')" value="其他" />
+                        <!--<input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('加拿大安大略省;')" value="加拿大安大略省" />-->
+                        <!--<input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('加拿大曼尼巴托省;')" value="加拿大曼尼巴托省" />-->
+                        <!--<input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('加拿大新斯高沙省;')" value="加拿大新斯高沙省" />-->
+                        <!--<input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('加拿大新布伦瑞克省;')" value="加拿大新布伦瑞克省" />-->
+                        <!--<input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('加拿大纽宾士域省;')" value="加拿大纽宾士域省" />-->
+                        <!--<input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('加拿大阿尔伯塔省;')" value="加拿大阿尔伯塔省" />-->
+                    </div>
+                </div>
+
+                <div class="form-group hasError">
+                    <label class="col-sm-2 control-label">认证&组织</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="Authentication" />
+                    </div>
+                    <div class="col-sm-5"> <h5 style="color:#999">注意：以分号结尾</h5></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-5 nsiCourseAdd">
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('CIE;')" value="CIE" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('Edexcel;')" value="Edexcel" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('OxfordAQA;')" value="OxfordAQA" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('IBO;')" value="IBO" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('CollegeBoard;')" value="CollegeBoard" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('CIS;')" value="CIS" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('WASC;')" value="WASC" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('NEASC;')" value="NEASC" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('EARCOS;')" value="EARCOS" />
+
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('AdvancED;')" value="AdvancED" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('NCCT;')" value="NCCT" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('ACAMIS;')" value="ACAMIS" />
+
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('ROUND SQUARE;')" value="ROUND SQUARE" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('FOBISIA;')" value="FOBISIA" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('ISAC;')" value="ISAC" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert01('THE DUKE OF EDINBURGH’S INTERNATIONAL AWARD;')" value="THE DUKE OF EDINBURGH'S INTERNATIONAL AWARD" />
+                    </div>
+                </div>
+
+                <div class="form-group hasError">
+                    <label class="col-sm-2 control-label">参加外部考试与评估</label>
+                    <div class="col-sm-5">
+                        <input type="text" id="Course_evaluation" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-5 nsiCourseEvaluationAdd">
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert03('WIDA;')" value="WIDA" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert03('MAP;')" value="MAP" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert03('WRAP;')" value="WRAP" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert03('ISA;')" value="ISA" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert03('SAT;')" value="SAT" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert03('AP;')" value="AP" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert03('IBDP;')" value="IBDP" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert03('A-Level;')" value="A-Level" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert03('IGCSE;')" value="IGCSE" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--学生信息-->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">学生信息</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-horizontal" role="form">
+
+                <!--后期添加，没有hasErr-->
+                <div class="form-group ">
+                    <label  class="col-sm-2 control-label">年段学生数（国际部）</label>
+                    <div class="col-sm-5">
+                        <div class="col-sm-2 text-center" style="margin-top:7px;">幼儿园</div>
+                        <div class="col-sm-4" style="padding: 0;">
+                            <input type="text" class="form-control " id="Student_Num01"/>
+                        </div>
+                        <div class="col-sm-2 text-center" style="margin-top:7px;">小学</div>
+                        <div class="col-sm-4"  style="padding: 0;">
+                            <input type="text" class="form-control " id="Student_Num02"/>
+                        </div>
+                    </div>
+                    <div class="col-sm-5"> <span  style=" color:#999"><h5>例如：2000</h5></span>  </div>
+                </div>
+                <div class="form-group ">
+                    <label  class="col-sm-2 control-label"></label>
+                    <div class="col-sm-5">
+                        <div class="col-sm-2 text-center" style="margin-top:7px;">初中</div>
+                        <div class="col-sm-4"  style="padding: 0;">
+                            <input type="text" class="form-control " id="Student_Num03"/>
+                        </div>
+                        <div class="col-sm-2 text-center" style="margin-top:7px;">高中</div>
+                        <div class="col-sm-4"  style="padding: 0;">
+                            <input type="text" class="form-control " id="Student_Num04"/>
+                        </div>
+                    </div>
+                    <div class="col-sm-5"> <span  style=" color:#999"><h5>例如：2000</h5></span>  </div>
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label class="col-sm-2 control-label"> 在校生总人数（国际部）</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="Student_Num_All"  onblur="checkStudentNum()"/>
+                    </div>
+                    <div class="col-sm-5">
+                        <h5 style="color:#999" class="studentNumCheck">注意：需要为整数，例如：1000</h5>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label  class="col-sm-2 control-label">总容量（国际部）</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="Student_Capacity" onblur="checkStuCapacity()"/>
+                    </div>
+                    <div class="col-sm-5">
+                        <h5 style="color:#999" class="stuCapacityCheck">注意：需要为整数，例如：1000</h5>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label  class="col-sm-2 control-label">毕业班人数（国际部）</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="Graduated_Stu_Num"  onblur="checkGraduatedStuNum()"/>
+                    </div>
+                    <div class="col-sm-5">
+                        <h5 style="color:#999" class="graduateStuCheck">注意：需要为整数，例如：1000</h5>
+                    </div>
+                </div>
+
+                <div class="form-group hasError">
+                    <label class="col-sm-2 control-label">学生主要国籍</label>
+                    <div class="col-sm-5">
+                        <input type="text" id="Stu_Dominant_nationality" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group hasError">
+                    <label class="col-sm-2 control-label">生均年投入</label>
+                    <div class="col-sm-5">
+                        <input type="text" id="Stu_Year_Investment" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label  class="col-sm-2 control-label">俱乐部数量</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="Club_Num"  onblur="checkFloat('#Club_Num','.clubNumCheck',19)"/>
+                    </div>
+                    <div class="col-sm-5">
+                        <h5 style="color:#999" class="clubNumCheck">注意：需要为数字</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--师资力量-->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">师资力量</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-horizontal" role="form">
+                <div class="form-group hasError">
+                    <label  class="col-sm-2 control-label">校长/国际部主任国籍</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="President_Country" name="President_country"/>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label  class="col-sm-2 control-label">总员工数量</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control"  id="Staff_Num" onblur="checkInt( '#Staff_Num','.staffNumCheck',21)" />
+                    </div>
+                    <div class="col-sm-5">
+                        <h5 style="color:#999" class="staffNumCheck">注意：需要为<span>整数</span>，例如：1000</h5>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label class="col-sm-2 control-label">总教师数量</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="Teacher_Num"  onblur="checkInt( '#Teacher_Num' , '.teacherNumCheck',22)"/>
+                    </div>
+                    <div class="col-sm-5">
+                        <h5 style="color:#999" class="teacherNumCheck">注意：需要为<span>整数</span>，例如：1000</h5>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label class="col-sm-2 control-label">外籍教师数量</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="Foreign_Teacher_num" onblur="checkInt('#Foreign_Teacher_num','.foreignTeacherCheck',23 )"/>
+                    </div>
+                    <div class="col-sm-5">
+                        <h5 style="color:#999" class="foreignTeacherCheck">注意：需要为<span>整数</span>，例如：1000</h5>
+                    </div>
+                </div>
+
+                <div class="form-group hasError">
+                    <label  class="col-sm-2 control-label">师均年培训投入</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="Teacher_Year_Investment"/>
+                    </div>
+                </div>
+
+                <div class="form-group hasError">
+                    <label  class="col-sm-2 control-label">教师流失率</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="Teacher_Retention"/>
+                    </div>
+                </div>
+
+                <div class="form-group hasError">
+                    <label  class="col-sm-2 control-label">教师薪酬（三年经验）</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="Teacher_Salary" />
+                    </div>
+                    <div class="col-sm-5"> <span  style=" color:#999"><h5>例如：20000-30000 或 30000</h5></span>  </div>
+                </div>
+
+                <div class="form-group hasError">
+                    <label  class="col-sm-2 control-label">师生比</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="Teacher_Stu_ratio"/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--基建&投资-->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">基建&投资</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-horizontal" role="form">
+                <div class="form-group has-feedback hasError" data-container="body" data-toggle="popover" data-trigger="manual" data-placement="top" data-content="注意：需要为整数，例如：1000">
+                    <label  class="col-sm-2 control-label">占地面积（亩）</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="Covered_Area"  onblur="checkMuMeter(28)" />
+                    </div>
+
+                    <div class="col-sm-5" style="border:1px solid #888;padding:0;border-radius: 3px;">
+                        <h5  class="col-sm-3" style="display:block;color:#999">亩/米转换器</h5>
+                        <input type="text" style="border-radius: 4px;margin-top:5px;" class="col-sm-3" id="Mu2MeterID" onblur="Mu2Meter()"placeholder="亩"/>
+                        <h5  class="col-sm-1" style="display:block;color:#999"> 亩 </h5>
+                        <input type="text" style="border-radius: 4px;margin-top:5px;" class="col-sm-3" id="Meter2MuID" onblur="Meter2Mu()"placeholder="平方米"/>
+                        <h5  class="col-sm-2" style="display:block;color:#999">平方米</h5>
+                    </div>
+
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label  class="col-sm-2 control-label">建筑面积（平方米）</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="Built_Area"  onblur="checkFloat('#Built_Area','.builtAreaCheck',29)"/>
+                    </div>
+                    <div class="col-sm-5">
+                        <h5 style="color:#999" class="builtAreaCheck">注意：需要为数字</h5>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label  class="col-lg-2 control-label">硬件设施</label>
+                    <div class="col-lg-5">
+                        <textarea class="form-control"  rows="3" id="Hardware"></textarea>
+                    </div>
+                    <div class="col-lg-5">
+                        <h5 style="color:#999" class="builtAreaCheck">注意：少于200字</h5>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label  class="col-sm-2 control-label">投资信息</label>
+                    <div class="col-sm-5">
+                        <textarea class="form-control" id="Investment"  rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label  class="col-sm-2 control-label">备注</label>
+                    <div class="col-sm-5">
+                        <!-- 						<input type="text" class="form-control" id="id_remark" name="remark"/> -->
+                        <textarea class="form-control" id="Remark"  rows="3"></textarea>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center" style="margin-top:30px;margin-bottom: 30px;">
+        <span class="btn btn-success" id="alertSubmit" onclick="formAlter()" style="display: inline-block;padding: 10px 20px;font-size:16px;font-weight: bold;color: #fff;cursor: pointer;border-radius: 0;">立即修改</span>
+    </div>
+
+    <!--<div class="form-horizontal"  style="margin-bottom: 30px;">-->
+        <!--<div class="form-group">-->
+            <!--<div class="col-lg-12 text-center">-->
+                <!--<span  class="btn btn-success" id="alertSubmit" onclick="formAlter()" style="display: inline-block;padding: 10px 20px;font-size:16px;font-weight: bold;color: #fff;margin-top:20px;border-radius: 0;">立即修改</span>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+<input id="alter_old_School_id"  style="display: none;">
+<!--页脚-->
+<!--#include virtual="../module/footer.html" -->
+<!--#include virtual="../module/modal.html" -->
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModalAlert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    系统提示
+                </h4>
+            </div>
+            <div class="modal-body">
+                提交失败，数据不符合格式
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger"
+                        data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--#include virtual="../module/advice.html" -->
+    <script src="../assets/js/jquery-1.11.1.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/public.js?v=1.0.3"></script>
+    <script src="../assets/js/jquery.cookie.js"></script>
+    <script src="../assets/js/school/alert.js?v=1.0.4"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">-->
+    <title>国际学校四库全书-人才数据库</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_383860_pi4r8ne6z23s1yvi.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_616804_678w1t3vo45qm2t9.css">
+    <link rel="stylesheet" href="../assets/css/talent/talPublic.css?v=1.0.2">
+    <link rel="stylesheet" href="../assets/css/layui.css">
+    <link rel="stylesheet" href="../assets/css/talent/talent.css">
+    <link rel="stylesheet" href="../assets/css/talent/rencaiku.css?v=1.0.3">
+</head>
+
+<body>
+    <!--头部-->
+    <!--#include virtual="../module/nav02.html" -->
+    <div>
+        <img src="../assets/img/swiper/banner02.jpg" alt="机构数据库" class="img-responsive" />
+    </div>
+    <div class="container-fluid" style="margin-top:10px;">
+        <ol class="breadcrumb" style="background: transparent;">
+            <li><a href="../other/index.html">首页</a></li>
+            <li style="color:#000033">人才数据库</li>
+        </ol>
+    </div>
+
+
+    <div class="container hide">
+        <div class="row text-center talentBtn">
+            <!-- 加入新学说数据库&发布招聘需求 -->
+            <div class="col-md-6 col-sm-6 join">
+                <a href="./createresume.html" id="join" class="title_desc"><span class="iconfont icon-jiarujiazuxianxing tochange"></span></a>
+                <p class="talentBtnDesc">加入人才库</p>
+            </div>
+            <!--<div class="col-md-6 col-sm-6 release">-->
+            <!--<a href="./releaseRecruit.html" id="release" class="title_desc animated">发布招聘需求<span>更加专业的团队在我们这里，期待你的加入</span></a>-->
+            <!--</div>-->
+            <div class="col-md-6 col-sm-6 release">
+                <a id="release" class="title_desc" href="releaseRecruit.html"><span class="iconfont icon-fabu tochange"></span></a>
+                <p class="talentBtnDesc">发布招聘</p>
+            </div>
+        </div>
+    </div>
+
+    <!--搜索框  -->
+    <div class="container searchPart">
+        <form method="get" class="searchForm">
+            <div class="row">
+                <ul class="btns col-md-7">
+                    <li class="dib">
+                        <input type="button" value="人才库" name="" class="active rck" id="rck">
+                    </li>
+                    <!--<li class="dib ">-->
+                    <!--<input type="button" value="招聘需求" name="" id="zpxq">-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-9 col-xs-9 search_box">
+                    <input type="text" placeholder="搜索人才信息" class="search" id="searchKey">
+                </div>
+                <span class="btn btn-primary glyphicon glyphicon-search search_icon" id="search"></span>
+            </div>
+        </form>
+    </div>
+
+    <!-- 搜索结果 -->
+    <div class="wrapAll">
+        <div class="container">
+            <div id="result" class="" style="margin-top: 25px;">
+                <!--<div class="talent-list row">-->
+                <!--<div class="col-md-8 ">-->
+                <!--<div class="talent-list_left01">-->
+                <!--<span>北京</span> &nbsp;&nbsp;|&nbsp;&nbsp;-->
+                <!--工作经验：<span>2年</span> &nbsp;&nbsp;|&nbsp;&nbsp;-->
+                <!--<span>硕士</span> &nbsp;&nbsp;|&nbsp;&nbsp;-->
+                <!--<span>可在2018年6月入职</span>-->
+                <!--</div>-->
+                <!--<div class="clearfix talent-list_left02">-->
+                <!--<div class="pull-left text-center talent-list_left02Bottom">-->
+                <!--<img src="http://www.soideas.cn/uploads/allimg/111207/0J5304295-12.jpg" alt="" class="talent-list_logo">-->
+                <!--<span class="iconfont icon-nan " id=""></span>-->
+                <!--<p class=" text-center"> <span class="expect-salary">期望年薪：<span>20w</span></span></p>-->
+                <!--</div>-->
+                <!--<div class="pull-left talent-list_left02Right">-->
+                <!--<p>  <span class="talent-name">Tmac-1</span> &nbsp;&nbsp;  期望职位：<span>国际学校教师</span>     </p>-->
+                <!--<p class="talent-nowWorkplace">   现工作地点：<span> 安徽新华电脑装修学院</span>  </p>-->
+                <!--<p class="talent-educationBackground">  <span > 四川师范大学，数学与软件工程  </span></p>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-4 clearfix">-->
+                <!--<h3 class="talent-list_workTitle">工作经历</h3>-->
+                <!--<p class="talent-list_workExperience">测温积分的飞机卡视角打发时间快递费举案说法接口阿什顿发是打发算法位访问服务法撒旦法师法师访问</p>-->
+                <!--<div class="pull-right forMore">-->
+                <!--<a href="">查看更多</a>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+
+    </div>
+    <!-- 分页 -->
+    <div class="container-fluid pageFooter" style="text-align:center;padding:15px 0;">
+        <div class="generalSearchResult" style="display: block;">
+            <p>已搜索到<span class="gengeralSearchNum" style="font-weight: bold;color: lightcoral;padding: 0px 4px;">0</span>条结果</p>
+            <div id="pageDemo01">
+
+            </div>
+        </div>
+    </div>
+    <!--#include virtual="../module/loading.html"-->
+
+    <!--页脚-->
+    <footer>
+        <div id="footer-sec" style="padding:30px 0;">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4 col-lg-4 text-center">
+                        <h4 style="padding-top:10px;font-weight:bold;font-family: 'Microsoft YaHei';font-size: 20px;margin:10px 0;">关于新学说</h4>
+                        <div class="center-block text-left" style="text-indent:2em;line-height:1.8;">
+                            <p style="font-size: 16px;">新学说(NewSchool Insight)是由国际学校资深专家共同打造的国际学校服务平台。 旗下有新学说传媒和新学说国际教育研究院两大品牌。为国际学校提供行业最新资讯，会议组 织，海外考察；研究报告，行业数据库；学校投建，运营管理，品牌管理，人才培养等专业咨询服务。
+                                <a href="http://www.xinxueshuo.cn/index.php?s=/Home/Article/index/category/gywm" target="_blank" style="color:#428bca;">more..</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-5 col-lg-5" style="padding-left: 62px;">
+                        <h4 style="padding-top:10px;font-weight:bold;font-family: 'Microsoft YaHei';font-size: 20px;margin:10px 0;padding-left: 104px;">联系我们</h4>
+                        <h5 class="h5" style="font-size: 16px; line-height: 1.5;">中国办公室：北京市西城区新风街2号 </h5>
+                        <h5 style="font-size: 16px;padding-left:96px;">天成科技大厦A座1006</h5>
+                        <h5 class="h5" style="font-size: 16px;padding-left:49px;">电话：010-52468286 </h5>
+                        <h5 class="h5" style="font-size: 16px;padding-left:49px;">手机：15010927730</h5>
+                        <h5 class="h5" style="font-size: 16px;padding-left:49px;">邮箱：info@xinxueshuo.cn</h5>
+                        <h5 class="h5" style="font-size: 16px;">美国办公室：德克萨斯州 奥斯丁市</h5>
+                        <h5 style="font-size: 16px;line-height: 1.5;padding-left:49px">邮箱：dbarrutia@xinxueshuo.cn</h5>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-lg-3" style="padding-left: 0px;" id="mobileFooter">
+                        <h4 style="padding-top:10px;font-weight:bold;font-family: 'Microsoft YaHei';font-size: 20px;margin:10px 0;padding-left: 10px;">微信公众号</h4>
+                        <div class="social-links">
+                            <img alt="微信二维码" height="120" width="120" src="../assets/img/wechat_QR.png">
+                            <h5 class="h5" style="font-size: 16px;padding-left: 10px;">微信关注我们</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--FOOTER SECTION END-->
+    <div class="copy-txt">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <h5 class="text-center" style="height:20px;">
+                        Copyright © 2017 | 数据来源 <a href="http://www.xinxueshuo.cn/" target="_blank" title="新学说" style="color:#428bca;">新学说</a> All rights reserved.
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/jquery-1.11.1.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.cookie.js"></script>
+    <script src="../assets/js/layui/layui.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/talent/talent.js?v=1.0.3"></script>
+    <script src="../assets/js/talent/searchTalent.js?v=1.0.4"></script>
+
+</body>
+
+</html>

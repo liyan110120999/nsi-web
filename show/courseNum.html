@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2017年各国际课程开设数量（非学校数）</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <script src="../assets/js/echart/echarts.min.js"></script>
+</head>
+<body style="height: 100%; background: rgb(239, 239, 239)">
+  <div id="main" style="width:100%;height:600px;margin-top: 6%;">
+
+  </div>
+  <script type="text/javascript">
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById('main'));
+
+      // 指定图表的配置项和数据
+      var option = {
+          color:['rgb(33,80,137)'],  //图表颜色
+          title: {
+              textStyle:{
+                  fontSize:24,
+              },
+              padding:20,
+              text: '2017年各国际课程开设数量（非学校数）',
+              subtext:'新学说研究出品',
+              subtextStyle:{
+                fontSize:14,
+              },
+              left:'center',
+              itemGap:20, //主标题和副标题间距
+          },
+          grid:{
+            left:'center',
+            top:120
+          },
+          tooltip: {},
+//          legend: {
+//              data:['数量'],
+//              left:'right'
+//          },
+          xAxis: {
+              name:"课程类别",
+              axisLabel:{
+                  fontSize:16,
+                  fontWeight:'bold',
+                  margin:25
+              },
+              axisLine:{
+                  lineStyle:{
+                    type:"solid",
+                  },
+              },
+              axisTick:{
+                  alignWithLabel:true   //和目录对齐
+              },
+              nameTextStyle:{
+                  fontSize:14,
+                 color:'rgb(33,80,137)'
+              },
+              data: ["A-level","AP","IB","加拿大课程","澳洲课程"],
+          },
+          yAxis: {
+              name:'数量',
+              axisLabel:{
+                  fontSize:16,
+                  fontWeight:'bold',
+                  margin:25
+              },
+              nameTextStyle:{
+                  fontSize:14,
+                  color:'rgb(33,80,137)'
+              },
+              splitNumber:8
+          },
+          series: [{
+              label:{
+                  normal:{
+                      show:true,
+                      position:'top',
+                      color:'auto',
+                      fontSize:14,
+                      distance:10
+                  }
+              },
+              itemStyle:{
+
+              },
+              name: '数量',
+              type: 'bar',
+              barWidth:'40%' ,
+          data: [356, 252, 118, 116, 29]
+      }]
+      };
+
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+  </script>
+</body>
+</html>

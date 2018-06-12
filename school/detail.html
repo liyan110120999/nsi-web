@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <title>国际学校四库全书-详细</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/public.css?v=1.0.2">
+    <link rel="stylesheet" href="../assets/css/detail.css?v=03161014">
+    <link rel="stylesheet" href="../assets/css/outCSS/webuploader.css">
+    <link rel="stylesheet" href="../assets/css/school/detailUpImg.css">
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <!-- animate -->
+    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/layer/3.1.0/theme/default/layer.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/advice/advice.css">
+</head>
+
+<body oncontextmenu="">
+    <!--头部-->
+    <!--#include virtual="../module/nav02.html" -->
+    <div class="container-fluid">
+        <ol class="breadcrumb">
+            <li><a href="../other/index.html">首页</a></li>
+            <li><a href="../school/search.html">学校数据库</a></li>
+            <li style="color:#000033">详情</li>
+        </ol>
+    </div>
+    <!-- container -->
+    <div class="container ptb45">
+        <div class="row mb30">
+            <div class="col-md-12">
+                <h4 class="school-title">国际学校数据库
+                    <p>ID：<span id="headerSchoolID" class="headerSchoolID"></span></p>
+                </h4>
+                <div class="school-brief clearfix">
+                    <div class="school-brief-img pull-left"><img alt="" id="School_logo" width="130" height="130"></div>
+                    <div class="school-brief-content pull-left">
+                        <p class="school-name"><span id="School_name"></span></p>
+                        <p>英文名：<span id="School_EnglishName"></span></p>
+                        <div class="isP">
+                            <p>类型：<span id="School_properties"></span></p>
+                            <p class="state">运营状态：<span id="OperationState"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 基本信息 -->
+        <h5 class="baseInfo">基本信息</h5>
+        <div class="baseInfo-desc mb30">
+            <ul class="list clearfix">
+                <li class="clearfix">
+                    <span class="title">建校时间</span>
+                    <span class="content" id="Founded_time"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">学制</span>
+                    <span class="content" id="School_system"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">幼儿园学费</span>
+                    <span class="content" id="Tuition01"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">小学学费</span>
+                    <span class="content" id="Tuition02"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">初中学费</span>
+                    <span class="content" id="Tuition03"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">高中学费</span>
+                    <span class="content" id="Tuition04"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">官网</span>
+                    <span class="content"><a id="Website" target="_"></a></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">电话</span>
+                    <span class="content" id="Telephone"></span>
+                </li>
+                <li class="clearfix w100">
+                    <span class="title w15">地址</span>
+                    <span class="content w85" id="Address"></span>
+                </li>
+            </ul>
+        </div>
+        <!-- 基本信息 END-->
+
+        <!-- 课程信息 -->
+        <h5 class="baseInfo">课程&学生</h5>
+        <div class="baseInfo-desc mb30">
+            <ul class="list clearfix">
+                <li class="clearfix">
+                    <span class="title">国际课程认证时间</span>
+                    <span class="content" id="Inter_Course_Founded_time"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">俱乐部数量</span>
+                    <span class="content" id="Club_Num"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">平均年收入</span>
+                    <span class="content" id="Stu_Year_Investment"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">总容量（国际部）</span>
+                    <span class="content" id="Student_Capacity"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">认证</span>
+                    <span class="content" id="Authentication"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">毕业班人数（国际部）</span>
+                    <span class="content" id="Graduated_Stu_Num"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">学生主要国籍</span>
+                    <span class="content" id="Stu_Dominant_nationality"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">在校生总人数（国际部）</span>
+                    <span class="content" id="Student_Num_All"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">幼儿园学生数</span>
+                    <span class="content" id="Student_Num01"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">小学学生数</span>
+                    <span class="content" id="Student_Num02"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">初中学生人数</span>
+                    <span class="content" id="Student_Num03"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">高中学生人数</span>
+                    <span class="content" id="Student_Num04"></span>
+                </li>
+                <li class="clearfix w100">
+                    <span class="title w15">参加外部考试与评估</span>
+                    <span class="content w85" id="Course_evaluation"></span>
+                </li>
+                <li class="clearfix w100">
+                    <span class="title w15">国际课程</span>
+                    <span class="content w85" id="Course"></span>
+                </li>
+            </ul>
+        </div>
+        <!-- 课程信息 END-->
+
+        <!-- 师资力量 -->
+        <h5 class="baseInfo">师资力量</h5>
+        <div class="baseInfo-desc mb30">
+            <ul class="list clearfix">
+                <li class="clearfix">
+                    <span class="title">校长/国际部主任国籍</span>
+                    <span class="content" id="President_Country"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">总员工数量</span>
+                    <span class="content" id="Staff_Num"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">教师薪酬（三年经验）</span>
+                    <span class="content" id="Teacher_Salary"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">总教师数量</span>
+                    <span class="content" id="Teacher_Num"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">师均年培训投入</span>
+                    <span class="content" id="Teacher_Year_Investment"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">外籍教师数量</span>
+                    <span class="content" id="Foreign_Teacher_num"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">师生比</span>
+                    <span class="content" id="Teacher_Stu_ratio"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">教师流失率</span>
+                    <span class="content" id="Teacher_Retention"></span>
+                </li>
+            </ul>
+        </div>
+        <!-- 师资力量 END-->
+
+        <!-- 基建&投资 -->
+        <h5 class="baseInfo">基建&投资</h5>
+        <div class="baseInfo-desc mb30">
+            <ul class="list clearfix">
+                <li class="clearfix">
+                    <span class="title">占地面积(亩)</span>
+                    <span class="content" id="Covered_Area"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">建筑面积（平方米）</span>
+                    <span class="content" id="Built_Area"></span>
+                </li>
+                <li class="clearfix w100">
+                    <span class="title w15">硬件设施</span>
+                    <span class="content w85" id="Hardware"></span>
+                </li>
+                <li class="clearfix w100">
+                    <span class="title w15">投资信息</span>
+                    <span class="content w85" id="Investment">权限不足</span>
+                </li>
+                <li class="clearfix w100">
+                    <span class="title w15">备注</span>
+                    <span class="content w85" id="Remark"></span>
+                </li>
+            </ul>
+        </div>
+        <!-- 基建&投资 END-->
+
+        <p class="feedback">如您在浏览过程中发现数据有误，可通过<a href="javascript:;" id="feedback">意见反馈</a>提交给我们，我们将及时处理</p>
+    </div>
+    <!-- container END-->
+    <!-- 意见弹窗 -->
+    <div class="bg" id="bg">
+        <div class="adviceBox animated" id="adviceBox">
+            <h5 class="adviceBox-title">新学说 - 意见反馈<span class="closeadviceBox" id="closeadviceBox" title="关闭"></span></h5>
+            <form class="details-box">
+                <div class="adviceContent connectUs">
+                    <p>您在浏览网页时遇到什么问题？ （可多选）</p>
+                    <div class="question1">
+                        <input type="checkbox" class="checkbox-primary" id="que1-1" value="性能不好,网页卡慢" name="qusetion">
+                        <label for="que1-1">性能不好,网页卡慢</label><br>
+                        <input type="checkbox" class="checkbox-primary" id="que1-2" value="页面不美观/界面不喜欢" name="qusetion">
+                        <label for="que1-2">页面不美观/界面不喜欢</label><br>
+                        <input type="checkbox" class="checkbox-primary" id="que1-3" value="功能找不到/功能不好用" name="qusetion">
+                        <label for="que1-3">功能找不到/功能不好用</label><br>
+                        <input type="checkbox" class="checkbox-primary" id="que1-4" value="网页在浏览器中显示错乱" name="qusetion">
+                        <label for="que1-4">网页在浏览器中显示错乱</label><br>
+                        <input type="checkbox" class="checkbox-primary" id="que1-5" value="搜索数据不正确" name="qusetion">
+                        <label for="que1-5">搜索数据不正确</label>
+                    </div>
+                    <p class="borderBottomstyle"></p>
+                    <p class="mt15">您对新学说数据库有什么建议？（建议说出具体的问题所在）</p>
+                    <textarea name="" class="advice" id="adviceArea" rows="3" placeholder="新学说团队会不断改进，以带给您更好的用户体验"></textarea>
+                    <p class="borderBottomstyle"></p>
+                    <p class="mt15">请留下您的联系方式，我们将会及时通知您问题处理的进展</p>
+                    <input type="text" class="connect" id="connect" placeholder="请输入联系方式">
+                </div>
+                <div class="text-center">
+                    <input type="button" class="mt15 btn btn-default" value="立即发送" id="send">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- 意见弹窗 END-->
+    <!--页脚-->
+    <!--#include virtual="../module/footer.html" -->
+    <!--#include virtual="../module/advice.html" -->
+
+
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.cookie.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/public.js?v=1.0.3"></script>
+    <script src="../assets/js/school/detail.js?v=03161014"></script>
+    <script src="https://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+    <script src="../assets/js/advice/advice.js"></script>
+    <!-- <script src="../assets/js/outJS/upload.js"></script> -->
+
+
+
+</body>
+
+</html>

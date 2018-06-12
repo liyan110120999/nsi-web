@@ -1,0 +1,126 @@
+.bg{
+    background-color: #f2f5f4;
+}
+.overview{
+    padding: 30px 0 11px 0;
+    color: #555;
+}
+.overview>h3{
+    position: relative;
+    display: inline-block;
+    height: 36px;
+    font-size: 36px;
+    color: #333;
+    line-height: 36px;
+    margin: 0 0 15px 0;
+}
+.baseInfomation{
+    margin-top: 2px;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+.salary{
+    color: #fd5f39
+}
+.types{
+    margin-bottom: 0;
+}
+.type{
+    display: inline-block;
+    height: 22px;
+    margin-right: 8px;
+    padding: 0 10px;
+    line-height: 22px;
+    background-color: #fff;
+    color: #70797b;
+    font-size: 12px;
+    border-radius: 10px;
+}
+.publish{
+    padding-top: 10px;
+    font-size: 14px;
+    color: #999;
+}
+
+
+.companyLogo>img{
+    background: #CCC;
+}
+.companyInfo{
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 18px;
+    color: #555;
+}
+
+.companyNameDesc{
+    display: inline-block;
+    line-height: 25px;
+}
+.addV{
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background: url(../../img/talent/v01.png) no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+    position: relative;
+    top: -3px;
+    left: 2px;
+}
+
+/* 详情 */
+.detail{
+    padding: 45px 0;
+}
+
+.jobTitle>h4,.jobDesc>h4,.companyArea>h4{
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    margin: 0;
+}
+.jobTitle>p{
+    margin-top: 13px;
+    color: #333
+}
+
+.jobDesc{
+    padding: 15px 0 10px;
+    color: #333;
+    word-wrap: break-word;
+}
+
+.Job_description>p,.Job_requirement>p,.Job_weal>p{
+    margin: 15px 0;
+    color: #333;
+}
+
+.companyArea>h4{
+    margin: 10px 0;
+}
+.shadow-right{
+    background: url("../../img/talent/shadow-y.png") repeat-y;
+    background-position: right;
+    padding-right: 50px;
+}
+.link{
+    padding-left: 15px;
+}
+.link>h4{
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.Link{
+    margin: 0 0 16px;
+    color: #737373;
+    line-height: 25px;
+}
+.Link>i{
+    font-size: 18px;
+    margin-right: 10px;
+}

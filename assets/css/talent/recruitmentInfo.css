@@ -1,0 +1,105 @@
+.mb15 {
+    margin-bottom: 15px;
+}
+
+.recruitmentBox {
+    min-height: 200px;
+    border: 1px solid #EAEEED;
+    border-radius: 4px;
+    transition: all .3s;
+    padding: 15px;
+    position: relative;
+    box-shadow: 0 0 3px #ccc;
+    /* box-shadow: 0 0 3px #215089; */
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.recruitmentBox:hover {
+    /* box-shadow: 0 8px 16px 0 rgba(7, 17, 27, .1); */
+    box-shadow: 0 8px 16px 0 rgb(33, 80, 137);
+}
+
+.recruitmentTitle {
+    max-width: 145px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    font-size: 16px;
+}
+
+.recruitmentTitle>a {
+    color: #555;
+    font-size: 16px;
+}
+
+.recruitmentTitle>a:hover {
+    color: #215089;
+}
+
+.recruitmentTitle>span {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fa6041
+}
+
+.jobYear {
+    height: 30px;
+    line-height: 30px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.types {
+    /* height: 30px; */
+    margin-top: 5px;
+    line-height: 30px;
+    overflow: hidden;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ccc
+}
+
+.types>span {
+    display: inline-block;
+    /* width: 61px; */
+    height: 26px;
+    padding: 0 5px;
+    font-size: 12px;
+    line-height: 26px;
+    color: #999;
+    border: 1px solid #F0F0F0;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.company {
+    padding-top: 15px;
+}
+
+.company>a {
+    float: left;
+}
+
+.company>a>img {
+    background: #ccc;
+}
+
+.companyInfo {
+    float: left;
+    margin-left: 10px;
+    color: #555;
+}
+
+.companyName:hover {
+    color: #215089
+}
+
+.companyAdd {
+    color: #999;
+    max-width: 275px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

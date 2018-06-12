@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+    <title>国际学校四库全书-用户信息</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_624009_osu1twmgmqssv2t9.css">
+    <link rel="stylesheet" href="../assets/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/cropper/cropper.min.css">
+
+    <link rel="stylesheet" href="../assets/css/user/userInfo.css">
+    <link rel="stylesheet" href="../assets/css/talent/talPublic.css?v=1.0.2">
+
+</head>
+<body  data-spy="scroll" data-target="#myScrollspy" data-offset="190">
+<!--头部-->
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top site-header renavbar-default renavbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" id="navBtn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand renavbar-brand" href="http://www.xinxueshuo.cn/" target="_blank">
+                    <img alt="Brand" src="../assets/img/index/logo.png" width="170" height="36" class="logo">
+                </a>
+            </div>
+            <div class="nav-left collapse navbar-collapse greyCollapse" aria-expanded="false" id="bs-example-navbar-collapse-1" >
+                <ul class="nav navbar-nav navbar-left renavbar-nav">
+                    <li><a href="../other/index.html"> 首页</a></li>
+                    <li  class="borderBottom05" style="height:50px;"><a href="../school/school.html">学校数据库</a></li>
+                    <li  class="insBorderBottom05" style="height:50px;"><a href="../company/company.html">  机构数据库</a></li>
+                    <li class=" accessControl"  style="height:50px;"><a href="../talent/talent.html">  人才数据库</a></li>
+                    <li class="proBorderBottom05 "  style="height:50px;"><a href="../project/project.html">  项目数据库</a></li>
+                    <li class="visBorderBottom05"  style="height:50px;"><a href="../visible/visible.html" >  数据可视化</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right rightNav">
+                    <li><a href="../other/instruction.html"><span class="glyphicon glyphicon-th-list"></span> &nbsp;使用说明</a></li>
+                    <li style="display: none;margin-right: 4px;"><a href="../user/register.html" style="border:1px solid #ccc; padding-top: 5px;margin-top:10px;padding-bottom: 5px;margin-bottom: 10px;border-radius: 5px;"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                    <li style="display: none;"><a href="../user/login.html"  style="border:1px solid #ccc; padding-top: 5px;margin-top:10px;padding-bottom: 5px;margin-bottom: 10px;border-radius: 5px;"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+                    <li>
+                        <a href="../user/userInfo.html"  data-toggle="modal" data-target="" class="navUser"><span class="glyphicon glyphicon-user" style="color:#fff;top:2px;"></span>&nbsp; <span class="loginUser" style="color:#fff;">未登录</span>&nbsp;<span id="userLevel" >Lv</span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle navMeun" data-toggle="dropdown"  style="color:#fff;">菜单<strong class="caret"></strong></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../user/userInfo.html"><span class="glyphicon glyphicon-th"></span>&nbsp;用户信息</a>
+                            </li>
+                            <li class="divider">
+                            </li>
+                            <li>
+                                <a href="../user/password.html"><span class="glyphicon glyphicon-edit"></span> 忘记密码</a>
+                            </li>
+                            <li class="divider">
+                            </li>
+                            <li>
+                                <a href="#"><span class="glyphicon glyphicon-star-empty"></span>&nbsp;我的贡献</a>
+                            </li>
+                            <li class="divider">
+                            </li>
+                            <li class="userMember000">
+                                <a href="javascript:;" id="exitLogin02"><span class="glyphicon glyphicon-off"></span>&nbsp;退出登录</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+</header>
+
+<div class="container" style="margin-top: 80px;">
+    <div class="row">
+        <div class="col-md-4" style="padding-right: 0;width: 365px;">
+             <div class="tabLeft   text-center">
+                 <img src="http://img.zcool.cn/community/01786557e4a6fa0000018c1bf080ca.png" alt="" class="userLogo" id="userLogo01">
+                 <p class="baseInfo">  <span>Tmac-1</span> 等级： <span> Lv3 </span>  积分：<span> 80 </span> </p>
+                  <ul class="ulWarp" id="ulWarp">
+                      <li class="liActive">我的信息</li>
+                      <li>我的简历</li>
+                  </ul>
+             </div>
+
+            <div class="tabLeft text-center hide" style="background: #FA6A43;margin-top: 30px;" id="tabLeft02">
+                <div class="" id="noUploadResumeAffix">
+                    <p style="color: #efefef;">*暂未上传简历附件</p>
+                    <button class="" id="addAffix" style="background: #fff;width: 120px;height: 50px;color:#FA6A43;border: 1px solid #ddd;border-radius:2px; box-shadow: 0 0 3px #ccc;">上传附件</button>
+                </div>
+                <div class="hide" style="color:#fff;width:240px;" id="UploadResumeAffix">
+                    <div style="font-size: 16px;">
+                        <span style="padding-right: 30px;">*简历附件</span>
+                        <span class="layui-icon affix-right" id="affix-right" style="font-size: 30px;position: relative;top:5px;" >&#xe65f;</span>
+                        <div style="position: relative">
+                            <ul class="resume-do" id="resume-do">
+                                <li class="hide">更新</li>
+                                <li id="deleteAffix">删除</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <p id="affixSite" style="width: 240px;word-break: break-all;">test.pdf</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-8" style="padding-left:0;">
+             <div class="tabRight">
+                  <div class="tabRight-myInfo" style="margin-bottom: 80px;" id="tabRight-myInfo">
+                      <div class="tabRight-myInfo_header text-center">
+                          我的信息
+                      </div>
+                      <div class="tabRight-myInfo_body" >
+                          <div class="text-center tabRight-myInfo_logo" >
+                              <img src="http://img.zcool.cn/community/01786557e4a6fa0000018c1bf080ca.png" alt="" id="userLogo02">
+                              <div class="edit-WebsiteLogo"  id="revise-WebsiteLogo">
+                                  <span class="iconfont icon-xiugai"></span>
+                              </div>
+                          </div>
+                          <p class="edit-baseInfo text-center" id="doReviseBaseInfo">  <span class="iconfont icon-xiugai"> </span> <span>修改</span> </p>
+                          <p class="edit-baseInfo text-center hide" id="undoReviseBaseInfo">  <span class="iconfont icon-quxiao1"> </span> <span>取消</span> </p>
+
+                          <ul class="register-info">
+                              <li> <span class="PL63 base-color"> 登录账号</span>  <span class="PL40" id="username01">   </span> </li>
+                              <li> <span class="PL111 base-color"> 姓名</span>  <span class="PL40 detailInfo " id="userTurename01">  </span>
+                                   <div class="ML40 inputWrap hide reviseBaseInfo">
+                                       <input class="myInput" type="text" placeholder="请输入姓名" id="userTurename">
+                                   </div>
+                              </li>
+                              <li> <span class="PL111 base-color"> 积分</span>  <span class="PL40" id="userScore01"> 80 </span> </li>
+                              <li> <span class="PL53 base-color"> 公司/机构</span>  <span class="PL40 detailInfo" id="userOrganization01">  </span>
+                                  <div class="ML40 inputWrap hide reviseBaseInfo">
+                                      <input class="myInput" type="text" placeholder="请输入公司或机构" id="userOrganization">
+                                  </div>
+                              </li>
+                              <li> <span class="PL111 base-color"> 职位</span>  <span class="PL40 detailInfo" id="userPosition01">  </span>
+                                  <div class="ML40 inputWrap hide reviseBaseInfo">
+                                      <input class="myInput" type="text" placeholder="请输入职位" id="userPosition">
+                                  </div>
+                              </li>
+                              <li> <span class="PL63 base-color"> 手机号码</span>  <span class="PL40 detailInfo" id="userPhone01">  </span>
+                                  <div class="ML40 inputWrap hide reviseBaseInfo">
+                                      <input class="myInput" type="text" placeholder="请输入手机号" id="userPhone">
+                                  </div>
+                              </li>
+                              <li class="hide"> <span class="PL15 base-color "> 绑定微信登录</span>  <span class="PL40"> 已绑定微信 </span>  <span class="unBind ">  <span class="iconfont icon-jiebang" style="font-weight: bold;"></span> 解绑</span> </li>
+                              <li class="hide reviseBaseInfo">
+                                 <p class="saveBaseInfo text-center" id="saveBaseInfo"><span>保存</span></p>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+
+                 <div class="tabRight-myResume hide" style="margin-bottom: 80px;" id="tabRight-myResume">
+                     <div class="tabRight-myResume_header text-center">
+                         我的简历
+                     </div>
+                     <div class="tabRight-myResume_body text-center" style="margin-top:100px;min-height: 500px;" id="noUploadResume">
+                         <img src="../assets/img/user/user_noadd.png" alt="" width="300" height="300">
+                         <p style="margin-top: 30px;">
+                             您还没有上传过简历哟！ <a href="../talent/createresume.html">去上传</a>
+                         </p>
+                     </div>
+                     <div class="tabRight-myResume_body hide" id="UploadResume">
+                         <p class="edit-resumeInfo text-center"> <a href="../talent/reviseResume.html" style="color: #fff;"> <span class="iconfont icon-xiugai"> </span> <span>修改</span> </a>  </p>
+                         <div class="clearfix">
+                             <div class="pull-left">
+                                 <div class="text-center tabRight-myResume_logo">
+                                     <img src="http://img.zcool.cn/community/01786557e4a6fa0000018c1bf080ca.png" alt="" id="resumeLogo">
+                                     <div class="edit-resumeLogo" id="revise-ResumeLogo">
+                                         <span class="iconfont icon-xiugai"></span>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="pull-left">
+                                 <ul class="resume_info01">
+                                     <li>  <span class="PL85  base-color"> 姓名 </span>  <span class="PL20" id="name"> </span>   <span class="base-color PL100">性别</span> <span class="PL20" id="sex"> </span>   </li>
+                                     <li>  <span class="PL45 base-color"> 手机号码 </span>   <span class="PL20" id="phone"> </span> </li>
+                                     <li>  <span class="PL85 base-color"> 邮箱 </span>  <span class="PL20" id="mail">  </span> </li>
+                                     <li>  <span class="base-color" style="padding-left:6px;"> 是否公开简历 </span >  <span class="PL20" id="isPublic">   </span> </li>
+                                 </ul>
+                             </div>
+                         </div>
+
+                         <div class="clearfix">
+                             <ul class="pull-left resume_info02">
+                                 <li> <span class="base-color" style="padding-left:62px;">专业</span> <span class="PL20" id="major">  </span> </li>
+                                 <li class="textOverflow"> <span class="base-color">现工作单位</span> <span class="PL20" id="workPlace">  </span>  </li>
+                                 <li> <span class="base-color"  style="padding-left:20px;">工作年限</span> <span class="PL20" id="workYear"> </span>  </li>
+                                 <li> <span class="base-color"  style="padding-left:20px;">最高学历</span> <span class="PL20" id="education"> </span>  </li>
+                             </ul>
+                             <ul class="pull-left resume_info03">
+                                 <li> <span class="base-color"> 期望工作地点</span> <span class="PL20" id="expectWorkPlace">北京 </span></li>
+                                 <li class="textOverflow"> <span style="padding-left:39px;" class="base-color">期望职位</span> <span  class="PL20" id="expectWorkPosition"> </span> </li>
+                                 <li> <span class="base-color" style="padding-left:38px;">期望年薪</span> <span  class="PL20" id="expectSalary">  </span></li>
+                                 <li class="textOverflow"> <span class="base-color" style="padding-left:37px;">入职时间</span> <span  class="PL20" id="entryTime">  </span></li>
+                             </ul>
+                         </div>
+
+                         <!--工作经历-->
+                         <div class="clearfix" style="margin-bottom:28px;margin-top: 30px; ">
+                             <div class="pull-left iconWrap text-center"> <span class="iconfont icon-gongzuojingli"></span> </div>
+                             <div class="pull-left" style="padding-left:20px;">
+                                   <p class="resumeTitle"> 工作经历 </p>
+                                 <ul class="listWrap" id="workExperience">
+                                     <!--<li>1、哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了 </li>-->
+                                     <!--<li>2、哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了 </li>-->
+                                     <!--<li>3、哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了 </li>-->
+                                 </ul>
+                             </div>
+                         </div>
+
+                         <!--教育背景-->
+                         <div class="clearfix" style="margin-bottom:28px; ">
+                             <div class="pull-left iconWrap text-center"> <span class="iconfont icon-jiaoyu"></span> </div>
+                             <div class="pull-left" style="padding-left:20px;">
+                                 <p class="resumeTitle"> 教育背景 </p>
+                                 <ul class="listWrap" id="educationBackground">
+                                     <!--<li>1、哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了 </li>-->
+                                     <!--<li>2、哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了 </li>-->
+                                     <!--<li>3、哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了 </li>-->
+                                 </ul>
+                             </div>
+                         </div>
+
+
+                         <!--培训经历-->
+                         <div class="clearfix" style="margin-bottom:28px; ">
+                             <div class="pull-left iconWrap text-center"> <span class="iconfont icon-peixun"></span> </div>
+                             <div class="pull-left" style="padding-left:20px;">
+                                 <p class="resumeTitle"> 培训经历 </p>
+                                 <ul class="listWrap" id="trainingBackground">
+                                     <!--<li>1、哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了 </li>-->
+                                     <!--<li>2、哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了 </li>-->
+                                     <!--<li>3、哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了 </li>-->
+                                 </ul>
+                             </div>
+                         </div>
+
+                         <!--其他要求-->
+                         <div class="clearfix" style="margin-bottom:28px; ">
+                             <div class="pull-left iconWrap text-center"> <span class="iconfont icon-qitashuju"></span> </div>
+                             <div class="pull-left" style="padding-left:20px;">
+                                 <p class="resumeTitle"> 其他要求 </p>
+                                 <ul class="listWrap" id="other">
+                                     <!--<li>1、哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了 </li>-->
+                                     <!--<li>2、哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了 </li>-->
+                                     <!--<li>3、哈哈哈哈哈待会哈发生大幅IEUhi噶UR嘎嘎嘎额U鬼阿尔噶房间卡刷卡了 </li>-->
+                                 </ul>
+                             </div>
+                         </div>
+
+
+                     </div>
+                 </div>
+
+             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title letter_spacing2 text-primary" id="myModalLabel">选择上传图片</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row modal_row">
+                    <!-- 选择上传图片 -->
+                    <div class="selectUpLoadLogo col-md-8 col-xs-12 ">
+                        <img src="" alt="" class="cropper-hidden" id="image">
+                        <!-- 上传图片btn -->
+                        <div class="upLoadBtn" id="upLoadBtn">
+                            <a href="javascript:;" class="lable_selectPic">
+                                <label ><span class="glyphicon glyphicon-plus"></span>选择图片</label>
+                            </a>
+                            <input type="file" id="inputImage" accept="image/jpeg,image/gif,image/x-png">
+                        </div>
+                    </div>
+                    <!-- 预览图片 -->
+                    <div class="previewLogo col-md-4 col-xs-12">
+                        <div class="img-preview">
+                            <span class="preview-pic">预览图片</span>
+                            <img src="" alt="" id="preview">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary hide"  id="upLoad-WebsiteLogo">上传</button>
+                <button type="button" class="btn btn-primary hide"  id="upLoad-ResumeLogo02">上传</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--页脚-->
+<!--#include virtual="../module/footer.html" -->
+
+<script src="../assets/layui/layui.js"></script>
+<script src="../assets/js/jquery-1.11.1.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.cookie.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/public.js?v=1.0.3"></script>
+
+<script src="../assets/js/cropper/cropper.min.js"></script>
+<script src="../assets/js/cropper/upLoadImg.js?v=1.0.5"></script>
+<script src="../assets/js/cropper/main.js"></script>
+
+<script src="../assets/js/user/userInfo.js?v=1.0.3"></script>
+
+</body>
+</html>

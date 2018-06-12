@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <title>国际学校四库全书-机构新增</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/outCSS/webuploader.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/school/detailUpImg.css">
+    <link rel="stylesheet" href="../assets/css/project/projectPublic.css?v=1.0.2">
+    <style>
+        .MB5 input{margin-bottom: 5px;}
+    </style>
+</head>
+<body>
+<!--头部-->
+<!--#include virtual="../module/nav02.html" -->
+<div class="container-fluid" >
+    <ol class="breadcrumb" style="background: transparent;">
+        <li><a href="../other/index.html">首页</a></li>
+        <li><a href="../project/project.html">项目数据库</a></li>
+        <li style="color:#000033">发布项目</li>
+    </ol>
+</div>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="jumbotron">
+                <h1>发布项目信息</h1>
+                <p>请按照标准格式录入数据</p>
+                <p><a class="btn btn-primary btn-large" href="project.html">返回项目首页</a></p>
+            </div>
+            <!--基本信息-->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">项目信息</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="form-group has-feedback hasError" data-container="body" data-toggle="popover"  data-trigger="manual" data-placement="top" data-content="注意：机构名已存在！">
+                            <label class="col-lg-2 control-label">项目名称：</label>
+                            <div class="col-lg-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <input type="text" class="form-control" id="SubjectName"  placeholder="请输入项目名" onblur="checkSubjectName()"/>
+                            </div>
+                            <div class="col-lg-5">
+                                <h5 style="color:#999" class="SubjectNameCheck" style="margin-top:0;"></h5>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group hasError">
+                            <label class="col-lg-2 control-label">项目地点：</label>
+                            <div class="col-lg-2">
+                                <select class="form-control" id="selProvince" onchange="provinceChange();"></select>
+                            </div>
+                            <div class="col-lg-3">
+                                <select class="form-control" id="selCity" ></select>
+                            </div>
+                        </div>
+                        <div class="form-group">  <!--修改过，没有hasError-->
+                            <label class="col-lg-2 control-label"></label>
+                            <div class="col-lg-5">
+                                <input type="text" id="Areas03" class="form-control" placeholder="详细地址：xxx 大街 xx 号">
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback hasError">
+                            <label  class="col-sm-2 control-label">发布单位：</label>
+                            <div class="col-sm-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <input type="text" class="form-control" id="Company"  onblur="checkCompany()"/>
+                            </div>
+                            <div class="col-sm-5">
+                                <h5 style="color:#999" class="CompanyCheck" style="margin-top:0;"></h5>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group hasError">
+                            <label class="col-sm-2 control-label">项目标签：</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="SubjectLabel"/>
+                            </div>
+                            <div class="col-sm-5"> <h5 style="color:#999">注意：以分号结尾</h5></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"></label>
+                            <div class="col-sm-5 MB5">
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('投资;')" value="投资" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('场地;')" value="场地" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('运营团队;')" value="运营团队" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('投建;')" value="投建" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('人才培训;')" value="人才培训" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('课程设计;')" value="课程设计" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('市场调研;')" value="市场调研" />
+                                <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:InsertLable('品牌推广;')" value="品牌推广" />
+
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback hasError">
+                            <label  class="col-sm-2 control-label">联系人：</label>
+                            <div class="col-sm-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <input type="text" class="form-control" id="Name" onblur="checkName()"/>
+                            </div>
+                            <div class="col-sm-5">
+                                <h5 style="color:#999" class="NameCheck" style="margin-top:0;"></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback hasError">
+                            <label  class="col-sm-2 control-label">电话：</label>
+                            <div class="col-sm-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <input type="text" class="form-control" id="Phone" onblur="checkPhone()"/>
+                            </div>
+                            <div class="col-sm-5">
+                                <h5 style="color:#999" class="PhoneCheck" style="margin-top:0;"></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback hasError">
+                            <label  class="col-sm-2 control-label">邮箱：</label>
+                            <div class="col-sm-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <input type="text" class="form-control" id="Mail" onblur="checkMail()"/>
+                            </div>
+                            <div class="col-sm-5">
+                                <h5 style="color:#999" class="MailCheck" style="margin-top:0;"></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">项目简介：</label>
+                            <div class="col-sm-5" >
+                                <textarea class="form-control"  id="SubjectIntroduction" rows="3" placeholder="控制在50字以内" onblur="checkSubjectIntroduction();" style="resize: none;"></textarea>
+                            </div>
+                            <div class="col-lg-5">
+                                <h5 style="color:#999" class="SubjectIntroductionCheck" style="margin-top:0;">注意：服务简介不能为空！</h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">详细信息：</label>
+                            <div class="col-sm-5" >
+                                <textarea class="form-control"  id="DetailInstitution" rows="3" placeholder="" style="min-height: 120px;"></textarea>
+                            </div>
+                            <div class="col-lg-5">
+                                <h5 style="color:#999" class="DetailInstitutionCheck" style="margin-top:0;"></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">项目要求：</label>
+                            <div class="col-sm-5" >
+                                <textarea class="form-control"  id="Requirement" rows="3" placeholder=""></textarea>
+                            </div>
+                            <div class="col-lg-5">
+                                <h5 style="color:#999" class="RequirementCheck" style="margin-top:0;"></h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="color: #999;">* 留空部分，系统默认补零，提交成功后需等待管理员审核后可见</div>
+            <div class="text-center" style="margin-top:10px;margin-bottom: 30px;">
+                <span class="btn btn-success" id="insertSubmit" onclick="projectFormSubmit()" style="display: inline-block;padding: 10px 20px;font-size:16px;font-weight: bold;color: #fff;cursor: pointer;border-radius: 0;">立即提交</span>
+            </div>
+
+            <!--简历上传-->
+            <div class="panel panel-primary" id="upResume">
+                <div class="panel-heading">
+                    <h3 class="panel-title">项目附件上传</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="wrapper">
+                        <div id="container">
+                            <!--头部，相册选择和格式选择-->
+                            <div id="uploader">
+                                <div class="queueList">
+                                    <div id="dndArea" class="placeholder">
+                                        <div id="filePicker"></div>
+                                        <p>或将文件拖到这里，目前只支持单文件上传</p>
+                                        <p>上传附件请小于5M</p>
+                                    </div>
+                                </div>
+                                <div class="statusBar" style="display:none;">
+                                    <div class="progress">
+                                        <span class="text">0%</span>
+                                        <span class="percentage"></span>
+                                    </div>
+                                    <div class="info"></div>
+                                    <div class="btns">
+                                        <div id="filePicker2"></div><div class="uploadBtn">开始上传</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel02">
+                    系统提示
+                </h4>
+            </div>
+            <div class="modal-body">
+                提交失败，数据不符合格式
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger"
+                        data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--自动跳转-->
+<div class="container" id="autoJump" style="position: fixed;left:20%;top:30%;z-index: 10;display: none;">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="panel panel-primary" style="border-radius: 0;">
+                <div class="panel-heading" style="border-radius: 0;">
+                    <h2 class="panel-title text-center">国际学校四库全书</h2>
+                </div>
+                <div class="panel-body text-center">
+                    <p class="h4" style="margin-top:40px;margin-bottom: 20px;">项目附件提交成功！</p>
+                    <p style="color:#999;padding:20px 0;"><span class="timeNum" style="color: #1E9FFF;">5</span> 秒后自动返回<a href="project.html"> 项目数据库首页</a></p>
+                    <a class="btn btn-primary" href="project.html" style="padding:5px 20px;margin-bottom: 20px;border-radius: 2px;box-shadow: 1px 1px 1px rgba(102,102,102,0.6)" >立即返回</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+
+<!--页脚-->
+<!--#include virtual="../module/footer.html" -->
+<script src="../assets/js/outJS/jquery.js"></script>
+<script src="../assets/js/outJS/webuploader.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.cookie.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/project/project.js?v=1.0.3"></script>
+<script src="../assets/js/project/releaseProject.js"></script>
+<script src="../assets/js/outJS/uploadProject.js"></script>
+</body>
+</html>

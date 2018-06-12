@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>国际学校四库全书-用户反馈</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/iCheck/1.0.2/skins/all.css" rel="stylesheet">
+    <style>
+        .checkBox{margin-bottom: 5px;}
+        li{list-style: none;font-size: 16px;}
+        li span{padding-left:20px;}
+        @media screen and (max-width: 768px){
+            textarea{display: block;}
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="margin-top:3%;">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background: #6495C6;color: #fff;">新学说-用户反馈</div>
+                <div class="panel-body">
+                    <div class="alert alert-warning">
+                        <strong>新学说~~~</strong>&nbsp;&nbsp;&nbsp;期待您的反馈，让我们变得更好
+                    </div>
+                  <div class="col-lg-8 col-xs-12" style="margin-top:20px;">
+                      <h5 style="font-size: 16px;font-weight: bold;margin-bottom: 15px;">您在浏览网页时遇到什么问题？ （可多选）</h5>
+                      <ul style="padding-left: 0;" id="checkBoxWrap">
+                          <li class="checkBox"><input type="checkbox" value="1"> <span >性能不好,网页卡慢</span></li>
+                          <li class="checkBox"><input type="checkbox" value="2"> <span >操作不习惯/界面不喜欢 </span> </li>
+                          <li class="checkBox"><input type="checkbox" value="3"> <span >功能找不到/功能不好用</span></li>
+                          <li class="checkBox"><input type="checkbox" value="4"> <span >搜索数据不正确 </span></li>
+                          <li class="checkBox"><input type="checkbox" value="5"> <span >网页在浏览器中显示错乱</span></li>
+                      </ul>
+
+                      <form role="form" >
+                          <div class="form-group" style="margin-top:30px;">
+                              <label  style="font-size: 16px;margin-bottom: 15px;">您对新学说数据库有什么建议？<span style="font-size: 14px;color: #ccc;">（建议说出具体的问题所在）</span></label>
+                              <textarea class="form-control" rows="3" id="myAdvice" placeholder="新学说团队会不断改进，以带给你更好的用户体验" style="display: block;"></textarea>
+                          </div>
+                          <div class="form-group" style="margin-top:30px;">
+                              <label  style="font-size: 16px;margin-bottom: 15px;">请留下你的联系方式，我们将会及时通知您问题处理的进展</label>
+                              <input type="text" class="form-control" placeholder="请输入联系方式" id="contactChannel">
+                          </div>
+                      </form>
+                      <div class="text-center" style="margin-top:30px;">
+                          <span class="btn btn-success" style="display: inline-block;padding: 10px 20px;font-size:16px;font-weight: bold;color: #fff; border-radius: 0;" id="feedBackSubmit">立即发送</span>
+                      </div>
+                  </div>
+
+                    <div class="col-lg-4 col-xs-12" id="phoneStyle">
+                        <img src="../assets/img/nsi-xyz.jpg" alt='新学说' class="img-responsive" style="margin-bottom: 60px;">
+                        <h5 style="font-size: 16px;color: darkgrey">● &nbsp;&nbsp;实时更新版中国国际学校数据库</h5>
+                        <h5 style="font-size: 16px;color: darkgrey">● &nbsp;&nbsp;丰富的教育机构平台信息</h5>
+                        <h5 style="font-size: 16px;color: darkgrey">● &nbsp;&nbsp;专业的行业研究/市场研究数据分析</h5>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
+<script src="../assets/js/jquery-1.11.1.js"></script>
+<script src="../assets/js/icheck.min.js"></script>
+<!--<script src="http://cdn.bootcss.com/iCheck/1.0.2/icheck.min.js"></script>-->
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/jquery.cookie.js"></script>
+<script src="../assets/js/public.js"></script>
+<script src="../assets/js/user/feedback.js"></script>
+
+</body>
+</html>

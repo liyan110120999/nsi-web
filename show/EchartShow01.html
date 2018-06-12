@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	   <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+       <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+       <title>中国国际学校柱状分布图</title>
+   </head>
+   <body style="height: 100%; background: rgb(239, 239, 239)">
+     <div class="container-fluid text-center" style="background: #ccc;">
+         <a class="btn btn-primary" href="../school/search.html">返回搜索页面</a>
+         <!--<button  class="btn btn-success" id="getParams02" >各地区统计信息</button>-->
+         <button id="getParams03" style="display: none;">赋值</button>
+     </div>
+
+         <div id="main" style="width:90%;height: 90%;margin:70px auto;"></div>
+     <!--#include virtual="../module/loading.html" -->
+       <script type="text/javascript" src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+       <script src="../assets/js/echart/echarts.min.js"></script>
+       <script src="../assets/js/config.js"></script>
+       <script type="text/javascript">
+			   var arr = [];
+			   function select(arr) {
+					  $.ajax({
+								type : "get",
+								async:false,
+                                url : 'http://'+changeUrl.address+'/School_api?whereFrom=EchartSchoolNum',
+                                data:{
+                                      option:'全部'
+                                  },
+								dataType : "jsonp",//数据类型为jsonp  
+								jsonp: "Callback",//服务端用于接收callback调用的function名的参数  
+								success : function(data){
+//									console.log(data);
+                                    $('#loadgif').hide()
+                                    $('#floatLayer').hide()//遮罩层
+									$("#testshow").html(JSON.stringify(data))
+									var i = 0;
+									$.each(data, function(key, value){//key和value分别保存的是data集合中的键和值
+										arr[i] = value;//将data集合中的值依次放进数组中
+										i=i+1;
+									});
+								},
+								error:function(){
+									alert('fail');
+								}
+							});
+					  return arr;
+					}
+				   arr = select(arr);
+
+
+				   var Json = arr
+				   var areas = []
+				   var number = []
+
+				$('#getParams03').click(function () {
+					for(var attr in Json ){
+						areas.push(Json[attr].name)
+						number.push(Json[attr].value)
+					}
+					console.log(areas)
+					console.log(number)
+					myChart.setOption(option, true);
+				})
+
+			  $(window).load(function () {
+				  $('#getParams03').trigger('click')
+				}
+			  )
+
+		var dom = document.getElementById("main");
+		var myChart = echarts.init(dom);
+		var app = {};
+		option = null;
+		var symbolSize = 20;
+//			app.title = '堆叠柱状图';
+
+		option = {
+            title: {
+                text: '中国国际学校柱状分布图'
+            },
+			tooltip : {
+				trigger: 'axis',
+				axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+					type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+				}
+			},
+			legend: {
+				data:['新学说数据库']
+			},
+			grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '3%',
+				containLabel: true
+			},
+			xAxis : [
+				{
+					type : 'category',
+					data : areas
+				}
+			],
+			yAxis : [
+				{
+					type : 'value'
+				}
+			],
+			
+			series : [
+				{
+					name:'新学说数据库',
+					type:'bar',
+					barWidth : 20,
+					stack: '学校分布',
+					data:number,
+					itemStyle:{
+						normal:{color:'#87CEFA'}
+					},
+					
+					markLine : {
+						lineStyle: {
+							normal: {
+								type: 'dashed'
+							}
+						},
+						data : [
+							[{type : 'min'}, {type : 'max'}]
+						]
+					}
+				},
+
+			]
+		};
+			myChart.setOption(option, true);
+			
+		// 处理点击事件并且跳转到相应的百度搜索页面
+		myChart.on('click', function (params) {
+//			window.open('http://data.xinxueshuo.cn/nsi-0.9/servlet?whereFrom=search&School_name=' + encodeURIComponent(params.name));
+            window.location.href='../school/search.html?whereFrom='+encodeURIComponent(params.name)
+		});
+       </script>
+   </body>
+</html>

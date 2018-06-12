@@ -1,0 +1,71 @@
+.school_input{ width: 454px;height:40px;padding-left:10px;outline: none;border: 2px solid #215089;border-right:0;border-radius: 5px 0 0 5px; }
+.search_tips{ width: 454px;border:1px solid #215089;position: absolute;left:281px;top:40px;border-radius:  0 0 5px 5px ;box-shadow: 0 0 5px #215089;z-index: 100;background: #fff;}
+.search_tips li {text-align:left;font-size: 14px;line-height:1.8;padding-left:10px;}
+.search_tips li:hover {background: #efefef;}
+.school_input:focus{  box-shadow: 0 0 5px #000;}
+
+.search_icon{background: #215089;left:-5px;top:-1px;height: 40px;width:60px;font-size: 24px;padding-top:2px;border-radius: 0 5px 5px 0; font-weight: 100;}
+.advance-search{background:#215089;padding:9px 14px; }
+.search_tips li {cursor: pointer;}
+
+.visible_show{font-size: 20px;color: #215089;font-weight: bold;}
+.add_school{font-size: 20px;color:#215089;padding-right:30px;font-weight: bold;}
+
+.hotContent {
+    width: 700px;
+    text-align: center;
+    height: 64px;
+    position: absolute;
+    left: 50%;
+    margin-left: -350px;
+}
+
+.hotContent a {
+    display: inline-block;
+    font-size: 16px;
+    color: steelblue;
+    padding: 5px 3px;
+    transition: all .5s;
+}
+
+.hotContent a:hover {
+    text-decoration: none;
+    color: #215089;
+}
+
+.bg-wrap{background:url("../../img/school/bg-school.jpg") no-repeat center top;background-size: cover;}
+.hotSchool_wrap{ margin-top:130px;margin-bottom:20px;border-bottom: 2px solid #215089;}
+.hot_school{font-size: 20px;color:#215089; font-weight: bold;padding-left:15px;}
+
+.school_logo{
+    transform: rotateY(0);
+    transition: all 0.60s ease-in-out 0s;
+}
+
+.school_list{display:block;padding:15px;background: rgba(255,255,255,0.8);border:1px solid #ccc;border-radius: 4px;box-sizing: border-box;transition: all 0.6s;}
+.school_list:hover{ box-shadow: 0 0 10px #215089;text-decoration: none;cursor: pointer;}
+.school_list:hover .school_logo{ transform: rotateY(-180deg) ;}
+.col-md-3{padding:0 8px;margin-top: 30px;}
+.school_list p{font-size: 14px;line-height:2;}
+.school_logo{display:inline-block;width: 100px;height: 100px;margin-top: 15px;border-radius: 50px;box-shadow: 0 0 5px  #215089;}
+.school_name{font-size:20px;padding:20px 0;font-weight: bold;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

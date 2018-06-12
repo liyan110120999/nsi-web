@@ -1,0 +1,102 @@
+/* 概览 */
+
+.overView {
+    margin: 0 auto;
+    border: 1px solid #215089;
+    padding: 30px 40px;
+}
+
+.usePic {
+    width: 100px;
+    height: 100px;
+    background: #9cd9fc;
+    font-size: 70px;
+    padding: 0;
+}
+
+.desc {
+    margin-left: 24px;
+    padding-top: 10px;
+}
+
+.container {
+    transition: all .5s;
+}
+
+.content {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+@media (min-width:1190px) {
+    .content {
+        padding: 0 185px;
+    }
+}
+
+
+/* 基本信息 */
+
+.detail_header::before {
+    display: inline-block;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: url("../../img/talent/base.jpg");
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+.detail_header::after {
+    display: inline-block;
+    content: "基本信息";
+    color: #FFF;
+    background: #215089;
+    padding: 6px 11px;
+}
+
+.detail_body {
+    margin-top: 10px;
+    border: 1px solid #215089;
+    padding: 20px 40px;
+}
+
+
+/* 其他信息 */
+
+.others_header::before {
+    display: inline-block;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: url("../../img/talent/other.jpg");
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+.others_header::after {
+    display: inline-block;
+    content: "其他信息";
+    color: #FFF;
+    background: #215089;
+    padding: 6px 11px;
+}
+
+.others_body {
+    margin-top: 10px;
+    border: 1px solid #215089;
+    padding: 20px 40px;
+}
+
+.others_descBox {
+    padding: 20px 20px;
+    min-height: 133px;
+}
+
+.others_desc {
+    width: 100%;
+    height: 123px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding-top: 15px;
+}

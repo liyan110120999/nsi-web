@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+    <title>国际学校四库全书-学校数据库</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/jquery-labelauty.css" rel="stylesheet">
+    <link href="../assets/css/layui.css" rel="stylesheet" media="all">
+    <link href="../assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../assets/css/search.css?v=06111646" rel="stylesheet">
+    <link href="../assets/css/public.css?v=1.0.2" rel="stylesheet">
+</head>
+
+<body>
+    <!--头部-->
+    <!--#include virtual="../module/nav02.html" -->
+    <div>
+        <img src="http://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-pc/banner01.jpg" alt="学校数据库" class="img-responsive" />
+    </div>
+    <!--面包屑导航-->
+    <div class="container-fluid">
+        <ol class="breadcrumb">
+            <li><a href="../other/index.html" style="color:#337ab7;">首页</a></li>
+            <li style="color:#000033">学校数据库</li>
+        </ol>
+    </div>
+
+    <!--搜索框-->
+    <div class="container" style="font-size: 16px;margin-bottom: 30px;margin-top:20px;">
+        <div class="row clearfix">
+            <div class="col-md-12 text-right">
+                <span class="glyphicon glyphicon-plus-sign" style="font-size: 20px;top:3px;padding-right: 6px;"></span> <a href="./insert.html" class="add_school" style="text-decoration: none;">新增学校</a>
+            </div>
+            <div class="col-md-12 column text-center">
+
+                <!-- <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                        <a href="../school/school.html" class="navbar-brand">学校数据库</a>
+                    </div> -->
+
+                <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active" style="border-radius: 10px;">
+                                <a href="insert.html"><span style="font-size: 16px;font-weight: bold;">+</span> 新增数据</a>
+                            </li>
+                            <li>
+                                <a href="../show/map_show.html" target="_blank">地图分布</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">可视化<strong class="caret"></strong></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="../show/EchartShow01.html" target="_blank">省市学校数量条形分布图</a>
+                                    </li>
+                                    <li>
+                                        <a href="../show/histogram.html" target="_blank">条形图2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul> -->
+                <div class="navbar-form" role="search" name="myform" id="GeneralSearch">
+                    <!-- <div class="form-group"> -->
+                    <input type="text" class="search_input" name="School_name" id="searchContent" placeholder="请输入学校名或关键字" />
+                    <!-- </div> -->
+                    <button class="btn btn-primary glyphicon glyphicon-search search_icon" id="searchBtn"></button>
+                </div>
+                <!--高级搜索 -->
+                <!-- <div class="navbar-form navbar-left" id="AdvancedSearchBtn">
+                            <button type="button" name="submit" class="btn btn-primary" id="advanceSearch">高级搜索</button>
+                        </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+        <br>
+    </div>
+    <!-- 高级搜索选择框 -->
+    <div id="AdvancedSearchID" class="container">
+        <div class="row">
+            <form class="clearfix" action="123.com">
+                <div id="AdvanDivID01" class="col-lg-12">
+                    <span class="AdvanSpan01 col-lg-1">地区:</span>
+
+                    <ul class="dowebok clearfix baseArea col-lg-10" id="clickForMore">
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="1" data-labelauty="北京"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="2" data-labelauty="上海"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="3" data-labelauty="天津"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="4" data-labelauty="重庆"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="5" data-labelauty="浙江"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="6" data-labelauty="江苏"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="7" data-labelauty="广东"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="8" data-labelauty="福建"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="9" data-labelauty="湖南"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="10" data-labelauty="湖北"></li>
+                    </ul>
+
+                    <ul class="dowebok clearfix moreArea col-lg-10" style="display: none;margin-bottom: 10px;" id="slideDown">
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="1" data-labelauty="北京"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="2" data-labelauty="上海"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="3" data-labelauty="天津"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="4" data-labelauty="重庆"></li>
+
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="5" data-labelauty="浙江"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="6" data-labelauty="江苏"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="7" data-labelauty="广东"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="8" data-labelauty="福建"></li>
+
+
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="9" data-labelauty="湖南"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="10" data-labelauty="湖北"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="11" data-labelauty="辽宁"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="12" data-labelauty="吉林"></li>
+
+
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="14" data-labelauty="河北"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="15" data-labelauty="河南"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="16" data-labelauty="山东"></li>
+
+
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="17" data-labelauty="陕西"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="18" data-labelauty="甘肃"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="19" data-labelauty="新疆"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="20" data-labelauty="青海"></li>
+
+
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="21" data-labelauty="山西"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="22" data-labelauty="四川"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="23" data-labelauty="贵州"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="24" data-labelauty="安徽"></li>
+
+
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="25" data-labelauty="江西"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="26" data-labelauty="云南"></li>
+
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="28" data-labelauty="西藏"></li>
+
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="29" data-labelauty="广西"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="30" data-labelauty="宁夏"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="31" data-labelauty="海南"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="32" data-labelauty="香港"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="33" data-labelauty="澳门"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="34" data-labelauty="台湾"></li>
+
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="13" data-labelauty="黑龙江"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox01" value="27" data-labelauty="内蒙古"></li>
+
+                    </ul>
+                    <span class="AdvanSpan01 col-lg-1 clickForMore" style="cursor:pointer;color: #2a6496">更多 <span class="glyphicon glyphicon-menu-down" style="color: #ccc;"></span></span>
+                    <span class="AdvanSpan01 col-lg-1 clickForSlidedown" style="display: none;cursor:pointer;color: #2a6496">收起 <span class="glyphicon glyphicon-menu-up" style="color: #ccc;"></span></span>
+                </div>
+                <div id="AdvanDivID02" class="col-lg-12">
+                    <span class="AdvanSpan01 col-lg-1">学制:</span>
+                    <ul class="dowebok clearfix col-lg-11">
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox02" value="1" data-labelauty="高中"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox02" value="2" data-labelauty="初中"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox02" value="3" data-labelauty="小学"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox02" value="4" data-labelauty="幼儿园"></li>
+                    </ul>
+                </div>
+                <div id="AdvanDivID03" class="col-lg-12">
+                    <span class="AdvanSpan01 col-lg-1">课程:</span>
+                    <ul class="dowebok clearfix col-lg-9">
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="1" data-labelauty="IPC"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="2" data-labelauty="IMYC"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="3" data-labelauty="AP"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="4" data-labelauty="IB"></li>
+
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="5" data-labelauty="IBPYP"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="6" data-labelauty="IBMYP"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="7" data-labelauty="IBDP"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="8" data-labelauty="A-LEVEL;"></li>
+
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="9" data-labelauty="IGCSE"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="10" data-labelauty="蒙特梭利"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="11" data-labelauty="美国课程"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="12" data-labelauty="澳大利亚课程"></li>
+
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="13" data-labelauty="澳洲VCE"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="14" data-labelauty="澳洲QCE"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="15" data-labelauty="澳洲WACE"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="16" data-labelauty="加拿大课程"></li>
+                        <li class="AdvanLi01"><input type="checkbox" name="checkbox03" value="17" data-labelauty="加拿大BC省"></li>
+                    </ul>
+                </div>
+                <div id="AdvanDivID04" class="col-lg-12" style="margin-bottom: 15px;">
+                    <span class="AdvanSpan01 col-lg-1">建校时间:</span>
+                    <div class="col-lg-8">
+                        <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                            <input class="form-control" size="16" type="text" readonly id="buildSchoolTime">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="AdvanDivID05">
+                    <ul class="dowebok clearfix text-center">
+                        <div class="col-lg-1"></div>
+                        <button type="reset" class="btn btn-default" id="AdvanceResetID">重置</button>
+                        <button type="submit" class="btn btn-primary" id="AdvanceSubmitID">搜索</button>
+                        <!-- <button type="button" class="btn btn-danger" id="closeAdvanceSearch">关闭</button> -->
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--方框形式展示搜索列表-->
+    <div class="container">
+        <div class="row">
+            <div class="" id="innerWrap">
+                <!--<div class="thumbnail clearfix overInfo">-->
+                <!--<img src="../assets/img/schoolNoPic.png" alt="新学说"  class="pull-left schoolPic" >-->
+                <!--<div class="pull-left clearfix leftInfo">-->
+                <!--<h4 class="h4 schoolName"><a href="http://data.xinxueshuo.cn/nsi-0.8/servlet?School_name=仙桃荣怀国际学校&whereFrom=search" target="_blank">仙桃荣怀国际学校</a></h4>-->
+                <!--<p><span>民办</span> | <span class="buildTime">建校时间：2013</span></p>-->
+                <!--<p class="mobieHidden"><span>学制：幼儿园小学初中高中</span> | <span>课程：探究式，双语沉浸式</span></p>-->
+                <!--<p class="pcHidden">学制：幼儿园小学初中高中</p>-->
+                <!--<p class="pcHidden">课程：探究式，双语沉浸式探究式</p>-->
+                <!--</div>-->
+                <!--<div class="pull-right rightInfo mobieHidden">-->
+                <!--<p class="clearfix"><span class="glyphicon glyphicon-globe"></span> <span class="schoolSite">北京</span></p>-->
+                <!--&lt;!&ndash;<p>提交用户：Tmac-1</p>&ndash;&gt;-->
+                <!--<p class="submitTime"><span class="glyphicon glyphicon-time"></span> 提交时间： 2017-08-18</p>-->
+                <!--</div>-->
+                <!--<div class="text-center pcHidden"  style="padding-left:5px;padding-right:5px;">-->
+                <!--<p style="height:117px;"></p>-->
+                <!--<span class="glyphicon glyphicon-globe"></span><span class="schoolSite">北京</span>-->
+                <!--<p style="margin-top:2px;"><span class="pull-right"><span class="glyphicon glyphicon-time"></span>&nbsp;<span class="foundedTime">提交时间： 2017-08-18</span></span></p>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <!--分页-->
+    <div class="container-fluid pageFooter">
+        <h3 class="noData"></h3>
+        <div class="generalSearchResult">
+            <p>已搜索到<span class="gengeralSearchNum">0</span>条结果</p>
+            <div id="pageDemo01"></div>
+        </div>
+    </div>
+    <!--页脚-->
+    <footer>
+        <div id="footer-sec" style="padding:30px 0;">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4 col-lg-4 text-center">
+                        <h4 style="padding-top:10px;font-weight:bold;font-family: 'Microsoft YaHei';font-size: 20px;margin:10px 0;">关于新学说</h4>
+                        <div class="center-block text-left" style="text-indent:2em;line-height:1.8;">
+                            <p style="font-size: 16px;">新学说(NewSchool Insight)是由国际学校资深专家共同打造的国际学校服务平台。 旗下有新学说传媒和新学说国际教育研究院两大品牌。为国际学校提供行业最新资讯，会议组 织，海外考察；研究报告，行业数据库；学校投建，运营管理，品牌管理，人才培养等专业咨询服务。
+                                <a href="http://www.xinxueshuo.cn/index.php?s=/Home/Article/index/category/gywm" target="_blank" style="color:#428bca;">more..</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-5 col-lg-5" style="padding-left: 62px;">
+                        <h4 style="padding-top:10px;font-weight:bold;font-family: 'Microsoft YaHei';font-size: 20px;margin:10px 0;padding-left: 104px;">联系我们</h4>
+                        <h5 class="h5" style="font-size: 16px; line-height: 1.5;">中国办公室：北京市西城区新风街2号 </h5>
+                        <h5 style="font-size: 16px;padding-left:96px;">天成科技大厦A座1006</h5>
+                        <h5 class="h5" style="font-size: 16px;padding-left:49px;">电话：010-52468286 </h5>
+                        <h5 class="h5" style="font-size: 16px;padding-left:49px;">手机：15010927730</h5>
+                        <h5 class="h5" style="font-size: 16px;padding-left:49px;">邮箱：info@xinxueshuo.cn</h5>
+                        <h5 class="h5" style="font-size: 16px;">美国办公室：德克萨斯州 奥斯丁市</h5>
+                        <h5 style="font-size: 16px;line-height: 1.5;padding-left:49px">邮箱：dbarrutia@xinxueshuo.cn</h5>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-lg-3" style="padding-left: 0px;" id="mobileFooter">
+                        <h4 style="padding-top:10px;font-weight:bold;font-family: 'Microsoft YaHei';font-size: 20px;margin:10px 0;padding-left: 10px;">微信公众号</h4>
+                        <div class="social-links">
+                            <img alt="微信二维码" height="120" width="120" src="../assets/img/wechat_QR.png">
+                            <h5 class="h5" style="font-size: 16px;padding-left: 10px;">微信关注我们</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--FOOTER SECTION END-->
+    <div class="copy-txt">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <h5 class="text-center" style="height:20px;">
+                        Copyright © 2017 | 数据来源 <a href="http://www.xinxueshuo.cn/" target="_blank" title="新学说" style="color:#428bca;">新学说</a> All rights reserved.
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--#include virtual="../module/loading.html" -->
+    <!--#include virtual="../module/modal.html" -->
+    <!--#include virtual="../module/modal02.html" -->
+
+    <script src="../assets/js/jquery-1.11.1.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/layui/layui.js"></script>
+    <script src="../assets/js/jquery-labelauty.js"></script>
+    <script src="../assets/js/jquery.cookie.js"></script>
+    <script src="../assets/js/bootstrap-datetimepicker.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/public.js?v=1.0.3"></script>
+    <script src="../assets/js/school/accessControl.js?v=1.0.5"></script>
+    <script src="../assets/js/school/search.js"></script>
+</body>
+
+</html>

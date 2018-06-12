@@ -1,0 +1,280 @@
+/* commonCss */
+
+.mtb20 {
+    margin: 20px 0;
+}
+
+.mtb50 {
+    margin: 50px 0 !important;
+}
+
+.tc {
+    text-align: center;
+}
+
+.letter_spacing2 {
+    letter-spacing: 2px;
+}
+
+.star {
+    color: red;
+    margin-right: 10px;
+}
+
+.form-group {
+    margin-bottom: 35px;
+}
+
+.form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.form-horizontal .form-group .control-label {
+    text-align: left;
+}
+
+
+/* logoBox */
+
+.logoBox {
+    width: 400px;
+    margin: 0 18.5% 50px;
+    position: relative;
+    font-family: '微软雅黑';
+    font-size: 12px;
+}
+
+.btns>input {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+
+/* input_file样式 */
+
+.logo_btn {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-indent: 0;
+    line-height: 20px;
+}
+
+.logo_btn>.upload_logo {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+
+
+/* 企业简介 */
+
+#Intro {
+    width: 84%;
+    height: 80%;
+    outline: none;
+    resize: none;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border: 1px solid #ddd;
+    font-family: "Microsoft YaHei", "微软雅黑", "Arial";
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+
+/* 模态框 */
+
+@media (min-width: 1200px) {
+    .modal-dialog {
+        width: 700px;
+        margin: 30px auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 700px;
+        margin: 30px auto;
+    }
+}
+
+
+/* 选择上传图片*/
+
+.modal_row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.selectUpLoadLogo {
+    width: 62%;
+    height: 300px;
+    border-radius: 4px;
+    background: #ddd;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.lable_selectPic {
+    display: inline-block;
+    line-height: 20px;
+    color: #FFFFFF;
+    background-color: #337ab7;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0px #fff solid;
+    padding: 5px 5px 0;
+}
+
+.lable_selectPic>label {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.upLoadBtn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -33px;
+    margin-top: -12px;
+    z-index: 999;
+}
+
+.upLoadBtn>input[type=file] {
+    width: 188px;
+    height: 60px;
+    background: #333;
+    margin: 0 auto;
+    position: absolute;
+    right: 50%;
+    margin-right: -94px;
+    top: 0;
+    right/*\**/
+    : 0px\9;
+    margin-right/*\**/
+    : 0px\9;
+    width/*\**/
+    : 10px\9;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: 2;
+}
+
+
+/* 预览图片 */
+
+.previewLogo {
+    width: 37%;
+    height: 300px;
+    padding: 30px 23px 0;
+    border-radius: 4px;
+    background: #ddd;
+    position: relative;
+    margin-left: 5px;
+}
+
+.img-preview {
+    position: relative;
+}
+
+#preview {
+    /* position: absolute; */
+    display: inline-block;
+    /* margin: 50px auto; */
+    width: 100%;
+    height: 200px;
+    background: #FFF;
+    border-radius: 4px;
+}
+
+.img-preview .preview-pic {
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-family: "Microsoft YaHei"
+}
+
+.cropper-hidden {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.cropper-crop-box {
+    width: 200px;
+    height: 200px;
+}
+
+.cropper-drag-box {
+    border-radius: 4px;
+}
+
+@media (max-width:567px) {
+    .img-preview .preview-pic {
+        padding-top: 20px;
+    }
+    .previewLogo {
+        padding: 0 7px;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 80px;
+    }
+    #preview {
+        margin: 15px auto;
+        height: 200px;
+        width: 200px;
+    }
+    .selectUpLoadLogo {
+        width: 100%;
+        margin-bottom: 5px;
+        height: 280px;
+    }
+    .modal-body {
+        padding: 5px 15px;
+    }
+}
+
+
+/* 工作城市 */
+
+.cityName {
+    padding-top: 7px;
+}
+
+
+/* 职位描述 */
+
+#Job_requirement,#Job_weal,
+#Job_description {
+    resize: none;
+    width: 100%;
+    border-radius: 4px;
+}
+
+
+/* 月薪 */
+
+.salary input[type=text] {
+    width: 20%;
+}
+
+.save {
+    margin-right: 15px;
+}
+
+/* 剪裁图片 */
+
+#cropperPic {
+    height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+}
+

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="新学说,新学说传媒,国际学校,国际学校数据库,查询国际学校,国际学校大全,新学说信息系统,国际学校四库全书,学校数据库" />
+    <meta name="description" content="新学说国际学校四库全书作为中国国际学校行业专业、全面、领先的在线数据库系统，由学校库，机构库，人才库，项目库组成，为行业，政府，学校，机构，个人提供国际学校全方位信息服务。" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">-->
+    <title>新学说-国际学校四库全书</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_538304_dqjbwbmbe9jp2e29.css">
+    <link rel="stylesheet" href="../assets/css/public.css?v=1.0.5">
+    <link rel="stylesheet" href="../assets/css/index.css?v=1.0.5">
+    <script>
+        //判断是否移动端，如果是则跳转到指定的URL地址
+        function browserRedirect(url) {
+            //只读的字符串，声明了浏览器用于 HTTP 请求的用户代理头的值
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            if (bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+                window.location.replace(url);
+            }
+        }
+        browserRedirect('http://data.xinxueshuo.cn/wap')
+    </script>
+</head>
+
+<body>
+    <!--头部导航-->
+    <!--#include virtual="../module/nav01.html" -->
+    <div>
+        <img src="http://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-pc/banner00.jpg" alt="四库全书" class="img-responsive" />
+    </div>
+    <!--搜索功能-->
+    <br>
+    <div class="container wrap text-center" style="margin-top:20px;">
+        <h1 class="mobileMT0">新学说国际学校行业数据库</h1>
+        <ul class="searchTab clearfix" id="searchTab">
+            <li class="fl activeTab">学校库</li>
+            <li class="fl">机构库</li>
+            <li class="fl">人才库</li>
+            <li class="fl">项目库</li>
+        </ul>
+        <div class="header-search">
+            <div role="search" name="myform">
+                <div class="clearfix">
+                    <input type="text" id="search" name="School_name" placeholder="请输入关键字" />
+                    <button id="SearchButton" type="submit">搜 索</button>
+                </div>
+            </div>
+            <ul class="text-left serchContent hide" id="serchContent"></ul>
+        </div>
+        <!--热词推荐-->
+        <div class="hotSearch">
+            <div class="hotContent hotSearchOfSchool">
+                <a href="../school/detail.html?School_name=100053&whereFrom=search">海嘉国际双语学校</a>
+                <a href="../school/detail.html?School_name=100139&whereFrom=search">北京京西学校</a>
+                <a href="../school/detail.html?School_name=100048&whereFrom=search">北京乐成国际学校</a>
+                <a href="../school/detail.html?School_name=100047&whereFrom=search">北京BISS国际学校</a>
+                <a href="../school/detail.html?School_name=100495&whereFrom=search">上海哈罗国际学校</a>
+                <br>
+                <a href="../school/detail.html?School_name=100122&whereFrom=search">上海世界外国语中学</a>
+                <a href="../school/detail.html?School_name=100109&whereFrom=search">上海中学国际部</a>
+                <a href="../school/detail.html?School_name=100065&whereFrom=search">成都美视国际学校</a>
+                <a href="../school/detail.html?School_name=100192&whereFrom=search">深圳国际交流学院</a>
+            </div>
+            <div class="hotContent hotsearchOfCompany">
+                <a href="../company/detailCompany.html?School_name=100043&whereFrom=search">起点校车</a>
+                <a href="../company/detailCompany.html?School_name=100127&whereFrom=search">大风车教育集团</a>
+                <a href="../company/detailCompany.html?School_name=100046&whereFrom=search">校宝智慧校园</a>
+                <a href="../company/detailCompany.html?School_name=100163&whereFrom=search">北京汉通文化有限责任公司</a>
+                <a href="../company/detailCompany.html?School_name=100181&whereFrom=search">卡西欧（中国）贸易有限公司</a>
+                <a href="../company/detailCompany.html?School_name=100099&whereFrom=search">博实乐教育集团</a>
+                <a href="../company/detailCompany.html?School_name=100106&whereFrom=search">DDC天乐勤教育</a>
+                <a href="../company/detailCompany.html?School_name=100165&whereFrom=search">ManageBac</a>
+            </div>
+            <div class="hotContent hotsearchOfTalent">
+                <a href="../talent/recruit01.html">重庆德普外国语学校</a>
+                <a href="../talent/recruit02.html">北大附属实验学校</a>
+                <a href="../talent/recruit03.html">北京新东方外国语学校</a>
+                <a href="../talent/recruit04.html">Ulink教育集团</a>
+                <a href="../talent/recruit05.html">雅力教育集团</a>
+                <a href="../talent/recruit06.html">美中国际学校 Griffin International Academy</a>
+            </div>
+            <div class="hotContent hotsearchOfProject">
+                <a href="../project/detailProject.html?School_name=10004&whereFrom=search">济南章丘 | 寻求与优质国际学校运营管理方合作办学</a>
+                <a href="../project/detailProject.html?School_name=10004&whereFrom=search">湖北襄阳 | 希望名校加入合作办学，校方负责教学管理</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!--主题内容-->
+    <mian class="titleContent">
+        <div class="container mt20">
+            <!-- 四库全书简介 -->
+            <h3 class="text-center fourBaseBook"><span class="line"></span>新学说 • 四库全书<span class="line"></span></h3>
+
+            <div class="row mt40">
+                <a href="../school/search.html" target="_">
+                    <div class="col-md-3 col-sm-6 productList">
+                        <div class="fourBaseBook_logo text-center">
+                            <span class="iconfont icon-xuexiao"></span>
+                        </div>
+                        <h4 class="text-center product_title">国际学校库</h4>
+                        <p class="productDesc">国际学校数据库，为国际学校提供科学的行业数据分析。加入数据库，就可以通过本数据库的行业信息，掌握行业的发展态势，了解自身的成长阶段</p>
+                    </div>
+                </a>
+                <a href="../company/company.html" target="_">
+                    <div class="col-md-3 col-sm-6 productList ml10">
+                        <div class="fourBaseBook_logo text-center">
+                            <span class="iconfont icon-juxingkaobei"></span>
+                        </div>
+                        <h4 class="text-center product_title">国际学校服务机构库</h4>
+                        <p class="productDesc">国际教育机构数据库提供与国际学校国际教育相关的各类服务机构和服务提供商的详细信息，您可以通过关键字查询所需的各类服务供应商，也可以对机构服务情况进行点评，全部信息完全开放</p>
+                    </div>
+                </a>
+                <a href="../talent/talent.html" target="_">
+                    <div class="col-md-3 col-sm-6 productList ml10">
+                        <div class="fourBaseBook_logo text-center">
+                            <span class="iconfont icon-kunzyrencaifazhan"></span>
+                        </div>
+                        <h4 class="text-center product_title">国际学校人才库</h4>
+                        <p class="productDesc">国际教育人才数据为内部数据库，您可以上传个人简历，进入国际教育人才储备库，根据自身需要选择性公开个人情况，获得更多的展示自己的机会</p>
+                    </div>
+                </a>
+                <a href="../project/project.html" target="_">
+                    <div class="col-md-3 col-sm-6 productList ml10">
+                        <div class="fourBaseBook_logo text-center">
+                            <span class="iconfont icon-iconxiangmuguanlimoren01"></span>
+                        </div>
+                        <h4 class="text-center product_title">国际学校项目库</h4>
+                        <p class="productDesc">新学说国际学校四库全书，为学校，机构，和从业者提供最权威的行业数据，最先进的行业服务</p>
+                    </div>
+                </a>
+            </div>
+            <!-- 四库全书简介 END-->
+
+        </div>
+    </mian>
+
+    <!-- 学校库 -->
+    <div class="container mt40 mb40">
+        <h3 class="text-center fourBaseBook"><span class="line"></span>新学说 • 学校库<span class="line"></span><a href="../school/search.html" class="more" target="_">更多&gt;&gt;</a></h3>
+        <div class="row">
+            <div class="col-md-9  mt100">
+                <a href="http://data.xinxueshuo.cn/nsi/school/detail.html?School_name=100053&whereFrom=search">
+                    <div class="schoolBase fl mb80">
+                        <div class="schoolBase_logo"><img src="http://data.xinxueshuo.cn/upImage/upSchoolImg/100053/100053-logo.png" alt=""></div>
+                        <div class="schoolBase_content">
+                            <!-- <p class="schoolID"></p> -->
+                            <div class="upBox">
+                                <p class="schoolName">海嘉国际双语学校<span class="fr">ID100053</span></p>
+                                <p><span>民办</span> | <span>建校时间：2006</span><span class="fr">北京</span></p>
+                                <p>学制：幼儿园；小学；初中；高中</p>
+                                <p>课程：美国课程;IBDP;IGCSE;A-LEVEL;</p>
+                            </div>
+                        </div>
+                        <div class="bg_content"></div>
+                    </div>
+                </a>
+                <a href="http://data.xinxueshuo.cn/nsi/school/detail.html?School_name=100048&whereFrom=search">
+                    <div class="schoolBase fl ml70  mb80">
+                        <div class="schoolBase_logo"><img src="http://data.xinxueshuo.cn/upImage/upSchoolImg/100048/100048-logo.jpg" alt=""></div>
+                        <div class="schoolBase_content">
+                            <!-- <p class="schoolID">ID100874</p> -->
+                            <div class="upBox">
+                                <p class="schoolName">北京乐成国际学校<span class="fr">ID100048</span></p>
+                                <p><span>民办</span> | <span>建校时间：2005</span><span class="fr">北京</span></p>
+                                <p>学制：幼儿园；小学；初中；高中；</p>
+                                <p>课程：IBPYP;IBMYP;IBDP;</p>
+                            </div>
+                        </div>
+                        <div class="bg_content"></div>
+                    </div>
+                </a>
+                <a href="http://data.xinxueshuo.cn/nsi/school/detail.html?School_name=100105&whereFrom=search">
+                    <div class="schoolBase fl">
+                        <div class="schoolBase_logo"><img src="http://data.xinxueshuo.cn/upImage/upSchoolImg/100105/100105-logo.jpg" alt=""></div>
+                        <div class="schoolBase_content">
+                            <!-- <p class="schoolID">ID100874</p> -->
+                            <div class="upBox">
+                                <p class="schoolName">上海美国学校<span class="fr">ID100105</span></p>
+                                <p><span>外籍</span> | <span>建校时间：1912</span><span class="fr">上海</span></p>
+                                <p>学制：高中</p>
+                                <p>课程：IBDP；AP；</p>
+                            </div>
+                        </div>
+                        <div class="bg_content"></div>
+                    </div>
+                </a>
+                <a href="http://data.xinxueshuo.cn/nsi/school/detail.html?School_name=100176&whereFrom=search">
+                    <div class="schoolBase fl ml70">
+                        <div class="schoolBase_logo"><img src="http://data.xinxueshuo.cn/upImage/upSchoolImg/100176/100176-logo.jpg" alt=""></div>
+                        <div class="schoolBase_content">
+                            <!-- <p class="schoolID">ID100874</p> -->
+                            <div class="upBox">
+                                <p class="schoolName">北京哈罗英国学校<span class="fr">ID100176</span></p>
+                                <p><span>民办</span> | <span>建校时间：2005</span><span class="fr">北京</span></p>
+                                <p>学制：幼儿园；小学；初中</p>
+                                <p>课程：A-LEVEL</p>
+                            </div>
+                        </div>
+                        <div class="bg_content"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 dynamic">
+                <!-- <h4 class="dynamicTitle">新学说<span>动态</span></h4> -->
+                <div class="dynamicContent">
+                    <h5>学校数据库最近更新</h5>
+                    <div class="dynamicList">
+                        <ul class="scrollBox" id="scrollBox"></ul>
+                        <ul class="scrollBox scrollBox_clone"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 学校库 END-->
+
+    <!-- 机构库 -->
+    <div class="container mb40">
+        <h3 class="text-center fourBaseBook"><span class="line"></span>新学说 • 机构库<span class="line"></span><a href="../company/company.html" class="more" target="_">更多&gt;&gt;</a></h3>
+        <div class="institutionsBase mt40">
+            <ul class="institutionsBox clearfix">
+                <li>
+                    <a href="http://data.xinxueshuo.cn/nsi/company/detailCompany.html?School_name=100163&whereFrom=search">
+                        <img src="../assets/img/index/institutionsBase01.jpg" class="institutions_bg">
+                        <div class="institutions_content">北京汉通文化有限责任公司</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://data.xinxueshuo.cn/nsi/company/detailCompany.html?School_name=100099&whereFrom=search">
+                        <img src="../assets/img/index/institutionsBase02.jpg" class="institutions_bg">
+                        <div class="institutions_content">博实乐教育集团</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://data.xinxueshuo.cn/nsi/company/detailCompany.html?School_name=100127&whereFrom=search">
+                        <img src="../assets/img/index/institutionsBase03.jpg" class="institutions_bg">
+                        <div class="institutions_content">大风车教育集团（机构）</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://data.xinxueshuo.cn/nsi/company/detailCompany.html?School_name=100046&whereFrom=search">
+                        <img src="../assets/img/companyImg/company03.jpg" class="institutions_bg">
+                        <div class="institutions_content">校宝智慧校园</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://data.xinxueshuo.cn/nsi/company/detailCompany.html?School_name=100181&whereFrom=search">
+                        <img src="../assets/img/companyImg/company05.jpg" class="institutions_bg">
+                        <div class="institutions_content">卡西欧（中国）贸易有限公司</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://data.xinxueshuo.cn/nsi/company/detailCompany.html?School_name=100106&whereFrom=search">
+                        <img src="../assets/img/companyImg/company07.jpg" class="institutions_bg">
+                        <div class="institutions_content">DDC天乐勤教育</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://data.xinxueshuo.cn/nsi/company/detailCompany.html?School_name=100165&whereFrom=search">
+                        <img src="../assets/img/companyImg/company08.jpg" class="institutions_bg">
+                        <div class="institutions_content">ManageBac</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://data.xinxueshuo.cn/nsi/company/detailCompany.html?School_name=100043&whereFrom=search">
+                        <img src="../assets/img/index/institutionsBase04.jpg" class="institutions_bg">
+                        <div class="institutions_content">起点校车</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://data.xinxueshuo.cn/nsi/company/detailCompany.html?School_name=100163&whereFrom=search">
+                        <img src="../assets/img/index/institutionsBase01.jpg" class="institutions_bg">
+                        <div class="institutions_content">北京汉通文化有限责任公司</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://data.xinxueshuo.cn/nsi/company/detailCompany.html?School_name=100099&whereFrom=search">
+                        <img src="../assets/img/index/institutionsBase02.jpg" class="institutions_bg">
+                        <div class="institutions_content">博实乐教育集团</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://data.xinxueshuo.cn/nsi/company/detailCompany.html?School_name=100127&whereFrom=search">
+                        <img src="../assets/img/index/institutionsBase03.jpg" class="institutions_bg">
+                        <div class="institutions_content">大风车教育集团（机构）</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://data.xinxueshuo.cn/nsi/company/detailCompany.html?School_name=100046&whereFrom=search">
+                        <img src="../assets/img/companyImg/company03.jpg" class="institutions_bg">
+                        <div class="institutions_content">校宝智慧校园</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 机构库 END-->
+
+    <!-- 人才库 -->
+    <div class="container mb40">
+        <h3 class="text-center fourBaseBook"><span class="line"></span>新学说 • 人才库<span class="line"></span><a href="../talent/talent.html" class="more" target="_">更多&gt;&gt;</a></h3>
+        <div class="talentBase mt40">
+            <ul class="talentBox clearfix">
+                <li>
+                    <img src="../assets/img/index/talent01.jpg" alt="">
+                    <p class="talentName">重庆德普外国语学校
+                        <a href="../talent/recruit01.html" class="fr btn btn-primary" target="_">详情</a>
+                    </p>
+                </li>
+                <li>
+                    <img src="../assets/img/index/talent02.jpg" alt="">
+                    <p class="talentName">北大附属实验学校
+                        <a href="../talent/recruit02.html" class="fr btn btn-primary" target="_">详情</a>
+                    </p>
+                </li>
+                <li>
+                    <img src="../assets/img/index/talent04.jpg" alt="">
+                    <p class="talentName">Ulink教育集团
+                        <a href="../talent/recruit04.html" class="fr btn btn-primary" target="_">详情</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 人才库 END-->
+    <!-- 项目库 -->
+    <div class="container mt40 mb40">
+        <h3 class="text-center fourBaseBook"><span class="line"></span>新学说 • 项目库<span class="line"></span><a href="../project/project.html" class="more" target="_">更多&gt;&gt;</a></h3>
+        <div class="projectBase mt40">
+            <ul class="projectList clearfix" id="projectList">
+                <li>
+                    <a href="../project/detailProject.html?whereFrom=search&School_name=10004">
+                        <img src="../assets/img/index/project02.jpg" alt="">
+                        <h4 class="text-center">济南章丘 | 寻求与优质国际学校运营管理合作办学</h4>
+                        <p class="projectList_desc">某地产集团目前在山东济南章丘区计划投建一所国际学校，希望寻找优质的国际学校运营管理方进行合作。</p>
+                        <p class="from clearfix"><span class="fr">发布单位：北京新学说</span></p>
+                    </a>
+                </li>
+                <li class="activeFront">
+
+                    <a href="../project/detailProject.html?whereFrom=search&School_name=10006">
+                        <img src="../assets/img/index/project01.jpg" alt="">
+                        <h4 class="text-center">山西沂州 | 某重点中学欲引入国际高中项目，寻求合作方。</h4>
+                        <p class="projectList_desc">学校目前欲走多元化的路线，引入全日制的独立的国际高中单体学校，学校自有建设用地十余亩（国有土地 ） 合作方式可进一步讨论</p>
+                        <p class="from clearfix"><span class="fr">发布单位：北京新学说</span></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../project/detailProject.html?whereFrom=search&School_name=10005">
+                        <img src="../assets/img/index/project03.jpg" alt="">
+                        <h4 class="text-center">辽宁沈阳 | 寻找优秀国际学校运营管理团队、投资合作方</h4>
+                        <p class="projectList_desc">沈阳某国际学校需要优秀的运营管理团队进行托管，也希望有投资意向的合作方加入。</p>
+                        <p class="from clearfix"><span class="fr">发布单位：北京新学说</span></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 项目库 END-->
+
+    <!--页脚-->
+    <!--#include virtual="../module/footer.html" -->
+
+
+
+    <script src="../assets/js/jquery-1.11.1.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.cookie.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/index.js?v=03161014"></script>
+</body>
+
+</html>

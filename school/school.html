@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>国际学校四库全书-学校数据库</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/school/school.css?v=1.0.2" rel="stylesheet">
+    <link href="../assets/css/public.css?v=1.0.2" rel="stylesheet">
+
+</head>
+
+<body>
+    <!--头部-->
+    <!--#include virtual="../module/nav02.html" -->
+    <div>
+        <img src="http://nsi.oss-cn-zhangjiakou.aliyuncs.com/nsi-pc/banner01.jpg" alt="学校数据库" class="img-responsive" />
+    </div>
+    <!--面包屑导航-->
+    <div class="container-fluid">
+        <ol class="breadcrumb">
+            <li><a href="../other/index.html" style="color:#337ab7;">首页</a></li>
+            <li style="color:#000033">学校数据库</li>
+        </ol>
+    </div>
+
+    <div class="bg-wrap">
+        <div class="container">
+            <h1 style="color:rgb(33,80,137);font-weight:bold" class="text-center">学校数据系统</h1>
+            <div class="row">
+                <div class="clearfix">
+                    <li class="pull-right" style="list-style: none;">
+                        <a href="../visible/visible.html" class="visible_show" style="text-decoration: none;">可视化</a>
+                        <!-- <ul class="dropdown-menu">
+                        <li>
+                            <a href="" target="_blank">省市学校数量条形分布图</a>
+                        </li>
+                    </ul> -->
+                    </li>
+                    <div class="pull-right">
+                        <span class="glyphicon glyphicon-plus-sign" style="font-size: 20px;top:3px;padding-right: 6px;"></span> <a href="./insert.html" class="add_school" style="text-decoration: none;">新增学校</a>
+                    </div>
+                </div>
+
+                <div class="text-center" style="margin-bottom: 30px;">
+                    <div style="position: relative;">
+                        <input type="search" placeholder="请输入学校关键字" class="school_input" id="search_content">
+                        <span class="btn btn-primary glyphicon glyphicon-search search_icon" id="searchBtn"></span>
+                        <!-- <a href="./search.html?advanceSearch=500&whereFrom=" class="btn btn-primary advance-search">高级搜索</a> -->
+                        <ul class="search_tips hide" id="search_tips">
+                            <!--<li>北京XXXX学校01</li>-->
+                            <!--<li>北京XXXX学校02</li>-->
+                            <!--<li>北京XXXX学校03</li>-->
+                            <!--<li>北京XXXX学校04</li>-->
+                            <!--<li>北京XXXX学校05</li>-->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="hotContent hotSearchOfSchool">
+                    <a href="../school/detail.html?School_name=100053&whereFrom=search">海嘉国际双语学校</a>
+                    <a href="../school/detail.html?School_name=100139&whereFrom=search">北京京西学校</a>
+                    <a href="../school/detail.html?School_name=100048&whereFrom=search">北京乐成国际学校</a>
+                    <a href="../school/detail.html?School_name=100047&whereFrom=search">北京BISS国际学校</a>
+                    <a href="../school/detail.html?School_name=100495&whereFrom=search">上海哈罗国际学校</a>
+                    <br>
+                    <a href="../school/detail.html?School_name=100122&whereFrom=search">上海世界外国语中学</a>
+                    <a href="../school/detail.html?School_name=100109&whereFrom=search">上海中学国际部</a>
+                    <a href="../school/detail.html?School_name=100065&whereFrom=search">成都美视国际学校</a>
+                    <a href="../school/detail.html?School_name=100192&whereFrom=search">深圳国际交流学院</a>
+                </div>
+
+                <div class="hotSchool_wrap">
+                    <span class="glyphicon glyphicon-fire" style="font-size: 20px; color: red;top:3px;margin-bottom: 15px;"></span> <span class="hot_school">热门学校</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!--热门学校-->
+        <div class="container" style="padding-bottom: 60px;">
+            <div class="row" id="adviceSchoolWrap">
+                <!--<div class="col-md-3">-->
+                <!--<a class="school_list">-->
+                <!--<div class="text-center">-->
+                <!--<img src="http://data.xinxueshuo.cn/upImage/upSchoolImg/100907/100907-logo.png" alt="学校logo" class="school_logo">-->
+                <!--</div>-->
+                <!--<h4 class="text-center school_name">深证市一顿龙岗书院深证市一顿龙岗书院</h4>-->
+                <!--<div class="clearfix">-->
+                <!--<p class="pull-left">-->
+                <!--<span>民办</span> <span>|</span> <span>建校时间：</span> <span>2016</span>-->
+                <!--</p>-->
+                <!--<p class="pull-right">-->
+                <!--<span class="glyphicon glyphicon-globe" style="top:2px;color:#215089;"></span> <span>广东</span>-->
+                <!--</p>-->
+                <!--</div>-->
+                <!--<p>-->
+                <!--<span>学制：</span> <span>小学；初中；高中</span>-->
+                <!--</p>-->
+                <!--<p> <span>课程：</span> <span>AP；</span></p>-->
+                <!--<p> <span class="glyphicon glyphicon-time" style="top:2px;color:#215089;"></span> <span> 提交时间：</span> <span>2018-03-12</span></p>-->
+                <!--</a>-->
+                <!--</div>-->
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--页脚-->
+    <!--#include virtual="../module/footer.html" -->
+
+
+    <script src="../assets/js/jquery-1.11.1.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.cookie.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/public.js?v=1.0.3"></script>
+    <script src="../assets/js/school/school.js"></script>
+
+</body>
+
+</html>

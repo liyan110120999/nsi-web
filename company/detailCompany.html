@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <title>国际学校四库全书-机构详情</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/instution/insPublic.css?v=1.0.2">
+    <link rel="stylesheet" href="../assets/css/instution/detailInstution.css">
+    <link rel="stylesheet" href="../assets/css/outCSS/webuploader.css">
+    <link rel="stylesheet" href="../assets/css/school/detailUpImg.css">
+    <!-- animate -->
+    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/layer/3.1.0/theme/default/layer.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/advice/advice.css">
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+
+<body oncontextmenu="return false;">
+    <!--头部-->
+    <!--#include virtual="../module/nav02.html" -->
+
+    <div class="container-fluid">
+        <ol class="breadcrumb" style="background: transparent;">
+            <li><a href="../other/index.html">首页</a></li>
+            <li><a href="../company/company.html">机构数据库</a></li>
+            <li style="color:#000033">详情</li>
+        </ol>
+    </div>
+
+
+    <div class="container ptb45">
+        <!-- container -->
+        <div class="row mb30">
+            <div class="col-md-12">
+                <h4 class="school-title">国际学校机构库
+                    <p>ID：<span id="headerInstutionID" class="headerInstutionID"></span></p>
+                </h4>
+                <div class="school-brief clearfix">
+                    <div class="school-brief-img pull-left"><img alt="" id="institutionLogo" width="130" height="130"></div>
+                    <div class="school-brief-content pull-left">
+                        <p class="school-name"><span id="Name"></span></p>
+                        <p>机构标签：<span id="instutionLable"></span></p>
+                        <div class="isP">
+                            <p>类型：<span id="companyType"></span></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 基本信息 -->
+        <h5 class="baseInfo">基本信息</h5>
+        <div class="baseInfo-desc mb30">
+            <ul class="list clearfix">
+                <li class="clearfix">
+                    <span class="title">成立时间</span>
+                    <span class="content" id="Founded_time"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">官网</span>
+                    <span class="content"><a id="Website" target="_"></a></span>
+                </li>
+                <li class="clearfix w100">
+                    <span class="title w15">地址</span>
+                    <span class="content w85" id="Address"></span>
+                </li>
+                <li class="clearfix w100">
+                    <span class="title w15">服务简介</span>
+                    <span class="content w85" id="Service"></span>
+                </li>
+            </ul>
+        </div>
+        <!-- 基本信息 END-->
+
+        <!-- 联系方式 -->
+        <h5 class="baseInfo">联系方式</h5>
+        <div class="baseInfo-desc mb30">
+            <ul class="list clearfix">
+                <li class="clearfix">
+                    <span class="title">个人姓名</span>
+                    <span class="content" id="ContactName"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">个人职位</span>
+                    <span class="content" id="ContactPosition"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">联系电话</span>
+                    <span class="content" id="ContactPhone"></span>
+                </li>
+                <li class="clearfix">
+                    <span class="title">联系邮箱</span>
+                    <span class="content" id="ContactMail"></span>
+                </li>
+            </ul>
+        </div>
+        <!-- 联系方式 END-->
+
+        <!-- 详情&备注 -->
+        <h5 class="baseInfo">详情&备注</h5>
+        <div class="baseInfo-desc mb30">
+            <ul class="list clearfix">
+                <li class="clearfix w100">
+                    <span class="title w15">投资信息</span>
+                    <span class="content w85" id="Investment"></span>
+                </li>
+                <li class="clearfix w100">
+                    <span class="title w15">过往服务学校</span>
+                    <span class="content w85" id="ServedSchool"></span>
+                </li>
+                <li class="clearfix w100">
+                    <span class="title w15">详细介绍</span>
+                    <span class="content w85" id="Introduction"></span>
+                </li>
+                <li class="clearfix w100">
+                    <span class="title w15">备注</span>
+                    <span class="content w85" id="Remark"></span>
+                </li>
+            </ul>
+        </div>
+        <p class="feedback">如您在浏览过程中发现数据有误，可通过<a href="javascript:;" id="feedback">意见反馈</a>提交给我们，我们将及时处理</p>
+        <!-- 详情&备注 END-->
+        <!-- 评论区 -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h4 style="color:  rgb(33,80,137);margin-bottom: 20px;">参与讨论 <span class="pull-right" style="font-size: 14px;color:#999;">评论内容至少20字，已输入 <span class="characterNum" style="color: #337ab7;font-size: 20px;font-style: italic;">0</span>&nbsp; 字</span>
+                </h4>
+                <textarea class="form-control" rows="6" style="border-radius:0;resize: none;" id="textContent" placeholder="您的IP已被记录，请不要做谩骂、恶意中伤、广告等不友好行为"></textarea><br>
+                <p class="pull-left" style="color: #999;font-size: 12px;">*评论在管理员通过后即可显示</p><button class="btn btn-primary pull-right noPass" style="font-size:14px;padding:8px 30px;border-radius: 3px;border-color: transparent;" id="commentSubmitBtn">发布</button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        </div>
+    </div>
+    <!-- container END-->
+    <!--页脚-->
+    <!--#include virtual="../module/footer.html" -->
+    <!--#include virtual="../module/advice.html" -->
+    <!-- 意见弹窗 -->
+    <div class="bg" id="bg">
+        <div class="adviceBox animated" id="adviceBox">
+            <h5 class="adviceBox-title">新学说 - 意见反馈<span class="closeadviceBox" id="closeadviceBox" title="关闭"></span></h5>
+            <form class="details-box">
+                <div class="adviceContent connectUs">
+                    <p>您在浏览网页时遇到什么问题？ （可多选）</p>
+                    <div class="question1">
+                        <input type="checkbox" class="checkbox-primary" id="que1-1" value="性能不好,网页卡慢" name="qusetion">
+                        <label for="que1-1">性能不好,网页卡慢</label><br>
+                        <input type="checkbox" class="checkbox-primary" id="que1-2" value="页面不美观/界面不喜欢" name="qusetion">
+                        <label for="que1-2">页面不美观/界面不喜欢</label><br>
+                        <input type="checkbox" class="checkbox-primary" id="que1-3" value="功能找不到/功能不好用" name="qusetion">
+                        <label for="que1-3">功能找不到/功能不好用</label><br>
+                        <input type="checkbox" class="checkbox-primary" id="que1-4" value="网页在浏览器中显示错乱" name="qusetion">
+                        <label for="que1-4">网页在浏览器中显示错乱</label><br>
+                        <input type="checkbox" class="checkbox-primary" id="que1-5" value="搜索数据不正确" name="qusetion">
+                        <label for="que1-5">搜索数据不正确</label>
+                    </div>
+                    <p class="borderBottomstyle"></p>
+                    <p class="mt15">您对新学说数据库有什么建议？（建议说出具体的问题所在）</p>
+                    <textarea name="" class="advice" id="adviceArea" rows="3" placeholder="新学说团队会不断改进，以带给您更好的用户体验"></textarea>
+                    <p class="borderBottomstyle"></p>
+                    <p class="mt15">请留下您的联系方式，我们将会及时通知您问题处理的进展</p>
+                    <input type="text" class="connect" id="connect" placeholder="请输入联系方式">
+                </div>
+                <div class="text-center">
+                    <input type="button" class="mt15 btn btn-default" value="立即发送" id="send">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 意见弹窗 END-->
+    <script src="../assets/js/outJS/jquery.js"></script>
+    <script src="../assets/js/outJS/webuploader.js"></script>
+    <script src="../assets/js/jquery-1.11.1.js"></script>
+    <script src="../assets/js/outJS/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.cookie.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/instution/publicInstution.js?v=1.0.3"></script>
+    <script src="../assets/js/instution/detailInstution.js?v=1.0.6"></script>
+    <script src="../assets/js/outJS/uploadInstitutionLogoImg.js"></script>
+    <script src="https://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+    <script src="../assets/js/advice/advice.js"></script>
+    <!-- <script src="../assets/js/WechatShare.js"></script> -->
+    <!--<script>-->
+    <!--jQuery(".picMarquee-left").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:3,interTime:50});-->
+    <!--</script>-->
+    <script>
+        //    var href = window.location.href
+        //    href.replace(/nsi/,'testDevice')
+        //    href.replace(/detailComapny/,'detail')
+        //    console.log(href)
+        //    browserRedirect(href)
+    </script>
+
+
+</body>
+
+</html>

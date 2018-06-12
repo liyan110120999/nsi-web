@@ -1,0 +1,226 @@
+
+/* ****************************************************** */
+
+/*我的信息*/
+.tabLeft{ background: #215089;padding:60px 20px;width: 280px; border-radius: 8px;box-shadow: 0 0 5px #AAAAAA;}
+.userLogo{ width: 100px; height:100px;border-radius: 50px }
+.baseInfo{color: #fff;font-size: 14px;padding:20px;}
+.ulWarp {padding-left:20px;}
+.ulWarp li { width: 200px;height: 40px;background: #fff;color:#215089 ;margin-bottom:20px;line-height: 40px;cursor: pointer;}
+.ulWarp .liActive{background: #FA6A43;color:#fff;box-shadow: 0 0 10px #CCC;}
+.resume-do{position:absolute;left:0;top:0;display: none;width: 80px;margin-left:130px;background: #fff;color: black;margin-top:-10px;padding:5px 0;box-shadow: 0 0 5px #ccc;}
+.resume-do li{line-height: 30px;height: 30px;}
+.resume-do li:hover{color: #ccc;cursor: pointer;}
+.affix-right:hover{color:#5FB878;cursor: pointer;}
+
+
+
+.tabRight{ width: 840px; }
+.tabRight-myInfo,.tabRight-myResume{ box-shadow: 0 0 5px #AAAAAA ;border-radius: 5px;padding-bottom: 60px;}
+.tabRight-myInfo_header,.tabRight-myResume_header{ background:#215089 ;height: 50px;line-height: 50px;font-size:18px;color:#fff; border-radius: 5px 5px 0 0}
+
+.tabRight-myInfo_logo{margin-top:80px;position: relative;}
+.edit-WebsiteLogo{ width: 50px;height: 50px;border-radius: 25px;background-color: #FA6A43;position:absolute;top:-10px;left:460px;box-shadow:  0 0 5px #BBB; cursor: pointer;}
+.edit-WebsiteLogo  span { color: #fff;font-size: 30px;position: relative;top:3px;left:0px;}
+.tabRight-myInfo_logo img { width: 150px; height:150px ;border-radius: 75px; border:1px solid #ccc;}
+.edit-baseInfo{ margin-top:40px;width: 80px ;height: 30px; line-height: 30px; background:#215089;color: #fff;border-radius: 4px;box-shadow: 0 0 5px #AAA; position: relative; left:655px;font-size:16px;cursor: pointer;}
+
+.register-info li { padding-left:100px;height: 40px;line-height: 1.5;font-size: 24px;font-weight: normal;}
+.base-color{ color:#215089 ;}
+.PL63{padding-left:63px;}
+.PL111{padding-left:111px;}
+.PL53{padding-left:53px;}
+.PL63{padding-left:63px;}
+.PL15{padding-left:15px;}
+.PL40{padding-left:40px;}
+.ML40{margin-left:40px;}
+.unBind{background:#215089;color:#fff;font-size: 16px; padding:4px 15px;margin-left: 20px;border-radius: 4px;cursor: pointer;box-shadow: 0 0 5px #AAA;}
+.inputWrap{display: inline-block;border-bottom: 1px solid #ccc;}
+.myInput{outline: none;height: 20px;border: 0;font-size: 20px;}
+.saveBaseInfo{margin-left:260px;  margin-top:30px;width: 80px ;height: 30px; line-height: 30px; background:#215089;color: #fff;border-radius: 4px;box-shadow: 0 0 5px #AAA; font-size:16px;cursor: pointer;}
+
+
+/*简历信息*/
+.tabRight-myResume_body{padding:0 70px;}
+.edit-resumeInfo{ margin-top:40px;margin-bottom:30px;width: 80px ;height: 30px; line-height: 30px; background:#215089;color: #fff;border-radius: 4px;box-shadow: 0 0 5px #AAA; position: relative; left:585px;font-size:16px;cursor: pointer;}
+
+
+.tabRight-myResume_logo{margin-left:15px;margin-right:65px;position: relative;}
+.edit-resumeLogo{ width: 50px;height: 50px;border-radius: 25px;background-color: #FA6A43;position:absolute;top:-10px;left:114px;box-shadow:  0 0 5px #BBB; cursor: pointer;}
+.edit-resumeLogo  span { color: #fff;font-size: 30px;position: relative;top:3px;left:0px;}
+.tabRight-myResume_logo img { width: 150px; height:150px ;border-radius: 75px; border:1px solid #ccc;}
+
+.resume_info01 li, .resume_info02 li,.resume_info03 li { height: 40px;line-height: 36px;padding-bottom: 4px;font-size: 20px;}
+.PL85{padding-left:85px;}
+.PL45{padding-left:45px;}
+.PL20{padding-left:20px;}
+.PL100{padding-left: 100px;}
+
+.resume_info02{width: 382px;padding-right: 28px;padding-top:28px;}
+.resume_info03{padding-top:20px;width: 316px;}
+.resume_info02 li{padding-left:15px;}
+.textOverflow{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+/*工作经历*/
+.iconWrap{width: 40px;height: 40px;border-radius: 20px;background:#215089;box-shadow: 0 0 5px #000 }
+.iconWrap span {font-size: 24px;color: #fff;position: relative;top:2px;}
+.resumeTitle{ height: 40px;line-height: 40px;color: #215089;font-size: 20px; width: 626px;border-bottom: 2px solid #215089;}
+.listWrap{width:626px;}
+.listWrap li { line-height: 1.7;font-size: 14px;}
+
+
+
+
+
+/* 选择上传图片*/
+
+.modal_row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.selectUpLoadLogo {
+    width: 62%;
+    height: 300px;
+    border-radius: 4px;
+    background: #ddd;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.lable_selectPic {
+    display: inline-block;
+    line-height: 20px;
+    color: #FFFFFF;
+    background-color: #337ab7;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0px #fff solid;
+    padding: 5px 5px 0;
+}
+
+.lable_selectPic>label {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.upLoadBtn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -33px;
+    margin-top: -12px;
+    z-index: 999;
+}
+
+.upLoadBtn>input[type=file] {
+    width: 188px;
+    height: 60px;
+    background: #333;
+    margin: 0 auto;
+    position: absolute;
+    right: 50%;
+    margin-right: -94px;
+    top: 0;
+    right/*\**/
+    : 0px\9;
+    margin-right/*\**/
+    : 0px\9;
+    width/*\**/
+    : 10px\9;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: 2;
+}
+
+
+/* 预览图片 */
+
+.previewLogo {
+    width: 37%;
+    height: 300px;
+    padding: 30px 23px 0;
+    border-radius: 4px;
+    background: #ddd;
+    position: relative;
+    margin-left: 5px;
+}
+
+.img-preview {
+    position: relative;
+}
+
+#preview {
+    display: inline-block;
+    width: 100%;
+    margin-top:20px;
+    height: 160px;
+    background: #FFF;
+    border-radius: 4px;
+}
+
+.img-preview .preview-pic {
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-family: "Microsoft YaHei"
+}
+.img-preview .preview-pic img{width:160px;height: 160px;}
+
+.cropper-hidden {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.cropper-crop-box {
+    width: 200px;
+    height: 200px;
+}
+
+.cropper-drag-box {
+    border-radius: 4px;
+}
+
+@media (max-width:567px) {
+    .img-preview .preview-pic {
+        padding-top: 20px;
+    }
+    .previewLogo {
+        padding: 0 7px;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 80px;
+    }
+    #preview {
+        margin: 15px auto;
+        height: 200px;
+        width: 200px;
+    }
+    .selectUpLoadLogo {
+        width: 100%;
+        margin-bottom: 5px;
+        height: 280px;
+    }
+    .modal-body {
+        padding: 5px 15px;
+    }
+}
+
+.save {
+    margin-right: 15px;
+}
+
+/* 剪裁图片 */
+
+#cropperPic {
+    height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+
+

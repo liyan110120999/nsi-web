@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <title>国际学校四库全书-项目搜索</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="../assets/css/layui.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="../assets/css/project/projectPublic.css?v=1.0.2">
+    <link rel="stylesheet" href="../assets/css/project/searchProject.css?v=06111646">
+</head>
+
+<body style="background: #f7f7f7;">
+    <!--头部-->
+    <!--#include virtual="../module/nav02.html"-->
+    <div>
+        <img src="../assets/img/swiper/banner04.jpg" alt="机构数据库" class="img-responsive" />
+    </div>
+    <!--面包屑导航-->
+    <div class="container-fluid" style="margin-top:10px;">
+        <ol class="breadcrumb" style="background: transparent;">
+            <li><a href="../other/index.html" style="color: #337ab7">首页</a></li>
+            <li><a href="project.html" style="color: #337ab7">项目数据库</a></li>
+            <li style="color:#000033">项目搜索</li>
+        </ol>
+    </div>
+
+    <!--搜索框-->
+    <!-- <div class="container" style="font-size: 16px;margin-bottom: 30px;margin-top:20px;">
+        <div class="row clearfix">
+            <div class="col-lg-12 column text-center">
+                <nav class="navbar navbar-default innerNav" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                        <a class="navbar-brand" style="cursor:default;">项目数据库</a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active" style="border-radius: 10px;">
+                                <a href="releaseProject.html"><span style="font-size: 16px;font-weight: bold;">+</span> 发布项目</a>
+                            </li>
+                        </ul>
+                        <div class="navbar-form" role="search" name="myform">
+                            <div class="form-group">
+                                <input type="text" style="width:300px" class="form-control" name="School_name" id="searchContent" placeholder="请输入项目名或其他关键字" />
+                            </div>
+                            <button class="btn btn-primary glyphicon glyphicon-search" id="searchBtn" style="top:0;left:6px;"></button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <br>
+    </div> -->
+    <div class="container" style="font-size: 16px;margin-bottom: 30px;margin-top:20px;">
+        <div class="row clearfix">
+            <div class="col-md-12 text-right">
+                <span class="glyphicon glyphicon-plus-sign" style="font-size: 20px;top:3px;padding-right: 6px;"></span> <a href="releaseProject.html" class="add_info" style="text-decoration: none;">发布项目</a>
+            </div>
+            <div class="col-lg-12 column text-center">
+                <input type="text" name="School_name" id="searchContent" placeholder="请输入项目名或其他关键字" class="search_input" />
+                <button class="btn btn-primary glyphicon glyphicon-search search_button" id="searchBtn"></button>
+                <!-- <nav class="navbar navbar-default innerNav" role="navigation">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                            <a class="navbar-brand" href="../company/company.html">机构数据库</a>
+                        </div>
+    
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown active" style="border-radius: 10px;">
+                                    <a href="insertCompany.html"><span style="font-size: 16px;font-weight: bold;">+</span> 新增数据</a>
+                                </li>
+                            </ul>
+                            <div class="navbar-form navbar-left" role="search" name="myform">
+    
+                            </div>
+    
+                        </div>
+                    </nav> -->
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <div class="container" style="margin-top:20px;margin-bottom: 40px;">
+        <div class="row" id="outerWrap">
+            <!--<div class="col-sm-6 col-md-4 col-lg-4">-->
+            <!--<div class="thumbnail">-->
+            <!--<a href="" class="linkHref"><img src="../assets/img/project.jpg" alt="新学说"></a>-->
+            <!--<div class="caption">-->
+            <!--<h3 class="projectName">新学说-国际学校项目数据库新学说-国际学校项目数据库新学说-国际学校项目数据库新学说-国际学校项目数据库新学说-国际学校项目数据库</h3>-->
+            <!--<p class="content"><a href="" class="linkHref" id="lengthControl">新学说国际学校项目数据库为您提供最新的土地资源、政策等方面的综合资讯，为您提供最权威，最细致的数据服务。</a></p>-->
+            <!--<div class="clearfix publishCompany"><p class="pull-right">发布单位：<span>北京新学说</span></p></div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-6 col-md-4 col-lg-4">-->
+            <!--<div class="thumbnail">-->
+            <!--<a href="" class="linkHref"><img src="../assets/img/project.jpg" alt="新学说"></a>-->
+            <!--<div class="caption">-->
+            <!--<h3>新学说-国际学校项目数据库</h3>-->
+            <!--<p class="content"><a href="" class="linkHref">新学说国际学校项目数据库为您提供最新的土地资源、政策等方面的综合资讯，为您提供最权威，最细致的数据服务。</a></p>-->
+            <!--<div class="clearfix publishCompany"><p class="pull-right">发布单位：<span>北京新学说</span></p></div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-6 col-md-4 col-lg-4">-->
+            <!--<div class="thumbnail">-->
+            <!--<a href="" class="linkHref"><img src="../assets/img/project.jpg" alt="新学说"></a>-->
+            <!--<div class="caption">-->
+            <!--<h3>新学说-国际学校项目数据库</h3>-->
+            <!--<p class="content"><a href="" class="linkHref">新学说国际学校项目数据库为您提供最新的土地资源、政策等方面的综合资讯，为您提供最权威，最细致的数据服务。</a></p>-->
+            <!--<div class="clearfix publishCompany"><p class="pull-right">发布单位：<span>北京新学说</span></p></div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <!--分页-->
+    <div class="container-fluid pageFooter">
+        <h3 class="noData"></h3>
+        <div class="generalSearchResult">
+            <p>已搜索到<span class="gengeralSearchNum">5</span>条结果</p>
+            <div id="pageDemo01"></div>
+        </div>
+    </div>
+    <!--页脚-->
+    <!--页脚-->
+    <footer>
+        <div id="footer-sec" style="padding:30px 0;">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4 col-lg-4 text-center">
+                        <h4 style="padding-top:10px;font-weight:bold;font-family: 'Microsoft YaHei';font-size: 20px;margin:10px 0;">关于新学说</h4>
+                        <div class="center-block text-left" style="text-indent:2em;line-height:1.8;">
+                            <p style="font-size: 16px;">新学说(NewSchool Insight)是由国际学校资深专家共同打造的国际学校服务平台。 旗下有新学说传媒和新学说国际教育研究院两大品牌。为国际学校提供行业最新资讯，会议组 织，海外考察；研究报告，行业数据库；学校投建，运营管理，品牌管理，人才培养等专业咨询服务。
+                                <a href="http://www.xinxueshuo.cn/index.php?s=/Home/Article/index/category/gywm" target="_blank" style="color:#428bca;">more..</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-5 col-lg-5" style="padding-left: 62px;">
+                        <h4 style="padding-top:10px;font-weight:bold;font-family: 'Microsoft YaHei';font-size: 20px;margin:10px 0;padding-left: 104px;">联系我们</h4>
+                        <h5 class="h5" style="font-size: 16px; line-height: 1.5;">中国办公室：北京市西城区新风街2号 </h5>
+                        <h5 style="font-size: 16px;padding-left:96px;">天成科技大厦A座1006</h5>
+                        <h5 class="h5" style="font-size: 16px;padding-left:49px;">电话：010-52468286 </h5>
+                        <h5 class="h5" style="font-size: 16px;padding-left:49px;">手机：15010927730</h5>
+                        <h5 class="h5" style="font-size: 16px;padding-left:49px;">邮箱：info@xinxueshuo.cn</h5>
+                        <h5 class="h5" style="font-size: 16px;">美国办公室：德克萨斯州 奥斯丁市</h5>
+                        <h5 style="font-size: 16px;line-height: 1.5;padding-left:49px">邮箱：dbarrutia@xinxueshuo.cn</h5>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-lg-3" style="padding-left: 0px;" id="mobileFooter">
+                        <h4 style="padding-top:10px;font-weight:bold;font-family: 'Microsoft YaHei';font-size: 20px;margin:10px 0;padding-left: 10px;">微信公众号</h4>
+                        <div class="social-links">
+                            <img alt="微信二维码" height="120" width="120" src="../assets/img/wechat_QR.png">
+                            <h5 class="h5" style="font-size: 16px;padding-left: 10px;">微信关注我们</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--#include virtual="../module/loading.html"-->
+    <!--#include virtual="../module/advice.html" -->
+    <script src="../assets/js/jquery-1.11.1.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/layui/layui.js"></script>
+    <script src="../assets/js/jquery.cookie.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/project/project.js?v=1.0.3"></script>
+    <script src="../assets/js/project/searchProject.js?v=1.0.2"></script>
+</body>
+
+</html>

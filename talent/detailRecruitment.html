@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>国际学校四库全书-人才数据库</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_616804_xzpckcligig4x6r.css">
+    <link rel="stylesheet" href="../assets/css/talent/talPublic.css?v=1.0.2">
+    <link rel="stylesheet" href="../assets/css/talent/detailRecruitment.css">
+    <!--<link rel="stylesheet" href="http://at.alicdn.com/t/font_383860_n13jcmpa91qncdi.css">-->
+</head>
+
+<body id="talentShare">
+    <!--头部-->
+    <!--#include virtual="../module/nav02.html" -->
+    <div>
+        <img src="../assets/img/swiper/banner02.jpg" alt="机构数据库" class="img-responsive" />
+    </div>
+
+    <!-- 概览 -->
+    <div class="container-fuild">
+        <div class="bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="overview">
+                            <p><span class="companyName" id="companyName"></span>招聘</p>
+                            <h3 class="position" id="position"></h3>
+                            <div class="baseInfomation">
+                                <span class="salary" id="salary"></span> /
+                                <span class="area" id="area"></span> /
+                                <span class="hasJobYear" id="hasJobYear"></span> /
+                                <span class="typeOfJob"><span class="Headcount" id="Headcount"></span>人</span>
+                            </div>
+                            <p class="types"><span class="type" id="type"></span></p>
+                            <p class="publish"><span id="time"></span> 发布于新学说</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="overview">
+                            <div class="companyLogo">
+                                <img alt="" width="100" height="100" id="companyLogo">
+                                <p class="companyInfo"><span class="companyNameDesc" id="companyNameDesc"><span class="addV" title="新学说认证"></span></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 详情 -->
+    <div class="container">
+        <div class="detail">
+            <div class="row">
+                <div class="col-md-8 shadow-right">
+                    <div class="jobTitle">
+                        <h4>职位名称：</h4>
+                        <p id="positionDesc"></p>
+                    </div>
+                    <div class="jobDesc">
+                        <h4>职位描述：</h4>
+                        <div class="Job_description" id="Job_description"></div>
+                        <h4>职位要求：</h4>
+                        <div class="Job_requirement" id="Job_requirement"></div>
+                        <h4>职位福利：</h4>
+                        <div class="Job_weal" id="Job_weal"></div>
+                    </div>
+                    <!-- <div class="companyArea">
+                        <h4>工作地址：</h4>
+                        <p id="address"></p>
+                    </div> -->
+                </div>
+                <div class="col-md-4">
+                    <div class="link">
+                        <h4>联系方式：</h4>
+                        <p class="Link"><i class="iconfont icon-lianxiren"></i><span id="linkName"></span></p>
+                        <p class="Link"><i class="iconfont icon-tel"></i><span id="linkTel"></span></p>
+                        <p class="Link"><i class="iconfont icon-mail"></i><span id="LinkMail"></span></p>
+                        <p class="Link"><i class="iconfont icon-didian"></i><span id="address"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="container content" style="margin-bottom: 60px;margin-top:0;">
+        <div class="row" style="background: #fff;margin-top:30px;border-left:15px solid rgb(33,80,137);">
+            <div class="col-lg-12">
+                <div class="baseInfo">
+                    <h5 style="font-size:16px;color:rgb(33,80,137);font-weight: bold;margin-bottom:0;padding-bottom:10px;border-bottom: 1px solid rgb(33,80,137);">联系方式</h5>
+                    <p style="padding-top:10px;"><span style="font-weight: bold;">联系人：</span><span style="line-height: 1.5;" class="Name">新学说-严老师</span></p>
+                    <p style="padding-top:10px;"><span style="font-weight: bold;">电话：</span><span style="line-height: 1.5;" class="Phone">13439162083</span> </p>
+                    <p style="padding-top:10px;"><span style="font-weight: bold;">邮箱：</span><span style="line-height: 1.5;" class="Mail">yanjilin@xinxueshuo.cn</span> </p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!--页脚-->
+    <!--#include virtual="../module/footer.html" -->
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="../assets/js/jquery-1.11.1.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.cookie.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/talent/talent.js?v=1.0.3"></script>
+    <script src="../assets/js/talent/detailRecruitment.js"></script>
+    <!-- <script src="../assets/js/talent/detailTalent.js"></script> -->
+    <script src="../assets/js/WechatShare.js?v=1.0.2"></script>
+</body>
+
+</html>
