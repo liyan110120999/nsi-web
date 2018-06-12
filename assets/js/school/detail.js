@@ -25,7 +25,7 @@ $(function() {
         data: {
             'Id': datailSchool
         }, //提交的参数
-        url: 'http://' + changeUrl.address + '/School_api?whereFrom=detail',
+        url: changeUrl.address + '/School_api?whereFrom=detail',
         dataType :   "jsonp", //数据类型为jsonp  
         jsonp:   "Callback", //服务端用于接收callback调用的function名的参数  
         success :   function(msg) {

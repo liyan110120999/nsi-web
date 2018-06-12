@@ -44,7 +44,7 @@ $.ajax({
     data: {
         "talentId": args.ID
     },
-    url: 'http://' + changeUrl.address + '/manager/talent/detail.do',
+    url: changeUrl.address + '/manager/talent/detail.do',
     success: function(msg) {
         console.log(msg);
         $("#name").text(zeroToEmpty(msg.data.name))

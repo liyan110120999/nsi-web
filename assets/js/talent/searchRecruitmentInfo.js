@@ -97,7 +97,7 @@ function generalSearch() {
         data: {
             'recuitment_searchKey': passVal,
         }, //提交的参数
-        url: "http://" + changeUrl.address + "/Recuitment_api?whereFrom=job_search", //获取搜索的总条数
+        url: changeUrl.address + "/Recuitment_api?whereFrom=job_search", //获取搜索的总条数
         // dataType: "jsonp", //数据类型为jsonp  
         // jsonp:   "Callback", //服务端用于接收callback调用的function名的参数  
         success: function(data) {
@@ -125,7 +125,7 @@ function generalSearch() {
                             'OnePageNum': 12
                         }
                         if (data.count !== 0) {
-                            myAjax(data01, "http://" + changeUrl.address + "/Recuitment_api?whereFrom=job_search", createList)
+                            myAjax(data01, changeUrl.address + "/Recuitment_api?whereFrom=job_search", createList)
                         } else {
                             $('#loadgif').hide()
                             $('#floatLayer').hide() //遮罩层
@@ -150,7 +150,7 @@ function initLoad(fn) {
             'pageNum': 1,
             'OnePageNum': 12
         }
-        myAjax(data02, 'http://' + changeUrl.address + '/Recuitment_api?whereFrom=job_search', fn)
+        myAjax(data02, changeUrl.address + '/Recuitment_api?whereFrom=job_search', fn)
     } else {
         var datailRecruitment = decodeURIComponent(args['whereFrom'])
         var data01 = {
@@ -160,7 +160,7 @@ function initLoad(fn) {
         }
         $('#searchKey').val(datailRecruitment)
         $('#result').html('')
-        myAjax(data01, 'http://' + changeUrl.address + '/Recuitment_api?whereFrom=job_search', fn)
+        myAjax(data01, changeUrl.address + '/Recuitment_api?whereFrom=job_search', fn)
     }
 }
 //初始数据加载

@@ -1,4 +1,3 @@
-
 $(function() {
 
     // 公司信息验证
@@ -67,7 +66,7 @@ $(function() {
                     }
                 }
             },
-            Areas03:{
+            Areas03: {
                 validators: {
                     notEmpty: {
                         message: "公司地点不能为空"
@@ -194,31 +193,31 @@ $(function() {
     var companyId = null;
 
     //添加公司
-    $("#next").click(function () {//非submit按钮点击后进行验证，如果是submit则无需此句直接验证
-        if($('#Logo').val() ===''){
+    $("#next").click(function() { //非submit按钮点击后进行验证，如果是submit则无需此句直接验证
+        if ($('#Logo').val() === '') {
             alert('请先上传图片')
-        }else if($('#selProvince').val() ==='' || $('#selCity').val() ===''){
+        } else if ($('#selProvince').val() === '' || $('#selCity').val() === '') {
             alert('请完善所在城市信息')
-        }else {
-            $("#companyInfo_tab1").bootstrapValidator('validate');//提交验证
-            if ($("#companyInfo_tab1").data('bootstrapValidator').isValid()) {//获取验证结果，如果成功，执行下面代码
+        } else {
+            $("#companyInfo_tab1").bootstrapValidator('validate'); //提交验证
+            if ($("#companyInfo_tab1").data('bootstrapValidator').isValid()) { //获取验证结果，如果成功，执行下面代码
                 //添加公司信息
                 var insertData = {
                     Name: $("#Name").val(),
                     Logo: $("#Logo").val(),
                     Brief_intro: $("#Brief_intro").val(),
-                    Intro:$("#Intro").val(),
-                    Province:$('#selProvince').val(),
+                    Intro: $("#Intro").val(),
+                    Province: $('#selProvince').val(),
                     City: $("#selCity").val(),
                     Site: $("#selCity").val(),
                     Link_name: $("#Link_name").val(),
                     Link_phone: $("#Link_phone").val(),
                     Link_mail: $("#Link_mail").val(),
-                    Load_people:$.cookie('username')
+                    Load_people: $.cookie('username')
                 }
                 $.ajax({
                     type: 'post',
-                    url: 'http://' + changeUrl.address + '/Recuitment_api?whereFrom=insert',
+                    url: changeUrl.address + '/Recuitment_api?whereFrom=insert',
                     data: insertData,
                     success: function(msg) {
                         console.log(msg)
@@ -234,56 +233,56 @@ $(function() {
                     }
                 })
 
-            }else {
+            } else {
                 alert('录入数据不符合格式')
             }
         }
     });
 
-     //新增职位
-       $('#saveNewJob').on('click',function () {
+    //新增职位
+    $('#saveNewJob').on('click', function() {
 
-          $("#jobManage_tab2").bootstrapValidator('validate');//提交验证
-           if( ($('#salary02').val() =='' || $('#salary01').val() =='') && $('#salary input:radio:checked').val()==='区间'){
-               alert('请选择薪资')
-           }else if($("#jobManage_tab2").data('bootstrapValidator').isValid()){
-               var salary01 =  $('#salary input:radio:checked').val()==='区间' ? $('#salary01').val() : '面议'
-               var jobInfo={
-                   recuitment_id:companyId,
-                   type:$('#SelectType').val(),
-                   Position:$('#Position').val(),
-                   Seniority:$('#Seniority input:radio:checked').val(),
-                   Headcount:$('#Headcount').val(),
-                   Areas:$('#selProvince1').val(),
-                   Areas02:$('#selCity1').val(),
-                   Areas03:$('#Areas03').val(),
-                   Job_description:autoChangeStyle($('#Job_description').val()),
-                   Job_requirement:autoChangeStyle($('#Job_requirement').val()),
-                   Job_weal:autoChangeStyle($('#Job_weal').val()),
-                   salary01:salary01,
-                   salary02:$('#salary02').val(),
-                   recuitment_name:$('#Name').val(),
-                   Load_people:$.cookie('username')
-               }
-               $.ajax({
-                   type:'post',
-                   url:'http://' + changeUrl.address + '/Recuitment_api?whereFrom=job_insert',
-                   data:jobInfo,
-                   success:function (msg) {
-                       console.log(msg)
-                       if(msg.code ==1){
-                           alert('添加成功，可继续添加职位')
-                           $('#JobForm').addClass('hide')
-                           $('#addNewJob').removeClass('hide')
-                       }
-                   },
-                   error:function () {
-                       alert('服务器繁忙，请稍后再试')
-                   }
-               })
-           }
+        $("#jobManage_tab2").bootstrapValidator('validate'); //提交验证
+        if (($('#salary02').val() == '' || $('#salary01').val() == '') && $('#salary input:radio:checked').val() === '区间') {
+            alert('请选择薪资')
+        } else if ($("#jobManage_tab2").data('bootstrapValidator').isValid()) {
+            var salary01 = $('#salary input:radio:checked').val() === '区间' ? $('#salary01').val() : '面议'
+            var jobInfo = {
+                recuitment_id: companyId,
+                type: $('#SelectType').val(),
+                Position: $('#Position').val(),
+                Seniority: $('#Seniority input:radio:checked').val(),
+                Headcount: $('#Headcount').val(),
+                Areas: $('#selProvince1').val(),
+                Areas02: $('#selCity1').val(),
+                Areas03: $('#Areas03').val(),
+                Job_description: autoChangeStyle($('#Job_description').val()),
+                Job_requirement: autoChangeStyle($('#Job_requirement').val()),
+                Job_weal: autoChangeStyle($('#Job_weal').val()),
+                salary01: salary01,
+                salary02: $('#salary02').val(),
+                recuitment_name: $('#Name').val(),
+                Load_people: $.cookie('username')
+            }
+            $.ajax({
+                type: 'post',
+                url: changeUrl.address + '/Recuitment_api?whereFrom=job_insert',
+                data: jobInfo,
+                success: function(msg) {
+                    console.log(msg)
+                    if (msg.code == 1) {
+                        alert('添加成功，可继续添加职位')
+                        $('#JobForm').addClass('hide')
+                        $('#addNewJob').removeClass('hide')
+                    }
+                },
+                error: function() {
+                    alert('服务器繁忙，请稍后再试')
+                }
+            })
+        }
 
-       })
+    })
 
 });
 
@@ -294,10 +293,9 @@ function autoChangeStyle(obj) {
 }
 
 //显示新填职位的框
-$('#addNewJob').on('click',function () {
+$('#addNewJob').on('click', function() {
     $(this).addClass('hide')
     $('#JobForm').removeClass('hide')
     $('#jobManage_tab2').addClass('active')
     return false;
 })
-

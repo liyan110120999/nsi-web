@@ -10,7 +10,7 @@ function getCookie() {
                 'username': $.cookie('username'),
                 'UserVerifyCode': $.cookie('userVerifyCode')
             }, //提交的参数
-            url: 'http://' + changeUrl.address + '/User_api?whereFrom=verify',
+            url: changeUrl.address + '/User_api?whereFrom=verify',
             dataType :   "jsonp", //数据类型为jsonp  
             jsonp:   "Callback", //服务端用于接收callback调用的function名的参数  
             success :   function(msg) {
@@ -181,4 +181,3 @@ function browserRedirect(url) {
 
 
 browserRedirect('http://data.xinxueshuo.cn/wap')
-

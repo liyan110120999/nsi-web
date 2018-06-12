@@ -26,7 +26,7 @@ $('#search_content').on('input propertychange', function(e) {
         var searchVal = $(this).val()
         $.ajax({
             type: 'get',
-            url: 'http://' + changeUrl.address + '/School_api?whereFrom=suggestSearch',
+            url: changeUrl.address + '/School_api?whereFrom=suggestSearch',
             data: {
                 keyword: searchVal
             },
@@ -56,7 +56,7 @@ $('#search_content').focus(function(event) {
     if (searchVal !== '') {
         $.ajax({
             type: 'get',
-            url: 'http://' + changeUrl.address + '/School_api?whereFrom=suggestSearch',
+            url: changeUrl.address + '/School_api?whereFrom=suggestSearch',
             data: {
                 keyword: searchVal
             },
@@ -91,7 +91,7 @@ $('#search_content').blur(function() {
 $(function() {
     $.ajax({
         type: 'get',
-        url: 'http://' + changeUrl.address + '/show_school_boards_api?whereFrom=show_boardsBySchool',
+        url: changeUrl.address + '/show_school_boards_api?whereFrom=show_boardsBySchool',
         data: {
 
         },

@@ -18,7 +18,7 @@ $(function() {
         data: {
             'Id': datailSchool
         }, //提交的参数
-        url: 'http://' + changeUrl.address + '/Institution_api?whereFrom=detail',
+        url: changeUrl.address + '/Institution_api?whereFrom=detail',
         dataType :   "jsonp", //数据类型为jsonp  
         jsonp:   "Callback", //服务端用于接收callback调用的function名的参数  
         success :   function(msg) {
@@ -189,7 +189,7 @@ function publishCommnent() {
         SubjectId: datailSchool,
         Content: commentContent
     }
-    var url = 'http://' + changeUrl.address + '/Comment_api?whereFrom=SendComment'
+    var url = changeUrl.address + '/Comment_api?whereFrom=SendComment'
 
     if (commentContent != '') {
         $.ajax({
@@ -218,7 +218,7 @@ $(function() {
     var data = {
         SubjectId: datailSchool,
     }
-    var url = 'http://' + changeUrl.address + '/Comment_api?whereFrom=CommentList'
+    var url = changeUrl.address + '/Comment_api?whereFrom=CommentList'
     $.ajax({
         type : "get",
         async: true,
