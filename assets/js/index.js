@@ -94,23 +94,25 @@ $(function() {
 })
 
 $(function() {
+    // 数据库最近更新
     var $scrollBox = $(".scrollBox");
     $.ajax({
         type: "POST",
         async: true,
         traditional: true,
-        dataType: 'jsonp',
+        // dataType: 'jsonp',
         data: {
-            'School_searchKey': "",
+            'searchKey': "",
             'pageNum': 1,
-            'OnePageNum': 10
+            'pageSize': 10
         },
-        jsonp: 'Callback',
-        url: 'http://' + changeUrl.address + '/School_api?whereFrom=search',
+        // jsonp: 'Callback',
+        url: changeUrl.address + '/school/list.do',
         success: function(msg) {
-            for (var i = 0; i < msg.length; i++) {
+            // console.log(msg.data.list);
+            for (var i = 0; i < msg.data.list.length; i++) {
                 $scrollBox.append(
-                    '<li title='+msg[i].School_name+'><a class="white" href="http://data.xinxueshuo.cn/nsi/school/detail.html?whereFrom=search&School_name=' + msg[i].Id + '">• &nbsp;' + msg[i].School_name + '</a></li>'
+                    '<li title=' + msg.data.list[i].schoolName + '><a class="white" href="http://data.xinxueshuo.cn/nsi/school/detail.html?whereFrom=search&School_name=' + msg.data.list[i].id + '">• &nbsp;' + msg.data.list[i].schoolName + '</a></li>'
                 )
             }
         },
@@ -257,7 +259,7 @@ $('#search').on('input propertychange', function(e) {
     if (schoolFlag) {
         $.ajax({
             type: 'get',
-            url: 'http://' + changeUrl.address + '/School_api?whereFrom=suggestSearch',
+            url: changeUrl.address + '/School_api?whereFrom=suggestSearch',
             data: {
                 keyword: searchVal
             },
@@ -293,7 +295,7 @@ $('#search').focus(function(event) {
         if (searchVal !== '') {
             $.ajax({
                 type: 'get',
-                url: 'http://' + changeUrl.address + '/School_api?whereFrom=suggestSearch',
+                url: changeUrl.address + '/School_api?whereFrom=suggestSearch',
                 data: {
                     keyword: searchVal
                 },
@@ -327,4 +329,4 @@ $('#search').blur(function() {
     }, 300)
 })
 
-console.log('2018-04-04 18:04')
+console.log('2018-06-12 18:04')
