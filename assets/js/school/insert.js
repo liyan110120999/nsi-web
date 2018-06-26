@@ -535,55 +535,56 @@ function formSubmit() {
         checkStudentNumResult == true && checkStuCapacityResult == true && checkGraduateStuResult == true && checkSchoolSystemResult == true && checkAddressResult == true
     ) {
         var insertData = {
-            'School_name': autoAddZero($('#School_name').val()),
-            'School_EnglishName': autoAddZero($('#School_EnglishName').val()),
-            'School_properties': autoAddZero($('#School_properties').val()),
-            'Areas': autoAddZero($('#selProvince').val()),
-            'Areas02': autoAddZero($('#selCity').val()),
-            'Areas03': autoAddZero($('#Areas03').val()),
-            'Founded_time': autoAddZero($('#Founded_time').val()),
-            'OperationState': autoAddZero($('#OperationState').val()),
-            'School_system': autoAddZero($('#School_system').val()),
 
-            'Tuition01': autoAddZero($('#Tuition01').val()),
-            'Tuition02': autoAddZero($('#Tuition02').val()),
-            'Tuition03': autoAddZero($('#Tuition03').val()),
-            'Tuition04': autoAddZero($('#Tuition04').val()),
+            'schoolName': autoAddZero($('#School_name').val()),
+            'schoolEnglishname': autoAddZero($('#School_EnglishName').val()),
+            'schoolProperties': autoAddZero($('#School_properties').val()),
+            'areas': autoAddZero($('#selProvince').val()),
+            'areas02': autoAddZero($('#selCity').val()),
+            'areas03': autoAddZero($('#Areas03').val()),
+            'foundedTime': autoAddZero($('#Founded_time').val()),
+            'operationstate': autoAddZero($('#OperationState').val()),
+            'schoolSystem': autoAddZero($('#School_system').val()),
 
-            'TuitionHigh': autoAddZero($('#TuitionHigh').val()),
-            'Website': autoAddZero($('#Website').val()),
-            'Telephone': autoAddZero($('#Telephone').val()),
-            'Inter_Course_Founded_time': autoAddZero($('#Inter_Course_Founded_time').val()),
-            'Course': autoAddZero($('#Course').val()),
-            'Authentication': autoAddZero($('#Authentication').val()),
-            'Course_evaluation': autoAddZero($('#Course_evaluation').val()),
+            'tuition01': autoAddZero($('#Tuition01').val()),
+            'tuition02': autoAddZero($('#Tuition02').val()),
+            'tuition03': autoAddZero($('#Tuition03').val()),
+            'tuition04': autoAddZero($('#Tuition04').val()),
 
-            'Student_Num01': autoAddZero($('#Student_Num01').val()),
-            'Student_Num02': autoAddZero($('#Student_Num02').val()),
-            'Student_Num03': autoAddZero($('#Student_Num03').val()),
-            'Student_Num04': autoAddZero($('#Student_Num04').val()),
+            'tuitionhigh': autoAddZero($('#TuitionHigh').val()),
+            'website': autoAddZero($('#Website').val()),
+            'telephone': autoAddZero($('#Telephone').val()),
+            'interCourseFoundedTime': autoAddZero($('#Inter_Course_Founded_time').val()),
+            'course': autoAddZero($('#Course').val()),
+            'authentication': autoAddZero($('#Authentication').val()),
+            'courseEvaluation': autoAddZero($('#Course_evaluation').val()),
 
-            'Student_Num_All': autoAddZero($('#Student_Num_All').val()),
-            'Student_Capacity': autoAddZero($('#Student_Capacity').val()),
-            'Graduated_Stu_Num': autoAddZero($('#Graduated_Stu_Num').val()),
-            'Stu_Dominant_nationality': autoAddZero($('#Stu_Dominant_nationality').val()),
-            'Stu_Year_Investment': autoAddZero($('#Stu_Year_Investment').val()),
-            'Club_Num': autoAddZero($('#Club_Num').val()),
-            'President_Country': autoAddZero($('#President_Country').val()),
-            'Staff_Num': autoAddZero($('#Staff_Num').val()),
-            'Teacher_Num': autoAddZero($('#Teacher_Num').val()),
-            'Foreign_Teacher_num': autoAddZero($('#Foreign_Teacher_num').val()),
-            'Teacher_Year_Investment': autoAddZero($('#Teacher_Year_Investment').val()),
-            'Teacher_Retention': autoAddZero($('#Teacher_Retention').val()),
-            'Teacher_Salary': autoAddZero($('#Teacher_Salary').val()),
-            'Teacher_Stu_ratio': autoAddZero($('#Teacher_Stu_ratio').val()),
-            'Covered_Area': autoAddZero($('#Covered_Area').val()),
-            'Built_Area': autoAddZero($('#Built_Area').val()),
-            'Hardware': autoAddZero($('#Hardware').val()),
-            'Investment': autoAddZero($('#Investment').val()),
-            'Remark': autoAddZero($('#Remark').val()),
+            'studentNum01': autoAddZero($('#Student_Num01').val()),
+            'studentNum02': autoAddZero($('#Student_Num02').val()),
+            'studentNum03': autoAddZero($('#Student_Num03').val()),
+            'studentNum04': autoAddZero($('#Student_Num04').val()),
 
-            "Load_People": $.cookie('username'),
+            'studentNumAll': autoAddZero($('#Student_Num_All').val()),
+            'studentCapacity': autoAddZero($('#Student_Capacity').val()),
+            'graduatedStuNum': autoAddZero($('#Graduated_Stu_Num').val()),
+            'stuDominantNationality': autoAddZero($('#Stu_Dominant_nationality').val()),
+            'stuYearInvestment': autoAddZero($('#Stu_Year_Investment').val()),
+            'clubNum': autoAddZero($('#Club_Num').val()),
+            'presidentCountry': autoAddZero($('#President_Country').val()),
+            'staffNum': autoAddZero($('#Staff_Num').val()),
+            'teacherNum': autoAddZero($('#Teacher_Num').val()),
+            'foreignTeacherNum': autoAddZero($('#Foreign_Teacher_num').val()),
+            'teacherYearInvestment': autoAddZero($('#Teacher_Year_Investment').val()),
+            'teacherRetention': autoAddZero($('#Teacher_Retention').val()),
+            'teacherSalary': autoAddZero($('#Teacher_Salary').val()),
+            'teacherStuRatio': autoAddZero($('#Teacher_Stu_ratio').val()),
+            'coveredArea': autoAddZero($('#Covered_Area').val()),
+            'builtArea': autoAddZero($('#Built_Area').val()),
+            'hardware': autoAddZero($('#Hardware').val()),
+            'investment': autoAddZero($('#Investment').val()),
+            'remark': autoAddZero($('#Remark').val()),
+
+            "loadPeople": $.cookie('username'),
             "member_sign": $.cookie('usertitle')
         }
         $.ajax({
@@ -591,9 +592,7 @@ function formSubmit() {
             async: false,
             traditional: true,
             data: insertData, //提交的参数
-            url: changeUrl.address + '/School_api?whereFrom=insert',
-            dataType: "jsonp", //数据类型为jsonp  
-            jsonp: "Callback", //服务端用于接收callback调用的function名的参数  
+            url: changeUrl.address + '/school/addSchool.do',
             beforeSend: function() { //触发ajax请求开始时执行
                 $('#insertSubmit').text('提交数据中...');
                 $('#insertSubmit').addClass('disabled')
@@ -601,7 +600,7 @@ function formSubmit() {
             },
             success: function(msg) {
                 console.log(msg)
-                if (msg.msg == 1) {
+                if (msg.code == 0) {
                     alert('恭喜！数据提交成功')
                     $('#insertSubmit').text('立即提交');
                     $('#insertSubmit').removeClass('disabled')

@@ -23,87 +23,82 @@ $(function() {
         async: false,
         traditional: true,
         data: {
-            'Id': datailSchool
+            'schoolId': datailSchool
         }, //提交的参数
-        url: changeUrl.address + '/School_api?whereFrom=detail',
-        dataType :   "jsonp", //数据类型为jsonp  
-        jsonp:   "Callback", //服务端用于接收callback调用的function名的参数  
+        // url: changeUrl.address + '/School_api?whereFrom=detail',
+        url: changeUrl.address + '/school/detail.do',
         success :   function(msg) {
             console.log(msg)
-            var imgSrc = msg[0].School_logo ? 'http://' + changeUrl.imgAddress + msg[0].School_logo : '../assets/img/schoolNoPic.png';
+            var imgSrc = msg.data.schoolLogo ? 'http://' + changeUrl.imgAddress + msg.data.schoolLogo : '../assets/img/schoolNoPic.png';
             $('#School_logo').attr('src', imgSrc)
-            $('#School_name').text(zeroToEmpty(msg[0].School_name))
-            $('#School_EnglishName').text(zeroToEmpty(msg[0].School_EnglishName))
-            $('#School_properties').text(zeroToEmpty(msg[0].School_properties))
-            $('#OperationState').text(zeroToEmpty(msg[0].OperationState))
+            $('#School_name').text(zeroToEmpty(msg.data.schoolName))
+            $('#School_EnglishName').text(zeroToEmpty(msg.data.schoolEnglishname))
+            $('#School_properties').text(zeroToEmpty(msg.data.schoolProperties))
+            $('#OperationState').text(zeroToEmpty(msg.data.operationstate))
 
-            // $('#Areas').text(filter(msg[0].Areas))
-            // $('#Areas02').text(filter(msg[0].Areas02))
-            // $('#Areas03').text(zeroToAddress(msg[0].Areas03))
-            $('#Address').text(filter(msg[0].Areas) + " " + filter(msg[0].Areas02) + " " + zeroToAddress(msg[0].Areas03))
-            $('#Website').text(zeroToEmpty(msg[0].Website))
-            $('#Website').attr("href", "http://" + zeroToEmpty(msg[0].Website))
-            $('#Telephone').text(zeroToEmpty(msg[0].Telephone))
-            $('#School_system').text(zeroToEmpty(msg[0].School_system))
-            $('#Founded_time').text(zeroToEmpty(msg[0].Founded_time))
-            $('#TuitionHigh').text(zeroToEmpty(msg[0].TuitionHigh))
+            $('#Address').text(filter(msg.data.areas) + " " + filter(msg.data.areas02) + " " + zeroToAddress(msg.data.areas03))
+            $('#Website').text(zeroToEmpty(msg.data.website))
+            $('#Website').attr("href", "http://" + zeroToEmpty(msg.data.website))
+            $('#Telephone').text(zeroToEmpty(msg.data.telephone))
+            $('#School_system').text(zeroToEmpty(msg.data.schoolSystem))
+            $('#Founded_time').text(zeroToEmpty(msg.data.foundedTime))
+            $('#TuitionHigh').text(zeroToEmpty(msg.data.tuitionhigh))
 
-            $('#Tuition01').text(zeroToEmpty(msg[0].Tuition01))
-            $('#Tuition02').text(zeroToEmpty(msg[0].Tuition02))
-            $('#Tuition03').text(zeroToEmpty(msg[0].Tuition03))
-            $('#Tuition04').text(zeroToEmpty(msg[0].Tuition04))
+            $('#Tuition01').text(zeroToEmpty(msg.data.tuition01))
+            $('#Tuition02').text(zeroToEmpty(msg.data.tuition02))
+            $('#Tuition03').text(zeroToEmpty(msg.data.tuition03))
+            $('#Tuition04').text(zeroToEmpty(msg.data.tuition04))
 
-            $('#Inter_Course_Founded_time').text(zeroToEmpty(msg[0].Inter_Course_Founded_time))
-            $('#Club_Num').text(zeroToEmpty(msg[0].Club_Num))
-            $('#Course_evaluation').text(zeroToEmpty(msg[0].Course_evaluation))
-            $('#Stu_Year_Investment').text(zeroToEmpty(msg[0].Stu_Year_Investment))
-            $('#Course').text(zeroToEmpty(msg[0].Course))
-            $('#Student_Capacity').text(zeroToEmpty(msg[0].Student_Capacity))
-            $('#Authentication').text(zeroToEmpty(msg[0].Authentication))
-            $('#Graduated_Stu_Num').text(zeroToEmpty(msg[0].Graduated_Stu_Num))
-            $('#Stu_Dominant_nationality').text(zeroToEmpty(msg[0].Stu_Dominant_nationality))
-            $('#Student_Num_All').text(zeroToEmpty(msg[0].Student_Num_All))
+            $('#Inter_Course_Founded_time').text(zeroToEmpty(msg.data.interCourseFoundedTime))
+            $('#Club_Num').text(zeroToEmpty(msg.data.clubNum))
+            $('#Course_evaluation').text(zeroToEmpty(msg.data.courseEvaluation))
+            $('#Stu_Year_Investment').text(zeroToEmpty(msg.data.stuYearInvestment))
+            $('#Course').text(zeroToEmpty(msg.data.course))
+            $('#Student_Capacity').text(zeroToEmpty(msg.data.studentCapacity))
+            $('#Authentication').text(zeroToEmpty(msg.data.authentication))
+            $('#Graduated_Stu_Num').text(zeroToEmpty(msg.data.graduatedStuNum))
+            $('#Stu_Dominant_nationality').text(zeroToEmpty(msg.data.stuDominantNationality))
+            $('#Student_Num_All').text(zeroToEmpty(msg.data.studentNumAll))
 
-            $('#Student_Num01').text(zeroToEmpty(msg[0].Student_Num01))
-            $('#Student_Num02').text(zeroToEmpty(msg[0].Student_Num02))
-            $('#Student_Num03').text(zeroToEmpty(msg[0].Student_Num03))
-            $('#Student_Num04').text(zeroToEmpty(msg[0].Student_Num04))
+            $('#Student_Num01').text(zeroToEmpty(msg.data.studentNumA01))
+            $('#Student_Num02').text(zeroToEmpty(msg.data.studentNumA02))
+            $('#Student_Num03').text(zeroToEmpty(msg.data.studentNumA03))
+            $('#Student_Num04').text(zeroToEmpty(msg.data.studentNumA04))
 
-            $('#President_Country').text(zeroToEmpty(msg[0].President_Country))
-            $('#Staff_Num').text(zeroToEmpty(msg[0].Staff_Num))
-            $('#Teacher_Salary').text(zeroToEmpty(msg[0].Teacher_Salary))
-            $('#Teacher_Num').text(zeroToEmpty(msg[0].Teacher_Num))
-            $('#Teacher_Year_Investment').text(zeroToEmpty(msg[0].Teacher_Year_Investment))
-            $('#Foreign_Teacher_num').text(zeroToEmpty(msg[0].Foreign_Teacher_num))
-            $('#Teacher_Stu_ratio').text(zeroToEmpty(msg[0].Teacher_Stu_ratio))
-            $('#Teacher_Retention').text(zeroToEmpty(msg[0].Teacher_Retention))
+            $('#President_Country').text(zeroToEmpty(msg.data.presidentCountry))
+            $('#Staff_Num').text(zeroToEmpty(msg.data.staffNum))
+            $('#Teacher_Salary').text(zeroToEmpty(msg.data.teacherSalary))
+            $('#Teacher_Num').text(zeroToEmpty(msg.data.teacherNum))
+            $('#Teacher_Year_Investment').text(zeroToEmpty(msg.data.teacherYearInvestment))
+            $('#Foreign_Teacher_num').text(zeroToEmpty(msg.data.foreignTeacherNum))
+            $('#Teacher_Stu_ratio').text(zeroToEmpty(msg.data.teacherStuRatio))
+            $('#Teacher_Retention').text(zeroToEmpty(msg.data.teacherRetention))
 
-            $('#Covered_Area').text(zeroToEmpty(msg[0].Covered_Area))
-            $('#Built_Area').text(zeroToEmpty(msg[0].Built_Area))
-            $('#Hardware').text(zeroToEmpty(msg[0].Hardware))
-            $('#Investment').text(zeroToEmpty(msg[0].Investment))
-            $('#Remark').text(zeroToEmpty(msg[0].Remark))
+            $('#Covered_Area').text(zeroToEmpty(msg.data.coveredArea))
+            $('#Built_Area').text(zeroToEmpty(msg.data.builtArea))
+            $('#Hardware').text(zeroToEmpty(msg.data.hardware))
+            $('#Investment').text(zeroToEmpty(msg.data.investment))
+            $('#Remark').text(zeroToEmpty(msg.data.remark))
 
-            $('#Load_People').text(msg[0].Load_People)
-            $('#Load_Time').text(msg[0].Load_Time)
+            $('#Load_People').text(msg.data.loadPeople)
+            $('#Load_Time').text(msg.data.loadTime)
 
             // 学校名
-            $('.schoolName').text(msg[0].School_name)
-                //学校网址(先判断是否只有http或https)
-                // website = msg[0].Website.substr(0,7).toLowerCase() == "http://" ? msg[0].Website : "http://" + msg[0].Website;
+            $('.schoolName').text(msg.data.schoolName)
 
-            if (msg[0].Website.substr(0, 7).toLowerCase() == "http://") {
-                website = msg[0].Website
-            } else if (msg[0].Website.substr(0, 7).toLowerCase() == "https:/") {
-                website = msg[0].Website
+            if (msg.data.website.substr(0, 7).toLowerCase() == "http://") {
+                console.log(msg.data.website)
+                website = msg.data.website
+            } else if (msg.data.website.substr(0, 7).toLowerCase() == "https:/") {
+                website = msg.data.website
             } else {
-                website = "http://" + msg[0].Website;
+                website = "http://" + msg.data.website;
             }
             $('.Website').attr('href', website)
 
             //学校ID
-            $('.everySchoolID').val(msg[0].Id)
-            $('.headerSchoolID').text(msg[0].Id)
+            $('.everySchoolID').val(msg.data.id)
+            $('.headerSchoolID').text(msg.data.id)
             accsessControl()
 
             // 硬件设施

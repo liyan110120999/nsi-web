@@ -1,13 +1,11 @@
 //封装ajax
 function myAjax(data, url, success) {
     $.ajax({
-        type :   "get",
+        type : "post",
         async: true,
         traditional: true,
         data: data, //提交的参数
         url: url,
-        dataType :   "jsonp", //数据类型为jsonp  
-        jsonp:   "Callback", //服务端用于接收callback调用的function名的参数  
         success :   function(msg) {
             console.log(msg)
             success(msg);

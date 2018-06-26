@@ -26,7 +26,7 @@ $('#search_content').on('input propertychange', function(e) {
         var searchVal = $(this).val()
         $.ajax({
             type: 'get',
-            url: changeUrl.address + '/School_api?whereFrom=suggestSearch',
+            url: changeUrl.address + '/school/suggest_search.do',
             data: {
                 keyword: searchVal
             },
@@ -56,7 +56,7 @@ $('#search_content').focus(function(event) {
     if (searchVal !== '') {
         $.ajax({
             type: 'get',
-            url: changeUrl.address + '/School_api?whereFrom=suggestSearch',
+            url: changeUrl.address + '/school/suggest_search.do',
             data: {
                 keyword: searchVal
             },
@@ -91,33 +91,33 @@ $('#search_content').blur(function() {
 $(function() {
     $.ajax({
         type: 'get',
-        url: changeUrl.address + '/show_school_boards_api?whereFrom=show_boardsBySchool',
+        url: changeUrl.address + '/school/get_school_boards.do',
         data: {
-
+            keyword: "学校顶部广告位"
         },
         success: function(msg) {
             console.log(msg)
             for (var i = 0; i < msg.data.length; i++) {
-                var imgSrc = msg.data[i].School_logo ? 'http://' + changeUrl.imgAddress + msg.data[i].School_logo : '../assets/img/schoolNoPic.png';
+                var imgSrc = msg.data[i].School_logo ? 'http://' + changeUrl.imgAddress + msg.data[i].schoolLogo : '../assets/img/schoolNoPic.png';
                 $('#adviceSchoolWrap').append(
                     '<div class="col-md-3">' +
-                    '<a class="school_list" href="./detail.html?School_name=' + msg.data[i].Id + '&whereFrom=search">' +
+                    '<a class="school_list" href="./detail.html?School_name=' + msg.data[i].id + '&whereFrom=search">' +
                     '<div class="text-center">' +
                     '<img src="' + imgSrc + '" alt="学校logo" class="school_logo ">' +
                     '</div>' +
-                    '<h4 class="text-center school_name">' + msg.data[i].School_name + '</h4>' +
+                    '<h4 class="text-center school_name">' + msg.data[i].schoolName + '</h4>' +
                     '<div class="clearfix">' +
                     '<p class="pull-left">' +
-                    '<span>' + msg.data[i].School_properties + '</span> <span>|</span> <span>建校时间：</span> <span>' + msg.data[i].Founded_time + '</span>' +
+                    '<span>' + msg.data[i].schoolProperties + '</span> <span>|</span> <span>建校时间：</span> <span>' + msg.data[i].foundedTime + '</span>' +
                     '</p>' +
                     '<p class="pull-right">' +
-                    '<span class="glyphicon glyphicon-globe" style="top:2px;color:#215089;"></span> <span>' + msg.data[0].Areas + '</span>' +
+                    '<span class="glyphicon glyphicon-globe" style="top:2px;color:#215089;"></span> <span>' + msg.data[0].areas + '</span>' +
                     '</p>' +
                     '</div>' +
                     ' <p>' +
-                    '<span>学制：</span> <span>' + msg.data[i].School_system + '</span>' +
+                    '<span>学制：</span> <span>' + msg.data[i].schoolSystem + '</span>' +
                     '</p>' +
-                    '<p> <span>课程：</span> <span>' + msg.data[i].Course + '</span></p>' +
+                    '<p> <span>课程：</span> <span>' + msg.data[i].course + '</span></p>' +
                     ' <p> <span class="glyphicon glyphicon-time" style="top:2px;color:#215089;"></span> <span> 提交时间：</span> <span>' + msg.data[i].Load_Time + '</span></p>' +
                     '</a>' +
                     '</div>'

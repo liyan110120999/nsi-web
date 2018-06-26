@@ -259,11 +259,13 @@ $('#search').on('input propertychange', function(e) {
     if (schoolFlag) {
         $.ajax({
             type: 'get',
-            url: changeUrl.address + '/School_api?whereFrom=suggestSearch',
+            url: changeUrl.address + '/school/suggest_search.do',
             data: {
                 keyword: searchVal
             },
             success: function(msg) {
+                console.log(msg);
+
                 $('#serchContent').html('')
                 if (msg.data.length !== 0) {
                     $('#serchContent').removeClass('hide')
@@ -275,7 +277,6 @@ $('#search').on('input propertychange', function(e) {
                 } else {
                     $('#serchContent').addClass('hide')
                 }
-
             },
             error: function() {
                 alert('服务器繁忙，请稍后再试~')
@@ -295,7 +296,7 @@ $('#search').focus(function(event) {
         if (searchVal !== '') {
             $.ajax({
                 type: 'get',
-                url: changeUrl.address + '/School_api?whereFrom=suggestSearch',
+                url: changeUrl.address + '/school/suggest_search.do',
                 data: {
                     keyword: searchVal
                 },
@@ -311,7 +312,6 @@ $('#search').focus(function(event) {
                     } else {
                         $('#serchContent').addClass('hide')
                     }
-
                 },
                 error: function() {
                     alert('服务器繁忙，请稍后再试~')

@@ -1,20 +1,24 @@
-body{
-    overflow-x:hidden;
+body {
+    overflow-x: hidden;
 }
-.ptb45{
+
+.ptb45 {
     padding: 45px 0;
 }
-.content{
+
+.content {
     /* border: 1px solid #ebebeb; */
     /* border-radius: 4px; */
-    transition:all .2s;
+    transition: all .2s;
     padding-left: 100px;
 }
-.step{
+
+.step {
     padding: 30px;
 }
-.step>span{
-    display:inline-block;
+
+.step>span {
+    display: inline-block;
     width: 20px;
     height: 20px;
     line-height: 24px;
@@ -22,7 +26,8 @@ body{
     border: 2px solid #c0c4cc;
     position: relative;
 }
-.step::before{
+
+.step::before {
     content: "";
     display: inline-block;
     position: absolute;
@@ -35,7 +40,7 @@ body{
     top: 32px;
 }
 
-.step::after{
+.step::after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -48,10 +53,12 @@ body{
     top: 32px;
 }
 
-.nostep::before,.nostep::after{
+.nostep::before,
+.nostep::after {
     display: none !important;
 }
-.step>p{
+
+.step>p {
     color: #c0c4cc;
     font-weight: 700;
     cursor: pointer;
@@ -60,19 +67,23 @@ body{
     top: -5px;
     left: 5px;
 }
-.active>span{
+
+.active>span {
     border: 2px solid #333;
 }
-.active>p{
-    color: #333
+
+.active>p {
+    color: rgb(33, 80, 137);
 }
-.complete>span{
+
+.complete>span {
     border-color: #54ae28;
     background: #67c23a;
     position: relative;
     transition: all .5s;
 }
-.complete>span::before{
+
+.complete>span::before {
     display: block;
     position: absolute;
     content: "";
@@ -83,7 +94,8 @@ body{
     top: 8px;
     transform: rotateZ(45deg);
 }
-.complete>span::after{
+
+.complete>span::after {
     display: block;
     position: absolute;
     content: "";
@@ -95,22 +107,30 @@ body{
     transform: rotateZ(-45deg);
 }
 
-.complete>p{
+.complete>p {
     color: #67c23a
 }
-.por{
+
+.por {
     position: relative;
 }
-.panel-primary{
+
+.panel-primary {
     position: absolute;
     width: 100%;
     display: none;
     box-shadow: 0 4px 8px rgba(7, 17, 27, 0.4);
     border-width: 2px;
 }
-.show{
+
+.show {
     display: block
 }
-#footer-sec{
+
+#footer-sec {
     margin-top: 690px;
+}
+
+.panel-body {
+    margin-top: 30px;
 }
